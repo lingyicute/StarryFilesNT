@@ -10,12 +10,6 @@ platform:
 - x64
 - ARM64
 
-environment:
-  PFX_ENC_PASS:
-    secure: vl0ntw9DjQdAno9nYVe0osg2tBmXD7gW75NLfxIvxMDW3GiVlJlFcESf7v6f7qKe
-  PFX_PASS:
-    secure: rgMy2ixSiaW0sk2CwaHwO5pK8U98ynzt/jjiGNRSYPfaAcOTRZ5oX+fsgqn6qP54
-
 cache:
   - vcpkg_installed -> vcpkg.json
   - '%LOCALAPPDATA%\vcpkg\archives -> vcpkg.json'
@@ -74,9 +68,6 @@ install:
 
     .\StarryFiles++\ThirdParty\vcpkg\bootstrap-vcpkg.bat
 
-    nuget install secure-file -ExcludeVersion
-
-    IF DEFINED PFX_ENC_PASS (secure-file\tools\secure-file -decrypt %APPVEYOR_BUILD_FOLDER%\authenticode.pfx.enc -secret %PFX_ENC_PASS%)
 
 before_build:
 - pwsh: >-
@@ -108,7 +99,6 @@ artifacts:
 - path: explorerpp_x86_setup.msi
 - path: explorerpp_x64_setup.msi
 - path: explorerpp_translations.zip
-- path: latest_version.txt
 
 before_deploy:
 - pwsh: >-
@@ -127,48 +117,3 @@ before_deploy:
     }
 
 deploy:
-  - provider: GitHub
-    auth_token:
-      secure: iU7ijPhvPEwymBKhGsZBwD9aDO3yPWpAq8iS5vaQcs5YdLRgcICuLOEJZ9UZIh9l
-    tag: $(APPVEYOR_REPO_TAG_NAME)
-    release: $(RELEASE_TITLE)
-    prerelease: $(PRERELEASE)
-    description: ''
-    artifact: /.*\.zip/
-    force_update: true
-    draft: true
-    on:
-      APPVEYOR_REPO_TAG: true
-      configuration: Release
-      branch: master
-
-  - provider: S3
-    access_key_id:
-      secure: C7kIRfyPAfkKkpF7Gh7BqEvqZVMMi2Ps0+iGFgCTiKE=
-    secret_access_key:
-      secure: agLWDF321Coa4wU5Wa07pwLm0QLQ2KPj9M0Ys5vVlOQID3+TDUtrvRX2R47yZbFJ
-    bucket: starryfilesplusplus-builds
-    region: us-east-1
-    folder: dev/$(APPVEYOR_BUILD_VERSION)
-    artifact: /.*\.zip|.*\.msi/
-    set_content_type: true
-    on:
-      APPVEYOR_REPO_TAG: false
-      configuration: Release
-      branch: master
-
-  - provider: S3
-    access_key_id:
-      secure: C7kIRfyPAfkKkpF7Gh7BqEvqZVMMi2Ps0+iGFgCTiKE=
-    secret_access_key:
-      secure: agLWDF321Coa4wU5Wa07pwLm0QLQ2KPj9M0Ys5vVlOQID3+TDUtrvRX2R47yZbFJ
-    bucket: starryfilesplusplus-builds
-    region: us-east-1
-    folder: dev
-    artifact: latest_version.txt
-    set_content_type: true
-    on:
-      APPVEYOR_REPO_TAG: false
-      platform: ARM64
-      configuration: Release
-      branch: master
