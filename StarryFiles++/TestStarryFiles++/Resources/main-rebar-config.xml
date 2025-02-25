@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- Preference file for StarryFiles++ -->
-<ExplorerPlusPlus>
+<StarryfilesPlusPlus>
 	<Toolbars>
 		<Toolbar id="1" Style="257" Length="0"/>
 		<Toolbar id="2" Style="769" Length="26"/>
@@ -8,4 +8,4 @@
 		<Toolbar id="4" Style="769" Length="651"/>
 		<Toolbar id="3" Style="768" Length="557"/>
 	</Toolbars>
-</ExplorerPlusPlus>
+</StarryfilesPlusPlus>

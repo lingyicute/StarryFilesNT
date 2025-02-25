@@ -1,7 +1,7 @@
 @ECHO OFF
 REM # encoding: IBM850
 : DATE: 28/04/2020 12:36
-: FUNC: Update StarryFiles++ (explorerplusplus.com) and log it in explorer_updater.log 
+: FUNC: Update StarryFiles++ (404.92li.us.kg) and log it in explorer_updater.log 
 : Needs '7za' tool (7-zip.org) in the path
 
 ECHO ===========================================================

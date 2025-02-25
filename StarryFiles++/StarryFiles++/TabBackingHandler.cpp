@@ -16,7 +16,7 @@
 #include "TabContainer.h"
 #include "ToolbarHelper.h"
 
-void Explorerplusplus::CreateTabBacking()
+void Starryfilesplusplus::CreateTabBacking()
 {
 	m_hTabBacking = CreateWindow(WC_STATIC, L"",
 		WS_VISIBLE | WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | SS_NOTIFY, 0, 0, 0, 0,
@@ -39,10 +39,10 @@ void Explorerplusplus::CreateTabBacking()
 	m_tabToolbarTooltipFontSetter = std::make_unique<MainFontSetter>(
 		reinterpret_cast<HWND>(SendMessage(m_hTabWindowToolbar, TB_GETTOOLTIPS, 0, 0)), m_config);
 
-	AddTabsInitializedObserver(std::bind_front(&Explorerplusplus::OnTabsInitialized, this));
+	AddTabsInitializedObserver(std::bind_front(&Starryfilesplusplus::OnTabsInitialized, this));
 }
 
-void Explorerplusplus::OnTabsInitialized()
+void Starryfilesplusplus::OnTabsInitialized()
 {
 	GetActivePane()->GetTabContainer()->tabCreatedSignal.AddObserver(
 		[this](int tabId, BOOL switchToNewTab)
@@ -54,7 +54,7 @@ void Explorerplusplus::OnTabsInitialized()
 		});
 
 	GetActivePane()->GetTabContainer()->tabUpdatedSignal.AddObserver(
-		std::bind_front(&Explorerplusplus::OnTabUpdated, this));
+		std::bind_front(&Starryfilesplusplus::OnTabUpdated, this));
 
 	GetActivePane()->GetTabContainer()->tabSelectedSignal.AddObserver(
 		[this](const Tab &tab)
@@ -73,7 +73,7 @@ void Explorerplusplus::OnTabsInitialized()
 		});
 }
 
-void Explorerplusplus::OnTabUpdated(const Tab &tab, Tab::PropertyType propertyType)
+void Starryfilesplusplus::OnTabUpdated(const Tab &tab, Tab::PropertyType propertyType)
 {
 	switch (propertyType)
 	{
@@ -89,7 +89,7 @@ void Explorerplusplus::OnTabUpdated(const Tab &tab, Tab::PropertyType propertyTy
 	}
 }
 
-void Explorerplusplus::UpdateTabToolbar()
+void Starryfilesplusplus::UpdateTabToolbar()
 {
 	const int nTabs = GetActivePane()->GetTabContainer()->GetNumTabs();
 

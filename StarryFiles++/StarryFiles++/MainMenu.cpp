@@ -66,7 +66,7 @@ const std::map<UINT, Icon> MAIN_MENU_IMAGE_MAPPINGS = {
 };
 // clang-format on
 
-void Explorerplusplus::InitializeMainMenu()
+void Starryfilesplusplus::InitializeMainMenu()
 {
 	FAIL_FAST_IF_FAILED(SHGetImageList(SHIL_SYSSMALL, IID_PPV_ARGS(&m_mainMenuSystemImageList)));
 
@@ -130,12 +130,12 @@ void Explorerplusplus::InitializeMainMenu()
 		});
 
 	AddGetMenuItemHelperTextObserver(
-		std::bind_front(&Explorerplusplus::MaybeGetMenuItemHelperText, this));
+		std::bind_front(&Starryfilesplusplus::MaybeGetMenuItemHelperText, this));
 
 	UpdateMenuAcceleratorStrings(mainMenu, m_app->GetAcceleratorManager());
 }
 
-void Explorerplusplus::AddMainMenuSubmenu(HMENU mainMenu, UINT subMenuItemId,
+void Starryfilesplusplus::AddMainMenuSubmenu(HMENU mainMenu, UINT subMenuItemId,
 	std::function<std::unique_ptr<MenuBase>(MenuView *menuView)> menuCreator)
 {
 	auto view = std::make_unique<MainMenuSubMenuView>(mainMenu, subMenuItemId);
@@ -143,7 +143,7 @@ void Explorerplusplus::AddMainMenuSubmenu(HMENU mainMenu, UINT subMenuItemId,
 	m_mainMenuSubMenus.emplace_back(std::move(view), std::move(menu));
 }
 
-void Explorerplusplus::SetMainMenuImages()
+void Starryfilesplusplus::SetMainMenuImages()
 {
 	HMENU mainMenu = GetMenu(m_hContainer);
 	UINT dpi = DpiCompatibility::GetInstance().GetDpiForWindow(m_hContainer);
@@ -157,7 +157,7 @@ void Explorerplusplus::SetMainMenuImages()
 	SetPasteSymLinkElevationIcon();
 }
 
-void Explorerplusplus::SetPasteSymLinkElevationIcon()
+void Starryfilesplusplus::SetPasteSymLinkElevationIcon()
 {
 	// Creating a symlink typically requires elevation. However, if the application is already
 	// elevated, there's no need to show the shield icon (which is used to indicate that elevation
@@ -190,7 +190,7 @@ void Explorerplusplus::SetPasteSymLinkElevationIcon()
 	m_mainMenuImages.push_back(std::move(bitmap));
 }
 
-void Explorerplusplus::InitializeGoMenu(HMENU mainMenu)
+void Starryfilesplusplus::InitializeGoMenu(HMENU mainMenu)
 {
 	// This is a bit indirect, but it's better than using something like GetSubMenu(), which would
 	// rely on the "Go" menu remaining in a fixed position.
@@ -227,7 +227,7 @@ void Explorerplusplus::InitializeGoMenu(HMENU mainMenu)
 	MenuHelper::RemoveTrailingSeparators(goMenu);
 }
 
-void Explorerplusplus::AddGoMenuItem(HMENU goMenu, UINT id, const KNOWNFOLDERID &folderId)
+void Starryfilesplusplus::AddGoMenuItem(HMENU goMenu, UINT id, const KNOWNFOLDERID &folderId)
 {
 	unique_pidl_absolute pidl;
 	HRESULT hr = SHGetKnownFolderIDList(folderId, KF_FLAG_DEFAULT, nullptr, wil::out_param(pidl));
@@ -240,7 +240,7 @@ void Explorerplusplus::AddGoMenuItem(HMENU goMenu, UINT id, const KNOWNFOLDERID 
 	AddGoMenuItem(goMenu, id, pidl.get());
 }
 
-void Explorerplusplus::AddGoMenuItem(HMENU goMenu, UINT id, const std::wstring &path)
+void Starryfilesplusplus::AddGoMenuItem(HMENU goMenu, UINT id, const std::wstring &path)
 {
 	unique_pidl_absolute pidl;
 	HRESULT hr = SHParseDisplayName(path.c_str(), nullptr, wil::out_param(pidl), 0, nullptr);
@@ -253,7 +253,7 @@ void Explorerplusplus::AddGoMenuItem(HMENU goMenu, UINT id, const std::wstring &
 	AddGoMenuItem(goMenu, id, pidl.get());
 }
 
-void Explorerplusplus::AddGoMenuItem(HMENU goMenu, UINT id, PCIDLIST_ABSOLUTE pidl)
+void Starryfilesplusplus::AddGoMenuItem(HMENU goMenu, UINT id, PCIDLIST_ABSOLUTE pidl)
 {
 	std::wstring folderName;
 	HRESULT hr = GetDisplayName(pidl, SHGDN_INFOLDER, folderName);
@@ -270,12 +270,12 @@ void Explorerplusplus::AddGoMenuItem(HMENU goMenu, UINT id, PCIDLIST_ABSOLUTE pi
 		{
 			UNREFERENCED_PARAMETER(overlayIndex);
 
-			// Accessing the Explorerplusplus instance here should always be safe. This callback is
+			// Accessing the Starryfilesplusplus instance here should always be safe. This callback is
 			// run on the main thread and will either run before the instance is destroyed, or not
 			// at all. It's not feasible for the callback to run while the destruction of the
-			// Explorerplusplus instance is ongoing (which would be unsafe), since even if messages
+			// Starryfilesplusplus instance is ongoing (which would be unsafe), since even if messages
 			// were pumped, the window message handler that the class sets up will no longer be
-			// active. So, once destruction of the Explorerplusplus instance has started, there's no
+			// active. So, once destruction of the Starryfilesplusplus instance has started, there's no
 			// way for this callback to run.
 			wil::unique_hbitmap bitmap;
 			ImageHelper::ImageListIconToPBGRABitmap(m_mainMenuSystemImageList.get(), iconIndex,
@@ -287,13 +287,13 @@ void Explorerplusplus::AddGoMenuItem(HMENU goMenu, UINT id, PCIDLIST_ABSOLUTE pi
 		});
 }
 
-boost::signals2::connection Explorerplusplus::AddMainMenuPreShowObserver(
+boost::signals2::connection Starryfilesplusplus::AddMainMenuPreShowObserver(
 	const MainMenuPreShowSignal::slot_type &observer)
 {
 	return m_mainMenuPreShowSignal.connect(observer);
 }
 
-void Explorerplusplus::OnInitMenu(HMENU menu)
+void Starryfilesplusplus::OnInitMenu(HMENU menu)
 {
 	// Note that as per
 	// https://stackoverflow.com/questions/69917594/wm-initmenu-has-unexpected-wparam-for-system-menu#comment123596433_69917594,
@@ -313,7 +313,7 @@ void Explorerplusplus::OnInitMenu(HMENU menu)
 	}
 }
 
-void Explorerplusplus::OnExitMenuLoop(bool shortcutMenu)
+void Starryfilesplusplus::OnExitMenuLoop(bool shortcutMenu)
 {
 	if (!shortcutMenu)
 	{
@@ -321,7 +321,7 @@ void Explorerplusplus::OnExitMenuLoop(bool shortcutMenu)
 	}
 }
 
-bool Explorerplusplus::MaybeHandleMainMenuItemSelection(UINT id)
+bool Starryfilesplusplus::MaybeHandleMainMenuItemSelection(UINT id)
 {
 	auto *subMenu = MaybeGetMainMenuSubMenuFromId(id);
 
@@ -335,13 +335,13 @@ bool Explorerplusplus::MaybeHandleMainMenuItemSelection(UINT id)
 	return true;
 }
 
-boost::signals2::connection Explorerplusplus::AddMainMenuItemMiddleClickedObserver(
+boost::signals2::connection Starryfilesplusplus::AddMainMenuItemMiddleClickedObserver(
 	const MainMenuItemMiddleClickedSignal::slot_type &observer)
 {
 	return m_mainMenuItemMiddleClickedSignal.connect(observer);
 }
 
-void Explorerplusplus::OnMenuMiddleButtonUp(const POINT &pt, bool isCtrlKeyDown,
+void Starryfilesplusplus::OnMenuMiddleButtonUp(const POINT &pt, bool isCtrlKeyDown,
 	bool isShiftKeyDown)
 {
 	if (!m_mainMenuShowing)
@@ -363,13 +363,13 @@ void Explorerplusplus::OnMenuMiddleButtonUp(const POINT &pt, bool isCtrlKeyDown,
 	m_mainMenuItemMiddleClickedSignal(pt, isCtrlKeyDown, isShiftKeyDown);
 }
 
-boost::signals2::connection Explorerplusplus::AddMainMenuItemRightClickedObserver(
+boost::signals2::connection Starryfilesplusplus::AddMainMenuItemRightClickedObserver(
 	const MainMenuItemRightClickedSignal::slot_type &observer)
 {
 	return m_mainMenuItemRightClickedSignal.connect(observer);
 }
 
-void Explorerplusplus::OnMenuRightButtonUp(HMENU menu, int index, const POINT &pt)
+void Starryfilesplusplus::OnMenuRightButtonUp(HMENU menu, int index, const POINT &pt)
 {
 	if (!m_mainMenuShowing)
 	{
@@ -379,13 +379,13 @@ void Explorerplusplus::OnMenuRightButtonUp(HMENU menu, int index, const POINT &p
 	m_mainMenuItemRightClickedSignal(menu, index, pt);
 }
 
-boost::signals2::connection Explorerplusplus::AddGetMenuItemHelperTextObserver(
+boost::signals2::connection Starryfilesplusplus::AddGetMenuItemHelperTextObserver(
 	const GetMenuItemHelperTextSignal::slot_type &observer)
 {
 	return m_getMenuItemHelperTextSignal.connect(observer);
 }
 
-std::optional<std::wstring> Explorerplusplus::MaybeGetMenuItemHelperText(HMENU menu, int id)
+std::optional<std::wstring> Starryfilesplusplus::MaybeGetMenuItemHelperText(HMENU menu, int id)
 {
 	if (MenuHelper::IsPartOfMenu(GetMenu(m_hContainer), menu))
 	{
@@ -398,7 +398,7 @@ std::optional<std::wstring> Explorerplusplus::MaybeGetMenuItemHelperText(HMENU m
 	return std::nullopt;
 }
 
-Explorerplusplus::MainMenuSubMenu *Explorerplusplus::MaybeGetMainMenuSubMenuFromId(UINT id)
+Starryfilesplusplus::MainMenuSubMenu *Starryfilesplusplus::MaybeGetMainMenuSubMenuFromId(UINT id)
 {
 	auto submenu = std::ranges::find_if(m_mainMenuSubMenus,
 		[id](const auto &submenu) {

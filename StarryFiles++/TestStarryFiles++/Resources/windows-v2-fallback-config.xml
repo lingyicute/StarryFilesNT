@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- Preference file for StarryFiles++ -->
-<ExplorerPlusPlus>
+<StarryfilesPlusPlus>
 	<Windows>
 		<Window X="683" Y="790" Width="390" Height="1490" ShowState="0" />
 	</Windows>
@@ -21,4 +21,4 @@
 		<Toolbar id="0" Style="768" Length="712" />
 		<Toolbar id="1" Style="768" Length="1834" />
 	</Toolbars>
-</ExplorerPlusPlus>
+</StarryfilesPlusPlus>

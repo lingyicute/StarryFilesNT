@@ -8,14 +8,14 @@
 #include "HolderWindow.h"
 #include "../Helper/WindowHelper.h"
 
-void Explorerplusplus::ToggleFolders()
+void Starryfilesplusplus::ToggleFolders()
 {
 	m_config->showFolders = !m_config->showFolders.get();
 	lShowWindow(m_treeViewHolder->GetHWND(), m_config->showFolders.get());
 	UpdateLayout();
 }
 
-void Explorerplusplus::ToggleDualPane()
+void Starryfilesplusplus::ToggleDualPane()
 {
 	m_config->dualPane = !m_config->dualPane;
 }

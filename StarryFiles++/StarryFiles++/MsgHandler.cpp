@@ -45,12 +45,12 @@
 #include <wil/resource.h>
 #include <algorithm>
 
-void Explorerplusplus::OpenDefaultItem(OpenFolderDisposition openFolderDisposition)
+void Starryfilesplusplus::OpenDefaultItem(OpenFolderDisposition openFolderDisposition)
 {
 	OpenItem(m_config->defaultTabDirectory, openFolderDisposition);
 }
 
-void Explorerplusplus::OpenItem(const std::wstring &itemPath,
+void Starryfilesplusplus::OpenItem(const std::wstring &itemPath,
 	OpenFolderDisposition openFolderDisposition)
 {
 	unique_pidl_absolute pidlItem;
@@ -62,7 +62,7 @@ void Explorerplusplus::OpenItem(const std::wstring &itemPath,
 	}
 }
 
-void Explorerplusplus::OpenItem(PCIDLIST_ABSOLUTE pidlItem,
+void Starryfilesplusplus::OpenItem(PCIDLIST_ABSOLUTE pidlItem,
 	OpenFolderDisposition openFolderDisposition)
 {
 	SFGAOF attributes = SFGAO_FOLDER | SFGAO_STREAM | SFGAO_LINK;
@@ -105,7 +105,7 @@ void Explorerplusplus::OpenItem(PCIDLIST_ABSOLUTE pidlItem,
 	}
 }
 
-void Explorerplusplus::OpenShortcutItem(PCIDLIST_ABSOLUTE pidlItem,
+void Starryfilesplusplus::OpenShortcutItem(PCIDLIST_ABSOLUTE pidlItem,
 	OpenFolderDisposition openFolderDisposition)
 {
 	unique_pidl_absolute target;
@@ -157,7 +157,7 @@ void Explorerplusplus::OpenShortcutItem(PCIDLIST_ABSOLUTE pidlItem,
 
 // Returns true if the specified container file should be opened as a folder. If false, the file
 // should be opened via the shell.
-bool Explorerplusplus::ShouldOpenContainerFile(PCIDLIST_ABSOLUTE pidlItem)
+bool Starryfilesplusplus::ShouldOpenContainerFile(PCIDLIST_ABSOLUTE pidlItem)
 {
 	std::wstring parsingPath;
 	HRESULT hr = GetDisplayName(pidlItem, SHGDN_FORPARSING, parsingPath);
@@ -171,7 +171,7 @@ bool Explorerplusplus::ShouldOpenContainerFile(PCIDLIST_ABSOLUTE pidlItem)
 	return (isZipFile && m_config->handleZipFiles) || !isZipFile;
 }
 
-void Explorerplusplus::OpenFolderItem(PCIDLIST_ABSOLUTE pidlItem,
+void Starryfilesplusplus::OpenFolderItem(PCIDLIST_ABSOLUTE pidlItem,
 	OpenFolderDisposition openFolderDisposition)
 {
 	if (openFolderDisposition == OpenFolderDisposition::CurrentTab)
@@ -229,7 +229,7 @@ void Explorerplusplus::OpenFolderItem(PCIDLIST_ABSOLUTE pidlItem,
 	}
 }
 
-void Explorerplusplus::OpenDirectoryInNewWindow(PCIDLIST_ABSOLUTE pidlDirectory)
+void Starryfilesplusplus::OpenDirectoryInNewWindow(PCIDLIST_ABSOLUTE pidlDirectory)
 {
 	/* Create a new instance of this program, with the
 	specified path as an argument. */
@@ -242,21 +242,21 @@ void Explorerplusplus::OpenDirectoryInNewWindow(PCIDLIST_ABSOLUTE pidlDirectory)
 	LaunchCurrentProcess(m_hContainer, szParameters);
 }
 
-void Explorerplusplus::OpenFileItem(const std::wstring &itemPath, const std::wstring &parameters)
+void Starryfilesplusplus::OpenFileItem(const std::wstring &itemPath, const std::wstring &parameters)
 {
 	auto shellBrowser = GetActiveShellBrowserImpl();
 	ExecuteFileAction(m_hContainer, itemPath, L"", parameters,
 		shellBrowser->InVirtualFolder() ? L"" : shellBrowser->GetDirectory().c_str());
 }
 
-void Explorerplusplus::OpenFileItem(PCIDLIST_ABSOLUTE pidl, const std::wstring &parameters)
+void Starryfilesplusplus::OpenFileItem(PCIDLIST_ABSOLUTE pidl, const std::wstring &parameters)
 {
 	auto shellBrowser = GetActiveShellBrowserImpl();
 	ExecuteFileAction(m_hContainer, pidl, L"", parameters,
 		shellBrowser->InVirtualFolder() ? L"" : shellBrowser->GetDirectory().c_str());
 }
 
-void Explorerplusplus::OnSize(UINT state)
+void Starryfilesplusplus::OnSize(UINT state)
 {
 	if (state == SIZE_MINIMIZED)
 	{
@@ -267,7 +267,7 @@ void Explorerplusplus::OnSize(UINT state)
 	UpdateLayout();
 }
 
-concurrencpp::null_result Explorerplusplus::ScheduleUpdateLayout(WeakPtr<Explorerplusplus> self,
+concurrencpp::null_result Starryfilesplusplus::ScheduleUpdateLayout(WeakPtr<Starryfilesplusplus> self,
 	Runtime *runtime)
 {
 	// This function is designed to be called from the UI thread and the call here will also resume
@@ -284,7 +284,7 @@ concurrencpp::null_result Explorerplusplus::ScheduleUpdateLayout(WeakPtr<Explore
 	self->UpdateLayout();
 }
 
-void Explorerplusplus::UpdateLayout()
+void Starryfilesplusplus::UpdateLayout()
 {
 	if (!m_browserInitialized || m_browserClosing)
 	{
@@ -486,14 +486,14 @@ void Explorerplusplus::UpdateLayout()
 	PinStatusBar(m_hStatusBar, mainWindowWidth, mainWindowHeight);
 }
 
-void Explorerplusplus::OnDpiChanged(const RECT *updatedWindowRect)
+void Starryfilesplusplus::OnDpiChanged(const RECT *updatedWindowRect)
 {
 	SetWindowPos(m_hContainer, nullptr, updatedWindowRect->left, updatedWindowRect->top,
 		GetRectWidth(updatedWindowRect), GetRectHeight(updatedWindowRect),
 		SWP_NOZORDER | SWP_NOACTIVATE);
 }
 
-std::optional<LRESULT> Explorerplusplus::OnCtlColorStatic(HWND hwnd, HDC hdc)
+std::optional<LRESULT> Starryfilesplusplus::OnCtlColorStatic(HWND hwnd, HDC hdc)
 {
 	UNREFERENCED_PARAMETER(hdc);
 
@@ -510,7 +510,7 @@ std::optional<LRESULT> Explorerplusplus::OnCtlColorStatic(HWND hwnd, HDC hdc)
 	return std::nullopt;
 }
 
-int Explorerplusplus::OnDestroy()
+int Starryfilesplusplus::OnDestroy()
 {
 	DCHECK(!m_browserClosing);
 	m_browserClosing = true;
@@ -548,7 +548,7 @@ int Explorerplusplus::OnDestroy()
 	return 0;
 }
 
-void Explorerplusplus::StartDirectoryMonitoringForTab(const Tab &tab)
+void Starryfilesplusplus::StartDirectoryMonitoringForTab(const Tab &tab)
 {
 	if (tab.GetShellBrowserImpl()->InVirtualFolder())
 	{
@@ -580,7 +580,7 @@ void Explorerplusplus::StartDirectoryMonitoringForTab(const Tab &tab)
 	tab.GetShellBrowserImpl()->SetDirMonitorId(*dirMonitorId);
 }
 
-void Explorerplusplus::StopDirectoryMonitoringForTab(const Tab &tab)
+void Starryfilesplusplus::StopDirectoryMonitoringForTab(const Tab &tab)
 {
 	auto dirMonitorId = tab.GetShellBrowserImpl()->GetDirMonitorId();
 
@@ -593,7 +593,7 @@ void Explorerplusplus::StopDirectoryMonitoringForTab(const Tab &tab)
 	tab.GetShellBrowserImpl()->ClearDirMonitorId();
 }
 
-void Explorerplusplus::OnDisplayWindowResized(WPARAM wParam)
+void Starryfilesplusplus::OnDisplayWindowResized(WPARAM wParam)
 {
 	if (m_config->displayWindowVertical)
 	{
@@ -608,7 +608,7 @@ void Explorerplusplus::OnDisplayWindowResized(WPARAM wParam)
 }
 
 /* Cycle through the current views. */
-void Explorerplusplus::OnToolbarViews()
+void Starryfilesplusplus::OnToolbarViews()
 {
 	Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	selectedTab.GetShellBrowserImpl()->CycleViewMode(true);
@@ -618,7 +618,7 @@ void Explorerplusplus::OnToolbarViews()
 // handle Tab/Shift+Tab, the key combinations in this case are synonyms for each other. Since
 // F6/Shift+F6 would need to be handled manually anyway, handling both with the same function
 // ensures that they have identical behavior.
-void Explorerplusplus::OnFocusNextWindow(FocusChangeDirection direction)
+void Starryfilesplusplus::OnFocusNextWindow(FocusChangeDirection direction)
 {
 	HWND focus = GetFocus();
 	HWND initialControl;
@@ -646,7 +646,7 @@ void Explorerplusplus::OnFocusNextWindow(FocusChangeDirection direction)
 	}
 }
 
-void Explorerplusplus::OnAppCommand(UINT cmd)
+void Starryfilesplusplus::OnAppCommand(UINT cmd)
 {
 	switch (cmd)
 	{
@@ -711,13 +711,13 @@ void Explorerplusplus::OnAppCommand(UINT cmd)
 	}
 }
 
-void Explorerplusplus::OnRefresh()
+void Starryfilesplusplus::OnRefresh()
 {
 	Tab &tab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	tab.GetShellBrowserImpl()->GetNavigationController()->Refresh();
 }
 
-void Explorerplusplus::CopyColumnInfoToClipboard()
+void Starryfilesplusplus::CopyColumnInfoToClipboard()
 {
 	auto currentColumns = m_pActiveShellBrowser->GetCurrentColumns();
 
@@ -765,7 +765,7 @@ void Explorerplusplus::CopyColumnInfoToClipboard()
 	clipboardWriter.WriteText(strColumnInfo);
 }
 
-void Explorerplusplus::OnDirectoryContentsChanged(const Tab &tab)
+void Starryfilesplusplus::OnDirectoryContentsChanged(const Tab &tab)
 {
 	if (GetActivePane()->GetTabContainer()->IsTabSelected(tab))
 	{
@@ -791,7 +791,7 @@ References:
 http://tech.groups.yahoo.com/group/wtl/message/13911
 http://www.eggheadcafe.com/forumarchives/platformsdkshell/Nov2005/post24294253.asp
 */
-void Explorerplusplus::OnAssocChanged()
+void Starryfilesplusplus::OnAssocChanged()
 {
 	typedef BOOL(WINAPI * FII_PROC)(BOOL);
 	FII_PROC fileIconInit;
@@ -850,7 +850,7 @@ void Explorerplusplus::OnAssocChanged()
 	/* TODO: Update the address bar. */
 }
 
-void Explorerplusplus::OnNewWindow()
+void Starryfilesplusplus::OnNewWindow()
 {
 	WINDOWPLACEMENT placement = {};
 	placement.length = sizeof(placement);
@@ -869,10 +869,10 @@ void Explorerplusplus::OnNewWindow()
 	initialData.displayWindowWidth = m_displayWindowWidth;
 	initialData.displayWindowHeight = m_displayWindowHeight;
 
-	Explorerplusplus::Create(m_app, &initialData);
+	Starryfilesplusplus::Create(m_app, &initialData);
 }
 
-void Explorerplusplus::OnCloneWindow()
+void Starryfilesplusplus::OnCloneWindow()
 {
 	std::wstring currentDirectory = m_pActiveShellBrowser->GetDirectory();
 
@@ -883,7 +883,7 @@ void Explorerplusplus::OnCloneWindow()
 	LaunchCurrentProcess(m_hContainer, szQuotedCurrentDirectory);
 }
 
-void Explorerplusplus::OnDisplayWindowRClick(POINT *ptClient)
+void Starryfilesplusplus::OnDisplayWindowRClick(POINT *ptClient)
 {
 	wil::unique_hmenu parentMenu(
 		LoadMenu(m_app->GetResourceInstance(), MAKEINTRESOURCE(IDR_DISPLAYWINDOW_RCLICK)));
@@ -909,7 +909,7 @@ void Explorerplusplus::OnDisplayWindowRClick(POINT *ptClient)
 		m_hContainer, nullptr);
 }
 
-void Explorerplusplus::OnSortBy(SortMode sortMode)
+void Starryfilesplusplus::OnSortBy(SortMode sortMode)
 {
 	Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	SortMode currentSortMode = selectedTab.GetShellBrowserImpl()->GetSortMode();
@@ -925,7 +925,7 @@ void Explorerplusplus::OnSortBy(SortMode sortMode)
 	}
 }
 
-void Explorerplusplus::OnGroupBy(SortMode groupMode)
+void Starryfilesplusplus::OnGroupBy(SortMode groupMode)
 {
 	Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	SortMode currentGroupMode = selectedTab.GetShellBrowserImpl()->GetGroupMode();
@@ -942,87 +942,87 @@ void Explorerplusplus::OnGroupBy(SortMode groupMode)
 	}
 }
 
-void Explorerplusplus::OnGroupByNone()
+void Starryfilesplusplus::OnGroupByNone()
 {
 	Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	selectedTab.GetShellBrowserImpl()->SetShowInGroups(false);
 }
 
-void Explorerplusplus::OnSortDirectionSelected(SortDirection direction)
+void Starryfilesplusplus::OnSortDirectionSelected(SortDirection direction)
 {
 	Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	selectedTab.GetShellBrowserImpl()->SetSortDirection(direction);
 }
 
-void Explorerplusplus::OnGroupSortDirectionSelected(SortDirection direction)
+void Starryfilesplusplus::OnGroupSortDirectionSelected(SortDirection direction)
 {
 	Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	selectedTab.GetShellBrowserImpl()->SetGroupSortDirection(direction);
 }
 
-const Config *Explorerplusplus::GetConfig() const
+const Config *Starryfilesplusplus::GetConfig() const
 {
 	return m_config;
 }
 
-HINSTANCE Explorerplusplus::GetResourceInstance() const
+HINSTANCE Starryfilesplusplus::GetResourceInstance() const
 {
 	return m_app->GetResourceInstance();
 }
 
-AcceleratorManager *Explorerplusplus::GetAcceleratorManager() const
+AcceleratorManager *Starryfilesplusplus::GetAcceleratorManager() const
 {
 	return m_app->GetAcceleratorManager();
 }
 
-HWND Explorerplusplus::GetMainWindow() const
+HWND Starryfilesplusplus::GetMainWindow() const
 {
 	return m_hContainer;
 }
 
-ShellBrowserImpl *Explorerplusplus::GetActiveShellBrowserImpl() const
+ShellBrowserImpl *Starryfilesplusplus::GetActiveShellBrowserImpl() const
 {
 	return m_pActiveShellBrowser;
 }
 
-CoreInterface *Explorerplusplus::GetCoreInterface()
+CoreInterface *Starryfilesplusplus::GetCoreInterface()
 {
 	return this;
 }
 
-TabContainer *Explorerplusplus::GetTabContainer() const
+TabContainer *Starryfilesplusplus::GetTabContainer() const
 {
 	return GetActivePane()->GetTabContainer();
 }
 
-HWND Explorerplusplus::GetTreeView() const
+HWND Starryfilesplusplus::GetTreeView() const
 {
 	return m_shellTreeView->GetHWND();
 }
 
-IDirectoryMonitor *Explorerplusplus::GetDirectoryMonitor() const
+IDirectoryMonitor *Starryfilesplusplus::GetDirectoryMonitor() const
 {
 	return m_pDirMon;
 }
 
-CachedIcons *Explorerplusplus::GetCachedIcons()
+CachedIcons *Starryfilesplusplus::GetCachedIcons()
 {
 	return m_app->GetCachedIcons();
 }
 
-void Explorerplusplus::OnShowHiddenFiles()
+void Starryfilesplusplus::OnShowHiddenFiles()
 {
 	Tab &tab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	tab.GetShellBrowserImpl()->SetShowHidden(!tab.GetShellBrowserImpl()->GetShowHidden());
 	tab.GetShellBrowserImpl()->GetNavigationController()->Refresh();
 }
 
-void Explorerplusplus::FocusChanged()
+void Starryfilesplusplus::FocusChanged()
 {
 	m_focusChangedSignal();
 }
 
-boost::signals2::connection Explorerplusplus::AddFocusChangeObserver(
+boost::signals2::connection Starryfilesplusplus::AddFocusChangeObserver(
 	const FocusChangedSignal::slot_type &observer)
 {
 	CHECK(!m_browserClosing)
@@ -1031,13 +1031,13 @@ boost::signals2::connection Explorerplusplus::AddFocusChangeObserver(
 	return m_focusChangedSignal.connect(observer);
 }
 
-void Explorerplusplus::FocusActiveTab()
+void Starryfilesplusplus::FocusActiveTab()
 {
 	Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	SetFocus(selectedTab.GetShellBrowserImpl()->GetListView());
 }
 
-bool Explorerplusplus::OnActivate(int activationState, bool minimized)
+bool Starryfilesplusplus::OnActivate(int activationState, bool minimized)
 {
 	// This may be called while the window is being constructed, before it has been added to the
 	// browser list. In that case, the window won't be visible and there's no need to try and set it
@@ -1063,7 +1063,7 @@ bool Explorerplusplus::OnActivate(int activationState, bool minimized)
 	return false;
 }
 
-void Explorerplusplus::OnChangeMainFontSize(FontSizeType sizeType)
+void Starryfilesplusplus::OnChangeMainFontSize(FontSizeType sizeType)
 {
 	auto &mainFont = m_config->mainFont.get();
 	std::wstring updatedFontName;
@@ -1096,7 +1096,7 @@ void Explorerplusplus::OnChangeMainFontSize(FontSizeType sizeType)
 	m_config->mainFont = CustomFont(updatedFontName, updatedFontSize);
 }
 
-void Explorerplusplus::OnResetMainFontSize()
+void Starryfilesplusplus::OnResetMainFontSize()
 {
 	auto &mainFont = m_config->mainFont.get();
 

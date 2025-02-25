@@ -90,7 +90,7 @@ namespace Plugins
 class PluginManager;
 }
 
-class Explorerplusplus :
+class Starryfilesplusplus :
 	public BrowserWindow,
 	public CoreInterface,
 	public PluginInterface,
@@ -104,9 +104,9 @@ class Explorerplusplus :
 public:
 	static constexpr wchar_t WINDOW_CLASS_NAME[] = L"StarryFiles++";
 
-	static Explorerplusplus *Create(App *app, const WindowStorageData *storageData = nullptr);
+	static Starryfilesplusplus *Create(App *app, const WindowStorageData *storageData = nullptr);
 
-	~Explorerplusplus();
+	~Starryfilesplusplus();
 
 	/* Directory modification. */
 	static void DirectoryAlteredCallback(const TCHAR *szFileName, DWORD dwAction, void *pData);
@@ -209,7 +209,7 @@ private:
 		std::unique_ptr<MenuBase> menu;
 	};
 
-	Explorerplusplus(App *app, const WindowStorageData *storageData);
+	Starryfilesplusplus(App *app, const WindowStorageData *storageData);
 
 	static HWND CreateMainWindow(const WindowStorageData *storageData);
 	static ATOM RegisterMainWindowClass(HINSTANCE instance);
@@ -228,7 +228,7 @@ private:
 	void Initialize(const WindowStorageData *storageData);
 	bool OnActivate(int activationState, bool minimized);
 	void OnSize(UINT state);
-	static concurrencpp::null_result ScheduleUpdateLayout(WeakPtr<Explorerplusplus> self,
+	static concurrencpp::null_result ScheduleUpdateLayout(WeakPtr<Starryfilesplusplus> self,
 		Runtime *runtime);
 	void UpdateLayout();
 	void OnDpiChanged(const RECT *updatedWindowRect);
@@ -664,5 +664,5 @@ private:
 	StatusBar *m_pStatusBar = nullptr;
 	std::unique_ptr<MainFontSetter> m_statusBarFontSetter;
 
-	WeakPtrFactory<Explorerplusplus> m_weakPtrFactory;
+	WeakPtrFactory<Starryfilesplusplus> m_weakPtrFactory;
 };

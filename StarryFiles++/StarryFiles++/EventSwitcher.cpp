@@ -13,7 +13,7 @@
 #include "ShellTreeView/ShellTreeView.h"
 #include "TabContainer.h"
 
-void Explorerplusplus::OnCopyItemPath() const
+void Starryfilesplusplus::OnCopyItemPath() const
 {
 	HWND hFocus;
 
@@ -29,7 +29,7 @@ void Explorerplusplus::OnCopyItemPath() const
 	}
 }
 
-void Explorerplusplus::OnCopyUniversalPaths() const
+void Starryfilesplusplus::OnCopyUniversalPaths() const
 {
 	HWND hFocus;
 
@@ -45,7 +45,7 @@ void Explorerplusplus::OnCopyUniversalPaths() const
 	}
 }
 
-void Explorerplusplus::OnCopy(BOOL bCopy)
+void Starryfilesplusplus::OnCopy(BOOL bCopy)
 {
 	HWND hFocus = GetFocus();
 
@@ -60,7 +60,7 @@ void Explorerplusplus::OnCopy(BOOL bCopy)
 	}
 }
 
-void Explorerplusplus::OnFileRename()
+void Starryfilesplusplus::OnFileRename()
 {
 	HWND hFocus = GetFocus();
 
@@ -75,7 +75,7 @@ void Explorerplusplus::OnFileRename()
 	}
 }
 
-void Explorerplusplus::OnFileDelete(bool permanent)
+void Starryfilesplusplus::OnFileDelete(bool permanent)
 {
 	HWND hFocus;
 
@@ -92,7 +92,7 @@ void Explorerplusplus::OnFileDelete(bool permanent)
 	}
 }
 
-void Explorerplusplus::OnSetFileAttributes() const
+void Starryfilesplusplus::OnSetFileAttributes() const
 {
 	HWND hFocus;
 
@@ -108,7 +108,7 @@ void Explorerplusplus::OnSetFileAttributes() const
 	}
 }
 
-void Explorerplusplus::OnShowFileProperties() const
+void Starryfilesplusplus::OnShowFileProperties() const
 {
 	HWND hFocus;
 
@@ -125,7 +125,7 @@ void Explorerplusplus::OnShowFileProperties() const
 	}
 }
 
-void Explorerplusplus::OnPaste()
+void Starryfilesplusplus::OnPaste()
 {
 	HWND focus = GetFocus();
 
@@ -139,7 +139,7 @@ void Explorerplusplus::OnPaste()
 	}
 }
 
-void Explorerplusplus::OnPasteShortcut()
+void Starryfilesplusplus::OnPasteShortcut()
 {
 	HWND focus = GetFocus();
 

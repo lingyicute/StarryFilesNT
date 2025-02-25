@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- Preference file for StarryFiles++ -->
-<ExplorerPlusPlus>
+<StarryfilesPlusPlus>
 	<Settings>
 		<Setting name="MainFont" Name="Agency FB" Size="20"/>
 	</Settings>
-</ExplorerPlusPlus>
+</StarryfilesPlusPlus>

@@ -33,21 +33,21 @@
 #include "../Helper/ShellHelper.h"
 #include <wil/com.h>
 
-void Explorerplusplus::OnChangeDisplayColors()
+void Starryfilesplusplus::OnChangeDisplayColors()
 {
 	DisplayColoursDialog displayColoursDialog(m_app->GetResourceInstance(), m_hContainer,
 		m_app->GetThemeManager(), m_config);
 	displayColoursDialog.ShowModalDialog();
 }
 
-void Explorerplusplus::OnFilterResults()
+void Starryfilesplusplus::OnFilterResults()
 {
 	FilterDialog filterDialog(m_app->GetResourceInstance(), m_hContainer, m_app->GetThemeManager(),
 		this, m_app->GetIconResourceLoader());
 	filterDialog.ShowModalDialog();
 }
 
-void Explorerplusplus::OnMergeFiles()
+void Starryfilesplusplus::OnMergeFiles()
 {
 	std::wstring currentDirectory = m_pActiveShellBrowser->GetDirectory();
 
@@ -66,7 +66,7 @@ void Explorerplusplus::OnMergeFiles()
 	mergeFilesDialog.ShowModalDialog();
 }
 
-void Explorerplusplus::OnSplitFile()
+void Starryfilesplusplus::OnSplitFile()
 {
 	int iSelected = ListView_GetNextItem(m_hActiveListView, -1, LVNI_SELECTED);
 
@@ -80,7 +80,7 @@ void Explorerplusplus::OnSplitFile()
 	}
 }
 
-void Explorerplusplus::OnDestroyFiles()
+void Starryfilesplusplus::OnDestroyFiles()
 {
 	std::list<std::wstring> fullFilenameList;
 	int iItem = -1;
@@ -97,14 +97,14 @@ void Explorerplusplus::OnDestroyFiles()
 	destroyFilesDialog.ShowModalDialog();
 }
 
-void Explorerplusplus::OnWildcardSelect(BOOL bSelect)
+void Starryfilesplusplus::OnWildcardSelect(BOOL bSelect)
 {
 	WildcardSelectDialog wilcardSelectDialog(m_app->GetResourceInstance(), m_hContainer,
 		m_app->GetThemeManager(), bSelect, this);
 	wilcardSelectDialog.ShowModalDialog();
 }
 
-void Explorerplusplus::OnSearch()
+void Starryfilesplusplus::OnSearch()
 {
 	CreateOrSwitchToModelessDialog(m_app->GetModelessDialogList(), L"SearchDialog",
 		[this]
@@ -118,14 +118,14 @@ void Explorerplusplus::OnSearch()
 		});
 }
 
-void Explorerplusplus::OnCustomizeColors()
+void Starryfilesplusplus::OnCustomizeColors()
 {
 	CustomizeColorsDialog customizeColorsDialog(m_app->GetResourceInstance(), m_hContainer,
 		m_app->GetThemeManager(), m_app->GetColorRuleModel(), m_app->GetIconResourceLoader());
 	customizeColorsDialog.ShowModalDialog();
 }
 
-void Explorerplusplus::OnRunScript()
+void Starryfilesplusplus::OnRunScript()
 {
 	CreateOrSwitchToModelessDialog(m_app->GetModelessDialogList(), L"ScriptingDialog",
 		[this]
@@ -135,7 +135,7 @@ void Explorerplusplus::OnRunScript()
 		});
 }
 
-void Explorerplusplus::OnShowOptions()
+void Starryfilesplusplus::OnShowOptions()
 {
 	CreateOrSwitchToModelessDialog(m_app->GetModelessDialogList(), L"OptionsDialog",
 		[this] {
@@ -144,7 +144,7 @@ void Explorerplusplus::OnShowOptions()
 		});
 }
 
-void Explorerplusplus::OnSearchTabs()
+void Starryfilesplusplus::OnSearchTabs()
 {
 	CreateOrSwitchToModelessDialog(m_app->GetModelessDialogList(), L"SearchTabsDialog",
 		[this]
@@ -154,25 +154,25 @@ void Explorerplusplus::OnSearchTabs()
 		});
 }
 
-void Explorerplusplus::OnOpenOnlineDocumentation()
+void Starryfilesplusplus::OnOpenOnlineDocumentation()
 {
 	ShellExecute(nullptr, L"open", App::DOCUMENTATION_URL, nullptr, nullptr, SW_SHOWNORMAL);
 }
 
-void Explorerplusplus::OnCheckForUpdates()
+void Starryfilesplusplus::OnCheckForUpdates()
 {
 	UpdateCheckDialog updateCheckDialog(m_app->GetResourceInstance(), m_hContainer,
 		m_app->GetThemeManager());
 	updateCheckDialog.ShowModalDialog();
 }
 
-void Explorerplusplus::OnAbout()
+void Starryfilesplusplus::OnAbout()
 {
 	AboutDialog aboutDialog(m_app->GetResourceInstance(), m_hContainer, m_app->GetThemeManager());
 	aboutDialog.ShowModalDialog();
 }
 
-void Explorerplusplus::OnSaveDirectoryListing() const
+void Starryfilesplusplus::OnSaveDirectoryListing() const
 {
 	TCHAR fileName[MAX_PATH];
 	LoadString(m_app->GetResourceInstance(), IDS_GENERAL_DIRECTORY_LISTING_FILENAME, fileName,
@@ -190,7 +190,7 @@ void Explorerplusplus::OnSaveDirectoryListing() const
 	}
 }
 
-void Explorerplusplus::OnCreateNewFolder()
+void Starryfilesplusplus::OnCreateNewFolder()
 {
 	auto pidlDirectory = m_pActiveShellBrowser->GetDirectoryIdl();
 
@@ -224,7 +224,7 @@ void Explorerplusplus::OnCreateNewFolder()
 	}
 }
 
-void Explorerplusplus::OnResolveLink()
+void Starryfilesplusplus::OnResolveLink()
 {
 	TCHAR szFullFileName[MAX_PATH];
 	TCHAR szPath[MAX_PATH];
@@ -275,13 +275,13 @@ void Explorerplusplus::OnResolveLink()
 	}
 }
 
-HRESULT Explorerplusplus::OnGoToOffset(int offset)
+HRESULT Starryfilesplusplus::OnGoToOffset(int offset)
 {
 	Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	return selectedTab.GetShellBrowserImpl()->GetNavigationController()->GoToOffset(offset);
 }
 
-HRESULT Explorerplusplus::OnGoHome()
+HRESULT Starryfilesplusplus::OnGoHome()
 {
 	Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	HRESULT hr = selectedTab.GetShellBrowserImpl()->GetNavigationController()->Navigate(

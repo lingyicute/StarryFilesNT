@@ -14,7 +14,7 @@
 #include "../Helper/Helper.h"
 #include "../Helper/ShellHelper.h"
 
-void Explorerplusplus::UpdateDisplayWindow(const Tab &tab)
+void Starryfilesplusplus::UpdateDisplayWindow(const Tab &tab)
 {
 	DisplayWindow_ClearTextBuffer(m_displayWindow->GetHWND());
 
@@ -34,7 +34,7 @@ void Explorerplusplus::UpdateDisplayWindow(const Tab &tab)
 	}
 }
 
-void Explorerplusplus::UpdateDisplayWindowForZeroFiles(const Tab &tab)
+void Starryfilesplusplus::UpdateDisplayWindowForZeroFiles(const Tab &tab)
 {
 	/* Clear out any previous data shown in the display window. */
 	DisplayWindow_ClearTextBuffer(m_displayWindow->GetHWND());
@@ -90,7 +90,7 @@ void Explorerplusplus::UpdateDisplayWindowForZeroFiles(const Tab &tab)
 	}
 }
 
-void Explorerplusplus::UpdateDisplayWindowForOneFile(const Tab &tab)
+void Starryfilesplusplus::UpdateDisplayWindowForOneFile(const Tab &tab)
 {
 	WIN32_FIND_DATA wfd;
 	SHFILEINFO shfi;
@@ -354,7 +354,7 @@ void Explorerplusplus::UpdateDisplayWindowForOneFile(const Tab &tab)
 	}
 }
 
-void Explorerplusplus::UpdateDisplayWindowForMultipleFiles(const Tab &tab)
+void Starryfilesplusplus::UpdateDisplayWindowForMultipleFiles(const Tab &tab)
 {
 	TCHAR szNumSelected[64] = L"";
 	TCHAR szTotalSize[64] = L"";

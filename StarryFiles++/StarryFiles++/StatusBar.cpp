@@ -15,7 +15,7 @@
 #include <fmt/format.h>
 #include <fmt/xchar.h>
 
-void Explorerplusplus::CreateStatusBar()
+void Starryfilesplusplus::CreateStatusBar()
 {
 	UINT style = WS_CHILD | WS_CLIPSIBLINGS | SBARS_SIZEGRIP | WS_CLIPCHILDREN;
 
@@ -28,7 +28,7 @@ void Explorerplusplus::CreateStatusBar()
 	m_pStatusBar = new StatusBar(m_hStatusBar);
 
 	m_windowSubclasses.push_back(std::make_unique<WindowSubclass>(m_hStatusBar,
-		std::bind_front(&Explorerplusplus::StatusBarSubclass, this)));
+		std::bind_front(&Starryfilesplusplus::StatusBarSubclass, this)));
 
 	SetStatusBarParts();
 
@@ -42,7 +42,7 @@ void Explorerplusplus::CreateStatusBar()
 	UpdateStatusBarMinHeight();
 }
 
-LRESULT Explorerplusplus::StatusBarSubclass(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT Starryfilesplusplus::StatusBarSubclass(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg)
 	{
@@ -54,7 +54,7 @@ LRESULT Explorerplusplus::StatusBarSubclass(HWND hwnd, UINT msg, WPARAM wParam, 
 	return DefSubclassProc(hwnd, msg, wParam, lParam);
 }
 
-void Explorerplusplus::SetStatusBarParts()
+void Starryfilesplusplus::SetStatusBarParts()
 {
 	RECT clientRect;
 	BOOL res = GetClientRect(m_hStatusBar, &clientRect);
@@ -69,7 +69,7 @@ void Explorerplusplus::SetStatusBarParts()
 }
 
 // This function should be called whenever the font is updated for the status bar control.
-void Explorerplusplus::UpdateStatusBarMinHeight()
+void Starryfilesplusplus::UpdateStatusBarMinHeight()
 {
 	auto hdc = wil::GetDC(m_hStatusBar);
 
@@ -110,7 +110,7 @@ void Explorerplusplus::UpdateStatusBarMinHeight()
 	SendMessage(m_hStatusBar, WM_SIZE, 0, 0);
 }
 
-LRESULT Explorerplusplus::StatusBarMenuSelect(WPARAM wParam, LPARAM lParam)
+LRESULT Starryfilesplusplus::StatusBarMenuSelect(WPARAM wParam, LPARAM lParam)
 {
 	/* Is the menu being closed? .*/
 	if (HIWORD(wParam) == 0xFFFF && lParam == 0)
@@ -150,7 +150,7 @@ LRESULT Explorerplusplus::StatusBarMenuSelect(WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-void Explorerplusplus::OnNavigationStartedStatusBar(const Tab &tab,
+void Starryfilesplusplus::OnNavigationStartedStatusBar(const Tab &tab,
 	const NavigateParams &navigateParams)
 {
 	if (GetActivePane()->GetTabContainer()->IsTabSelected(tab))
@@ -159,7 +159,7 @@ void Explorerplusplus::OnNavigationStartedStatusBar(const Tab &tab,
 	}
 }
 
-void Explorerplusplus::SetStatusBarLoadingText(PCIDLIST_ABSOLUTE pidl)
+void Starryfilesplusplus::SetStatusBarLoadingText(PCIDLIST_ABSOLUTE pidl)
 {
 	std::wstring displayName;
 	HRESULT hr = GetDisplayName(pidl, SHGDN_INFOLDER, displayName);
@@ -183,7 +183,7 @@ void Explorerplusplus::SetStatusBarLoadingText(PCIDLIST_ABSOLUTE pidl)
 	SendMessage(m_hStatusBar, SB_SETTEXT, 2, reinterpret_cast<LPARAM>(L""));
 }
 
-void Explorerplusplus::OnNavigationCompletedStatusBar(const Tab &tab,
+void Starryfilesplusplus::OnNavigationCompletedStatusBar(const Tab &tab,
 	const NavigateParams &navigateParams)
 {
 	UNREFERENCED_PARAMETER(navigateParams);
@@ -194,7 +194,7 @@ void Explorerplusplus::OnNavigationCompletedStatusBar(const Tab &tab,
 	}
 }
 
-void Explorerplusplus::OnNavigationFailedStatusBar(const Tab &tab,
+void Starryfilesplusplus::OnNavigationFailedStatusBar(const Tab &tab,
 	const NavigateParams &navigateParams)
 {
 	UNREFERENCED_PARAMETER(navigateParams);
@@ -205,7 +205,7 @@ void Explorerplusplus::OnNavigationFailedStatusBar(const Tab &tab,
 	}
 }
 
-HRESULT Explorerplusplus::UpdateStatusBarText(const Tab &tab)
+HRESULT Starryfilesplusplus::UpdateStatusBarText(const Tab &tab)
 {
 	int numItemsSelected = tab.GetShellBrowserImpl()->GetNumSelected();
 	std::wstring numItemsText;
@@ -285,7 +285,7 @@ HRESULT Explorerplusplus::UpdateStatusBarText(const Tab &tab)
 	return S_OK;
 }
 
-std::wstring Explorerplusplus::CreateDriveFreeSpaceString(const std::wstring &path)
+std::wstring Starryfilesplusplus::CreateDriveFreeSpaceString(const std::wstring &path)
 {
 	ULARGE_INTEGER totalNumberOfBytes;
 	ULARGE_INTEGER totalNumberOfFreeBytes;

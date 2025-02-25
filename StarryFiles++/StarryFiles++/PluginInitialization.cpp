@@ -11,7 +11,7 @@
 #include "../Helper/ProcessHelper.h"
 #include <filesystem>
 
-void Explorerplusplus::InitializePlugins()
+void Starryfilesplusplus::InitializePlugins()
 {
 	if (!m_app->GetFeatureList()->IsEnabled(Feature::Plugins))
 	{

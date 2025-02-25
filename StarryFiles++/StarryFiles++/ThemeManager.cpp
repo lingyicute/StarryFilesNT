@@ -121,7 +121,7 @@ void ThemeManager::ApplyThemeToWindow(HWND hwnd)
 		return;
 	}
 
-	if (lstrcmp(className, Explorerplusplus::WINDOW_CLASS_NAME) == 0)
+	if (lstrcmp(className, Starryfilesplusplus::WINDOW_CLASS_NAME) == 0)
 	{
 		ApplyThemeToMainWindow(hwnd, enableDarkMode);
 	}

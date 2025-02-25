@@ -21,13 +21,13 @@
 #include <boost/range/adaptor/map.hpp>
 #include <glog/logging.h>
 
-void Explorerplusplus::ApplyDisplayWindowPosition()
+void Starryfilesplusplus::ApplyDisplayWindowPosition()
 {
 	SendMessage(m_displayWindow->GetHWND(), WM_USER_DISPLAYWINDOWMOVED,
 		m_config->displayWindowVertical, NULL);
 }
 
-void Explorerplusplus::CopyToFolder(bool move)
+void Starryfilesplusplus::CopyToFolder(bool move)
 {
 	if (ListView_GetSelectedCount(m_hActiveListView) == 0)
 	{
@@ -56,12 +56,12 @@ void Explorerplusplus::CopyToFolder(bool move)
 	FileOperations::CopyFilesToFolder(m_hContainer, title, pidls, move);
 }
 
-void Explorerplusplus::OnDeviceChange(WPARAM wParam, LPARAM lParam)
+void Starryfilesplusplus::OnDeviceChange(WPARAM wParam, LPARAM lParam)
 {
 	m_deviceChangeSignal(static_cast<UINT>(wParam), lParam);
 }
 
-boost::signals2::connection Explorerplusplus::AddDeviceChangeObserver(
+boost::signals2::connection Starryfilesplusplus::AddDeviceChangeObserver(
 	const DeviceChangeSignal::slot_type &observer)
 {
 	return m_deviceChangeSignal.connect(observer);
@@ -82,14 +82,14 @@ Possible bugs:
    If this runs after the tab is freed, the tab existence
    check will fail, and the shell browser function won't be called.
 */
-void Explorerplusplus::DirectoryAlteredCallback(const TCHAR *szFileName, DWORD dwAction,
+void Starryfilesplusplus::DirectoryAlteredCallback(const TCHAR *szFileName, DWORD dwAction,
 	void *pData)
 {
 	DirectoryAltered *pDirectoryAltered = nullptr;
-	Explorerplusplus *pContainer = nullptr;
+	Starryfilesplusplus *pContainer = nullptr;
 
 	pDirectoryAltered = (DirectoryAltered *) pData;
-	pContainer = (Explorerplusplus *) pDirectoryAltered->pData;
+	pContainer = (Starryfilesplusplus *) pDirectoryAltered->pData;
 
 	Tab *tab =
 		pContainer->GetActivePane()->GetTabContainer()->GetTabOptional(pDirectoryAltered->iIndex);
@@ -106,16 +106,16 @@ void Explorerplusplus::DirectoryAlteredCallback(const TCHAR *szFileName, DWORD d
 	}
 }
 
-void Explorerplusplus::FolderSizeCallbackStub(int nFolders, int nFiles,
+void Starryfilesplusplus::FolderSizeCallbackStub(int nFolders, int nFiles,
 	PULARGE_INTEGER lTotalFolderSize, LPVOID pData)
 {
-	auto *pfsei = reinterpret_cast<Explorerplusplus::FolderSizeExtraInfo *>(pData);
-	reinterpret_cast<Explorerplusplus *>(pfsei->pContainer)
+	auto *pfsei = reinterpret_cast<Starryfilesplusplus::FolderSizeExtraInfo *>(pData);
+	reinterpret_cast<Starryfilesplusplus *>(pfsei->pContainer)
 		->FolderSizeCallback(pfsei, nFolders, nFiles, lTotalFolderSize);
 	free(pfsei);
 }
 
-void Explorerplusplus::FolderSizeCallback(FolderSizeExtraInfo *pfsei, int nFolders, int nFiles,
+void Starryfilesplusplus::FolderSizeCallback(FolderSizeExtraInfo *pfsei, int nFolders, int nFiles,
 	PULARGE_INTEGER lTotalFolderSize)
 {
 	UNREFERENCED_PARAMETER(nFolders);
@@ -135,7 +135,7 @@ void Explorerplusplus::FolderSizeCallback(FolderSizeExtraInfo *pfsei, int nFolde
 	PostMessage(m_hContainer, WM_APP_FOLDERSIZECOMPLETED, (WPARAM) pDWFolderSizeCompletion, 0);
 }
 
-void Explorerplusplus::OnSelectColumns()
+void Starryfilesplusplus::OnSelectColumns()
 {
 	SelectColumnsDialog selectColumnsDialog(m_app->GetResourceInstance(), m_hContainer,
 		m_app->GetThemeManager(),
@@ -144,7 +144,7 @@ void Explorerplusplus::OnSelectColumns()
 	selectColumnsDialog.ShowModalDialog();
 }
 
-StatusBar *Explorerplusplus::GetStatusBar()
+StatusBar *Starryfilesplusplus::GetStatusBar()
 {
 	return m_pStatusBar;
 }

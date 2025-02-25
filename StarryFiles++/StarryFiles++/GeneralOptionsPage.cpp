@@ -394,7 +394,7 @@ bool GeneralOptionsPage::UpdateReplaceExplorerSetting(ReplaceExplorerMode update
 
 	LSTATUS res = ERROR_SUCCESS;
 	std::wstring menuText =
-		ResourceHelper::LoadString(m_resourceInstance, IDS_OPEN_IN_EXPLORERPLUSPLUS);
+		ResourceHelper::LoadString(m_resourceInstance, IDS_OPEN_IN_STARRYFILESPLUSPLUS);
 
 	switch (updatedReplaceMode)
 	{

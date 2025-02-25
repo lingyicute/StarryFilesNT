@@ -270,7 +270,7 @@ void App::RestoreSession(const std::vector<WindowStorageData> &windows)
 		// - If m_config.startupMode is StartupMode::DefaultFolder.
 		//
 		// In each case, a default window should be created.
-		Explorerplusplus::Create(this);
+		Starryfilesplusplus::Create(this);
 	}
 }
 
@@ -278,7 +278,7 @@ void App::RestorePreviousWindows(const std::vector<WindowStorageData> &windows)
 {
 	for (const auto &window : windows)
 	{
-		Explorerplusplus::Create(this, &window);
+		Starryfilesplusplus::Create(this, &window);
 
 		// If this feature isn't enabled, only a single window is supported.
 		if (!m_featureList.IsEnabled(Feature::MultipleWindowsPerSession))
@@ -305,7 +305,7 @@ void App::CreateStartupFolders()
 	WindowStorageData initialData;
 	initialData.tabs = tabs;
 	initialData.selectedTab = 0;
-	Explorerplusplus::Create(this, &initialData);
+	Starryfilesplusplus::Create(this, &initialData);
 }
 
 bool App::IsModelessDialogMessage(MSG *msg)

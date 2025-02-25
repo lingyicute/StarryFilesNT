@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- Preference file for StarryFiles++ -->
-<ExplorerPlusPlus>
+<StarryfilesPlusPlus>
 	<Bookmarksv2>
 		<PermanentItem name="BookmarksToolbar" DateCreatedLow="2876077051" DateCreatedHigh="30811747" DateModifiedLow="173556977" DateModifiedHigh="30811754">
 			<Bookmark name="0" Type="1" GUID="0FEE66C9-12BD-4278-8AAF-10C4E4068220" ItemName="C" Location="C:\" DateCreatedLow="4052642449" DateCreatedHigh="30811747" DateModifiedLow="4201443992" DateModifiedHigh="30811747">
@@ -27,4 +27,4 @@
 			</Bookmark>
 		</PermanentItem>
 	</Bookmarksv2>
-</ExplorerPlusPlus>
+</StarryfilesPlusPlus>

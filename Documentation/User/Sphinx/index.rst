@@ -5,7 +5,7 @@ Welcome to StarryFiles++'s documentation!
    :titlesonly:
    :caption: Contents
 
-   about_explorer++
+   about_starryfiles++
    menus/index
    toolbars/index
    panes/index

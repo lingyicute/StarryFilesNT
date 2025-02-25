@@ -12,9 +12,9 @@
 
 [vcpkg](https://vcpkg.io/) is used to manage dependencies. Before you can build StarryFiles++, you'll first need to initialize vcpkg:
 
-`git clone --recurse-submodules https://github.com/derceg/explorerplusplus.git`
+`git clone --recurse-submodules https://github.com/lingyicute/starryfilesnt.git`
 
-`cd explorerplusplus`
+`cd starryfilesplusplus`
 
 `.\StarryFiles++\ThirdParty\vcpkg\bootstrap-vcpkg.bat`
 

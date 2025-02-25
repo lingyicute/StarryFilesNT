@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- Preference file for StarryFiles++ -->
-<ExplorerPlusPlus>
+<StarryfilesPlusPlus>
 	<Tabs>
 		<Tab name="0" Directory="C:\" ApplyFilter="no" AutoArrange="yes" Filter=""
 			FilterCaseSensitive="no" GroupMode="1" ShowHidden="yes" ShowInGroups="no"
@@ -37,4 +37,4 @@
 			</Columns>
 		</Tab>
 	</Tabs>
-</ExplorerPlusPlus>
+</StarryfilesPlusPlus>

@@ -11,7 +11,7 @@
 #include "TabContainer.h"
 #include "../Helper/ClipboardHelper.h"
 
-BOOL Explorerplusplus::AnyItemsSelected() const
+BOOL Starryfilesplusplus::AnyItemsSelected() const
 {
 	HWND hFocus = GetFocus();
 
@@ -35,40 +35,40 @@ BOOL Explorerplusplus::AnyItemsSelected() const
 	return FALSE;
 }
 
-bool Explorerplusplus::CanCreate() const
+bool Starryfilesplusplus::CanCreate() const
 {
 	const Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	auto pidlDirectory = selectedTab.GetShellBrowserImpl()->GetDirectoryIdl();
 	return CanCreateInDirectory(pidlDirectory.get());
 }
 
-BOOL Explorerplusplus::CanCut() const
+BOOL Starryfilesplusplus::CanCut() const
 {
 	return TestItemAttributes(SFGAO_CANMOVE);
 }
 
-BOOL Explorerplusplus::CanCopy() const
+BOOL Starryfilesplusplus::CanCopy() const
 {
 	return TestItemAttributes(SFGAO_CANCOPY);
 }
 
-BOOL Explorerplusplus::CanRename() const
+BOOL Starryfilesplusplus::CanRename() const
 {
 	return TestItemAttributes(SFGAO_CANRENAME);
 }
 
-BOOL Explorerplusplus::CanDelete() const
+BOOL Starryfilesplusplus::CanDelete() const
 {
 	return TestItemAttributes(SFGAO_CANDELETE);
 }
 
-BOOL Explorerplusplus::CanShowFileProperties() const
+BOOL Starryfilesplusplus::CanShowFileProperties() const
 {
 	return TestItemAttributes(SFGAO_HASPROPSHEET);
 }
 
 /* Returns TRUE if all the specified attributes are set on the selected items. */
-BOOL Explorerplusplus::TestItemAttributes(SFGAOF attributes) const
+BOOL Starryfilesplusplus::TestItemAttributes(SFGAOF attributes) const
 {
 	SFGAOF commonAttributes = attributes;
 	HRESULT hr = GetSelectionAttributes(&commonAttributes);
@@ -81,7 +81,7 @@ BOOL Explorerplusplus::TestItemAttributes(SFGAOF attributes) const
 	return FALSE;
 }
 
-HRESULT Explorerplusplus::GetSelectionAttributes(SFGAOF *pItemAttributes) const
+HRESULT Starryfilesplusplus::GetSelectionAttributes(SFGAOF *pItemAttributes) const
 {
 	HWND hFocus;
 	HRESULT hr = E_FAIL;
@@ -101,13 +101,13 @@ HRESULT Explorerplusplus::GetSelectionAttributes(SFGAOF *pItemAttributes) const
 	return hr;
 }
 
-HRESULT Explorerplusplus::GetTreeViewSelectionAttributes(SFGAOF *pItemAttributes) const
+HRESULT Starryfilesplusplus::GetTreeViewSelectionAttributes(SFGAOF *pItemAttributes) const
 {
 	auto pidl = m_shellTreeView->GetSelectedNodePidl();
 	return GetItemAttributes(pidl.get(), pItemAttributes);
 }
 
-BOOL Explorerplusplus::CanPaste(PasteType pasteType) const
+BOOL Starryfilesplusplus::CanPaste(PasteType pasteType) const
 {
 	auto directory = MaybeGetFocusedDirectory();
 
@@ -120,14 +120,14 @@ BOOL Explorerplusplus::CanPaste(PasteType pasteType) const
 }
 
 // Tests whether a hard link or symlink can be pasted.
-bool Explorerplusplus::CanPasteLink() const
+bool Starryfilesplusplus::CanPasteLink() const
 {
 	const auto *activeShellBrowser = GetActiveShellBrowserImpl();
 	return ClipboardOperations::CanPasteLinkInDirectory(
 		activeShellBrowser->GetDirectoryIdl().get());
 }
 
-PidlAbsolute Explorerplusplus::MaybeGetFocusedDirectory() const
+PidlAbsolute Starryfilesplusplus::MaybeGetFocusedDirectory() const
 {
 	HWND focus = GetFocus();
 

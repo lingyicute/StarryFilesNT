@@ -48,7 +48,7 @@ and the right edge of the treeview during
 a resizing operation. */
 static const int TREEVIEW_DRAG_OFFSET = 8;
 
-LRESULT Explorerplusplus::WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT Starryfilesplusplus::WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg)
 	{
@@ -121,7 +121,7 @@ LRESULT Explorerplusplus::WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LP
 		OnDisplayWindowResized(wParam);
 		break;
 
-		// See https://github.com/derceg/explorerplusplus/issues/169.
+		// See https://github.com/lingyicute/starryfilesnt/issues/169.
 		/*case WM_APP_ASSOC_CHANGED:
 			OnAssocChanged();
 			break;*/
@@ -216,7 +216,7 @@ LRESULT Explorerplusplus::WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LP
 	// That method will then dispatch non-queued messages, with WM_CLOSE being one such message.
 	// That's an issue, as it means if a WM_CLOSE message is in the message queue when a COM method
 	// is called, the WM_CLOSE message could be processed, the main window destroyed and
-	// Explorerplusplus instance deleted, all within the call to the COM method. Once the COM method
+	// Starryfilesplusplus instance deleted, all within the call to the COM method. Once the COM method
 	// returns, the application isn't going to be in a valid state and will crash.
 	// PeekMessage() won't, however, dispatch posted (i.e. queued) messages. So the message that's
 	// posted here will only be processed in the normal message loop. If a COM modal loop is
@@ -248,7 +248,7 @@ LRESULT Explorerplusplus::WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LP
 	return DefSubclassProc(hwnd, msg, wParam, lParam);
 }
 
-LRESULT CALLBACK Explorerplusplus::CommandHandler(HWND hwnd, HWND control, int id,
+LRESULT CALLBACK Starryfilesplusplus::CommandHandler(HWND hwnd, HWND control, int id,
 	UINT notificationCode)
 {
 	// Several toolbars will handle their own items.
@@ -272,7 +272,7 @@ LRESULT CALLBACK Explorerplusplus::CommandHandler(HWND hwnd, HWND control, int i
 
 // It makes sense to handle menu items/toolbar buttons/accelerators together, since an individual
 // command might be represented by all three of those.
-LRESULT Explorerplusplus::HandleMenuOrToolbarButtonOrAccelerator(HWND hwnd, int id,
+LRESULT Starryfilesplusplus::HandleMenuOrToolbarButtonOrAccelerator(HWND hwnd, int id,
 	UINT notificationCode)
 {
 	if (notificationCode == 0 && id >= MENU_BOOKMARK_START_ID && id < MENU_BOOKMARK_END_ID)
@@ -1401,7 +1401,7 @@ LRESULT Explorerplusplus::HandleMenuOrToolbarButtonOrAccelerator(HWND hwnd, int 
 	return 1;
 }
 
-LRESULT Explorerplusplus::HandleControlNotification(HWND hwnd, UINT notificationCode)
+LRESULT Starryfilesplusplus::HandleControlNotification(HWND hwnd, UINT notificationCode)
 {
 	UNREFERENCED_PARAMETER(hwnd);
 
@@ -1419,7 +1419,7 @@ LRESULT Explorerplusplus::HandleControlNotification(HWND hwnd, UINT notification
 /*
  * WM_NOTIFY handler for the main window.
  */
-LRESULT CALLBACK Explorerplusplus::NotifyHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK Starryfilesplusplus::NotifyHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	auto *nmhdr = reinterpret_cast<NMHDR *>(lParam);
 

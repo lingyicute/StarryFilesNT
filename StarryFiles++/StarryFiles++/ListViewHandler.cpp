@@ -32,17 +32,17 @@
 #include "../Helper/WinRTBaseWrapper.h"
 #include <wil/com.h>
 
-LRESULT CALLBACK Explorerplusplus::ListViewProcStub(HWND hwnd, UINT uMsg, WPARAM wParam,
+LRESULT CALLBACK Starryfilesplusplus::ListViewProcStub(HWND hwnd, UINT uMsg, WPARAM wParam,
 	LPARAM lParam, UINT_PTR uIdSubclass, DWORD_PTR dwRefData)
 {
 	UNREFERENCED_PARAMETER(uIdSubclass);
 
-	auto *pexpp = reinterpret_cast<Explorerplusplus *>(dwRefData);
+	auto *pexpp = reinterpret_cast<Starryfilesplusplus *>(dwRefData);
 
 	return pexpp->ListViewSubclassProc(hwnd, uMsg, wParam, lParam);
 }
 
-LRESULT CALLBACK Explorerplusplus::ListViewSubclassProc(HWND ListView, UINT msg, WPARAM wParam,
+LRESULT CALLBACK Starryfilesplusplus::ListViewSubclassProc(HWND ListView, UINT msg, WPARAM wParam,
 	LPARAM lParam)
 {
 	switch (msg)
@@ -138,7 +138,7 @@ LRESULT CALLBACK Explorerplusplus::ListViewSubclassProc(HWND ListView, UINT msg,
 	return DefSubclassProc(ListView, msg, wParam, lParam);
 }
 
-LRESULT Explorerplusplus::OnListViewKeyDown(LPARAM lParam)
+LRESULT Starryfilesplusplus::OnListViewKeyDown(LPARAM lParam)
 {
 	LV_KEYDOWN *keyDown = reinterpret_cast<LV_KEYDOWN *>(lParam);
 
@@ -174,7 +174,7 @@ LRESULT Explorerplusplus::OnListViewKeyDown(LPARAM lParam)
 	return 0;
 }
 
-int Explorerplusplus::DetermineListViewObjectIndex(HWND hListView)
+int Starryfilesplusplus::DetermineListViewObjectIndex(HWND hListView)
 {
 	for (auto &item : GetActivePane()->GetTabContainer()->GetAllTabs())
 	{
@@ -187,7 +187,7 @@ int Explorerplusplus::DetermineListViewObjectIndex(HWND hListView)
 	return -1;
 }
 
-void Explorerplusplus::OnShowListViewContextMenu(const POINT &ptScreen)
+void Starryfilesplusplus::OnShowListViewContextMenu(const POINT &ptScreen)
 {
 	POINT finalPoint = ptScreen;
 
@@ -237,7 +237,7 @@ void Explorerplusplus::OnShowListViewContextMenu(const POINT &ptScreen)
 	}
 }
 
-void Explorerplusplus::OnListViewBackgroundRClick(POINT *pCursorPos)
+void Starryfilesplusplus::OnListViewBackgroundRClick(POINT *pCursorPos)
 {
 	const auto &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	auto pidlDirectory = selectedTab.GetShellBrowserImpl()->GetDirectoryIdl();
@@ -268,7 +268,7 @@ void Explorerplusplus::OnListViewBackgroundRClick(POINT *pCursorPos)
 		serviceProvider.get(), flags);
 }
 
-void Explorerplusplus::OnListViewItemRClick(POINT *pCursorPos)
+void Starryfilesplusplus::OnListViewItemRClick(POINT *pCursorPos)
 {
 	int nSelected = ListView_GetSelectedCount(m_hActiveListView);
 
@@ -300,7 +300,7 @@ void Explorerplusplus::OnListViewItemRClick(POINT *pCursorPos)
 	}
 }
 
-void Explorerplusplus::OnListViewClick(const NMITEMACTIVATE *eventInfo)
+void Starryfilesplusplus::OnListViewClick(const NMITEMACTIVATE *eventInfo)
 {
 	if (!m_config->globalFolderSettings.oneClickActivate.get())
 	{
@@ -320,7 +320,7 @@ void Explorerplusplus::OnListViewClick(const NMITEMACTIVATE *eventInfo)
 	OnListViewDoubleClick(eventInfo);
 }
 
-void Explorerplusplus::OnListViewDoubleClick(const NMITEMACTIVATE *eventInfo)
+void Starryfilesplusplus::OnListViewDoubleClick(const NMITEMACTIVATE *eventInfo)
 {
 	// Note that while it's stated in the documentation for both NM_CLICK and NM_DBLCLK that "The
 	// iItem member of lParam is only valid if the icon or first-column label has been clicked.", it
@@ -346,7 +346,7 @@ void Explorerplusplus::OnListViewDoubleClick(const NMITEMACTIVATE *eventInfo)
 	}
 }
 
-void Explorerplusplus::OnListViewCopyItemPath() const
+void Starryfilesplusplus::OnListViewCopyItemPath() const
 {
 	if (ListView_GetSelectedCount(m_hActiveListView) == 0)
 	{
@@ -369,7 +369,7 @@ void Explorerplusplus::OnListViewCopyItemPath() const
 	clipboardWriter.WriteText(strItemPaths);
 }
 
-void Explorerplusplus::OnListViewCopyUniversalPaths() const
+void Starryfilesplusplus::OnListViewCopyUniversalPaths() const
 {
 	if (ListView_GetSelectedCount(m_hActiveListView) == 0)
 	{
@@ -406,13 +406,13 @@ void Explorerplusplus::OnListViewCopyUniversalPaths() const
 	clipboardWriter.WriteText(strUniversalPaths);
 }
 
-void Explorerplusplus::OnListViewSetFileAttributes() const
+void Starryfilesplusplus::OnListViewSetFileAttributes() const
 {
 	const Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	selectedTab.GetShellBrowserImpl()->SetFileAttributesForSelection();
 }
 
-void Explorerplusplus::OnListViewPaste()
+void Starryfilesplusplus::OnListViewPaste()
 {
 	wil::com_ptr_nothrow<IDataObject> clipboardObject;
 	HRESULT hr = OleGetClipboard(&clipboardObject);
@@ -457,7 +457,7 @@ void Explorerplusplus::OnListViewPaste()
 	}
 }
 
-int Explorerplusplus::HighlightSimilarFiles(HWND ListView) const
+int Starryfilesplusplus::HighlightSimilarFiles(HWND ListView) const
 {
 	BOOL bSimilarTypes;
 	int iSelected;
@@ -494,7 +494,7 @@ int Explorerplusplus::HighlightSimilarFiles(HWND ListView) const
 	return nSimilar;
 }
 
-void Explorerplusplus::OpenAllSelectedItems(OpenFolderDisposition openFolderDisposition)
+void Starryfilesplusplus::OpenAllSelectedItems(OpenFolderDisposition openFolderDisposition)
 {
 	BOOL bSeenDirectory = FALSE;
 	DWORD dwAttributes;
@@ -522,7 +522,7 @@ void Explorerplusplus::OpenAllSelectedItems(OpenFolderDisposition openFolderDisp
 	}
 }
 
-void Explorerplusplus::OpenListViewItem(int index, OpenFolderDisposition openFolderDisposition)
+void Starryfilesplusplus::OpenListViewItem(int index, OpenFolderDisposition openFolderDisposition)
 {
 	auto pidlComplete = m_pActiveShellBrowser->GetItemCompleteIdl(index);
 	OpenItem(pidlComplete.get(), openFolderDisposition);

@@ -5,27 +5,27 @@
 #include "stdafx.h"
 #include "StarryFiles++.h"
 
-TabContainer *Explorerplusplus::GetTabContainer()
+TabContainer *Starryfilesplusplus::GetTabContainer()
 {
 	return GetActivePane()->GetTabContainer();
 }
 
-Plugins::PluginMenuManager *Explorerplusplus::GetPluginMenuManager()
+Plugins::PluginMenuManager *Starryfilesplusplus::GetPluginMenuManager()
 {
 	return &m_pluginMenuManager;
 }
 
-UiTheming *Explorerplusplus::GetUiTheming()
+UiTheming *Starryfilesplusplus::GetUiTheming()
 {
 	return m_uiTheming.get();
 }
 
-AcceleratorUpdater *Explorerplusplus::GetAccleratorUpdater()
+AcceleratorUpdater *Starryfilesplusplus::GetAccleratorUpdater()
 {
 	return &m_acceleratorUpdater;
 }
 
-Plugins::PluginCommandManager *Explorerplusplus::GetPluginCommandManager()
+Plugins::PluginCommandManager *Starryfilesplusplus::GetPluginCommandManager()
 {
 	return &m_pluginCommandManager;
 }

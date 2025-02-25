@@ -13,7 +13,7 @@
 #include "ShellTreeView/ShellTreeView.h"
 #include "../Helper/BulkClipboardWriter.h"
 
-void Explorerplusplus::CreateFolderControls()
+void Starryfilesplusplus::CreateFolderControls()
 {
 	UINT holderStyle = WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN;
 
@@ -28,16 +28,16 @@ void Explorerplusplus::CreateFolderControls()
 		ResourceHelper::LoadString(m_app->GetResourceInstance(), IDS_HIDE_FOLDERS_PANE),
 		m_app->GetConfig(), m_app->GetIconResourceLoader(), m_app->GetDarkModeManager());
 	m_treeViewHolder->SetCloseButtonClickedCallback(
-		std::bind(&Explorerplusplus::ToggleFolders, this));
+		std::bind(&Starryfilesplusplus::ToggleFolders, this));
 	m_treeViewHolder->SetResizedCallback(
-		std::bind_front(&Explorerplusplus::OnTreeViewHolderResized, this));
+		std::bind_front(&Starryfilesplusplus::OnTreeViewHolderResized, this));
 
 	m_shellTreeView = ShellTreeView::Create(m_treeViewHolder->GetHWND(), m_app, this, this,
 		&m_FileActionHandler, m_app->GetCachedIcons());
 	m_treeViewHolder->SetContentChild(m_shellTreeView->GetHWND());
 }
 
-void Explorerplusplus::OnTreeViewCopyItemPath() const
+void Starryfilesplusplus::OnTreeViewCopyItemPath() const
 {
 	auto pidl = m_shellTreeView->GetSelectedNodePidl();
 
@@ -48,7 +48,7 @@ void Explorerplusplus::OnTreeViewCopyItemPath() const
 	clipboardWriter.WriteText(fullFileName);
 }
 
-void Explorerplusplus::OnTreeViewCopyUniversalPaths() const
+void Starryfilesplusplus::OnTreeViewCopyUniversalPaths() const
 {
 	auto pidl = m_shellTreeView->GetSelectedNodePidl();
 
@@ -72,7 +72,7 @@ void Explorerplusplus::OnTreeViewCopyUniversalPaths() const
 	}
 }
 
-void Explorerplusplus::OnTreeViewSetFileAttributes() const
+void Starryfilesplusplus::OnTreeViewSetFileAttributes() const
 {
 	std::list<NSetFileAttributesDialogExternal::SetFileAttributesInfo> sfaiList;
 	NSetFileAttributesDialogExternal::SetFileAttributesInfo sfai;
@@ -101,7 +101,7 @@ void Explorerplusplus::OnTreeViewSetFileAttributes() const
 	}
 }
 
-void Explorerplusplus::OnTreeViewHolderResized(int newWidth)
+void Starryfilesplusplus::OnTreeViewHolderResized(int newWidth)
 {
 	m_treeViewWidth = newWidth;
 

@@ -18,7 +18,7 @@
 #include "../Helper/MenuHelper.h"
 #include "../Helper/ShellHelper.h"
 
-void Explorerplusplus::UpdateMenuEntries(HMENU menu, PCIDLIST_ABSOLUTE pidlParent,
+void Starryfilesplusplus::UpdateMenuEntries(HMENU menu, PCIDLIST_ABSOLUTE pidlParent,
 	const std::vector<PidlChild> &pidlItems, IContextMenu *contextMenu)
 {
 	if (pidlItems.empty())
@@ -31,7 +31,7 @@ void Explorerplusplus::UpdateMenuEntries(HMENU menu, PCIDLIST_ABSOLUTE pidlParen
 	}
 }
 
-void Explorerplusplus::UpdateBackgroundContextMenu(HMENU menu, PCIDLIST_ABSOLUTE folderPidl,
+void Starryfilesplusplus::UpdateBackgroundContextMenu(HMENU menu, PCIDLIST_ABSOLUTE folderPidl,
 	IContextMenu *contextMenu)
 {
 	RemoveNonFunctionalItemsFromBackgroundContextMenu(menu, contextMenu);
@@ -91,7 +91,7 @@ void Explorerplusplus::UpdateBackgroundContextMenu(HMENU menu, PCIDLIST_ABSOLUTE
 	MenuHelper::AddSeparator(menu, position++, true);
 }
 
-void Explorerplusplus::RemoveNonFunctionalItemsFromBackgroundContextMenu(HMENU menu,
+void Starryfilesplusplus::RemoveNonFunctionalItemsFromBackgroundContextMenu(HMENU menu,
 	IContextMenu *contextMenu)
 {
 	int numItems = GetMenuItemCount(menu);
@@ -139,7 +139,7 @@ void Explorerplusplus::RemoveNonFunctionalItemsFromBackgroundContextMenu(HMENU m
 	}
 }
 
-void Explorerplusplus::UpdateItemContextMenu(HMENU menu, PCIDLIST_ABSOLUTE pidlParent,
+void Starryfilesplusplus::UpdateItemContextMenu(HMENU menu, PCIDLIST_ABSOLUTE pidlParent,
 	const std::vector<PidlChild> &pidlItems)
 {
 	bool addNewTabMenuItem = false;
@@ -171,7 +171,7 @@ void Explorerplusplus::UpdateItemContextMenu(HMENU menu, PCIDLIST_ABSOLUTE pidlP
 	}
 }
 
-bool Explorerplusplus::HandleShellMenuItem(PCIDLIST_ABSOLUTE pidlParent,
+bool Starryfilesplusplus::HandleShellMenuItem(PCIDLIST_ABSOLUTE pidlParent,
 	const std::vector<PidlChild> &pidlItems, const std::wstring &verb)
 {
 	if (verb == L"open")
@@ -208,7 +208,7 @@ bool Explorerplusplus::HandleShellMenuItem(PCIDLIST_ABSOLUTE pidlParent,
 	return false;
 }
 
-void Explorerplusplus::HandleCustomMenuItem(PCIDLIST_ABSOLUTE pidlParent,
+void Starryfilesplusplus::HandleCustomMenuItem(PCIDLIST_ABSOLUTE pidlParent,
 	const std::vector<PidlChild> &pidlItems, UINT menuItemId)
 {
 	switch (menuItemId)
@@ -232,7 +232,7 @@ void Explorerplusplus::HandleCustomMenuItem(PCIDLIST_ABSOLUTE pidlParent,
 	}
 }
 
-std::wstring Explorerplusplus::GetHelpTextForItem(UINT menuItemId)
+std::wstring Starryfilesplusplus::GetHelpTextForItem(UINT menuItemId)
 {
 	// By default, the help text will be looked up via the menu item ID.
 	UINT menuHelpTextId = menuItemId;

@@ -11,7 +11,7 @@
 #include "TabContainer.h"
 #include "TabStorage.h"
 
-void Explorerplusplus::InitializeTabs()
+void Starryfilesplusplus::InitializeTabs()
 {
 	/* The tab backing will hold the tab window. */
 	CreateTabBacking();
@@ -22,26 +22,26 @@ void Explorerplusplus::InitializeTabs()
 	m_browserPane = std::make_unique<BrowserPane>(tabContainer);
 
 	tabContainer->tabCreatedSignal.AddObserver(
-		std::bind_front(&Explorerplusplus::OnTabCreated, this), boost::signals2::at_front);
+		std::bind_front(&Starryfilesplusplus::OnTabCreated, this), boost::signals2::at_front);
 	tabContainer->tabNavigationStartedSignal.AddObserver(
-		std::bind_front(&Explorerplusplus::OnNavigationStartedStatusBar, this),
+		std::bind_front(&Starryfilesplusplus::OnNavigationStartedStatusBar, this),
 		boost::signals2::at_front);
 	tabContainer->tabNavigationCommittedSignal.AddObserver(
-		std::bind_front(&Explorerplusplus::OnNavigationCommitted, this), boost::signals2::at_front);
+		std::bind_front(&Starryfilesplusplus::OnNavigationCommitted, this), boost::signals2::at_front);
 	tabContainer->tabNavigationCompletedSignal.AddObserver(
-		std::bind_front(&Explorerplusplus::OnNavigationCompletedStatusBar, this),
+		std::bind_front(&Starryfilesplusplus::OnNavigationCompletedStatusBar, this),
 		boost::signals2::at_front);
 	tabContainer->tabNavigationFailedSignal.AddObserver(
-		std::bind_front(&Explorerplusplus::OnNavigationFailedStatusBar, this),
+		std::bind_front(&Starryfilesplusplus::OnNavigationFailedStatusBar, this),
 		boost::signals2::at_front);
 	tabContainer->tabSelectedSignal.AddObserver(
-		std::bind_front(&Explorerplusplus::OnTabSelected, this), boost::signals2::at_front);
+		std::bind_front(&Starryfilesplusplus::OnTabSelected, this), boost::signals2::at_front);
 
 	tabContainer->tabDirectoryContentsChangedSignal.AddObserver(
-		std::bind_front(&Explorerplusplus::OnDirectoryContentsChanged, this),
+		std::bind_front(&Starryfilesplusplus::OnDirectoryContentsChanged, this),
 		boost::signals2::at_front);
 	tabContainer->tabListViewSelectionChangedSignal.AddObserver(
-		std::bind_front(&Explorerplusplus::OnTabListViewSelectionChanged, this),
+		std::bind_front(&Starryfilesplusplus::OnTabListViewSelectionChanged, this),
 		boost::signals2::at_front);
 
 	tabContainer->sizeUpdatedSignal.AddObserver([this] { UpdateLayout(); });
@@ -59,7 +59,7 @@ void Explorerplusplus::InitializeTabs()
 	m_tabsInitializedSignal();
 }
 
-void Explorerplusplus::OnTabCreated(int tabId, BOOL switchToNewTab)
+void Starryfilesplusplus::OnTabCreated(int tabId, BOOL switchToNewTab)
 {
 	UNREFERENCED_PARAMETER(switchToNewTab);
 
@@ -74,13 +74,13 @@ void Explorerplusplus::OnTabCreated(int tabId, BOOL switchToNewTab)
 	UpdateLayout();
 }
 
-boost::signals2::connection Explorerplusplus::AddTabsInitializedObserver(
+boost::signals2::connection Starryfilesplusplus::AddTabsInitializedObserver(
 	const TabsInitializedSignal::slot_type &observer)
 {
 	return m_tabsInitializedSignal.connect(observer);
 }
 
-void Explorerplusplus::OnNavigationCommitted(const Tab &tab, const NavigateParams &navigateParams)
+void Starryfilesplusplus::OnNavigationCommitted(const Tab &tab, const NavigateParams &navigateParams)
 {
 	UNREFERENCED_PARAMETER(navigateParams);
 
@@ -101,7 +101,7 @@ void Explorerplusplus::OnNavigationCommitted(const Tab &tab, const NavigateParam
 
 /* Creates a new tab. If a folder is selected, that folder is opened in a new
  * tab, else the default directory is opened. */
-void Explorerplusplus::OnNewTab()
+void Starryfilesplusplus::OnNewTab()
 {
 	const Tab &selectedTab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	int selectionIndex = ListView_GetNextItem(selectedTab.GetShellBrowserImpl()->GetListView(), -1,
@@ -131,7 +131,7 @@ void Explorerplusplus::OnNewTab()
 		TabSettings(_selected = true));
 }
 
-void Explorerplusplus::CreateInitialTabs(const WindowStorageData *storageData)
+void Starryfilesplusplus::CreateInitialTabs(const WindowStorageData *storageData)
 {
 	if (storageData)
 	{
@@ -151,7 +151,7 @@ void Explorerplusplus::CreateInitialTabs(const WindowStorageData *storageData)
 	}
 }
 
-void Explorerplusplus::CreateTabsFromStorageData(const WindowStorageData &storageData)
+void Starryfilesplusplus::CreateTabsFromStorageData(const WindowStorageData &storageData)
 {
 	int index = 0;
 
@@ -190,7 +190,7 @@ void Explorerplusplus::CreateTabsFromStorageData(const WindowStorageData &storag
 	}
 }
 
-void Explorerplusplus::CreateCommandLineTabs()
+void Starryfilesplusplus::CreateCommandLineTabs()
 {
 	// It's implicitly assumed that this will succeed. Although the documentation states that
 	// GetCurrentDirectory() can fail, I'm not sure under what circumstances it ever would.
@@ -261,7 +261,7 @@ void Explorerplusplus::CreateCommandLineTabs()
 	}
 }
 
-void Explorerplusplus::OnTabSelected(const Tab &tab)
+void Starryfilesplusplus::OnTabSelected(const Tab &tab)
 {
 	/* Hide the old listview. */
 	ShowWindow(m_hActiveListView, SW_HIDE);
@@ -276,7 +276,7 @@ void Explorerplusplus::OnTabSelected(const Tab &tab)
 	SetFocus(m_hActiveListView);
 }
 
-void Explorerplusplus::OnSelectTabByIndex(int iTab)
+void Starryfilesplusplus::OnSelectTabByIndex(int iTab)
 {
 	int nTabs = GetActivePane()->GetTabContainer()->GetNumTabs();
 	int newIndex;
@@ -300,25 +300,25 @@ void Explorerplusplus::OnSelectTabByIndex(int iTab)
 	GetActivePane()->GetTabContainer()->SelectTabAtIndex(newIndex);
 }
 
-bool Explorerplusplus::OnCloseTab()
+bool Starryfilesplusplus::OnCloseTab()
 {
 	const Tab &tab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 	return GetActivePane()->GetTabContainer()->CloseTab(tab);
 }
 
-void Explorerplusplus::ShowTabBar()
+void Starryfilesplusplus::ShowTabBar()
 {
 	m_bShowTabBar = true;
 	UpdateLayout();
 }
 
-void Explorerplusplus::HideTabBar()
+void Starryfilesplusplus::HideTabBar()
 {
 	m_bShowTabBar = false;
 	UpdateLayout();
 }
 
-void Explorerplusplus::OnTabListViewSelectionChanged(const Tab &tab)
+void Starryfilesplusplus::OnTabListViewSelectionChanged(const Tab &tab)
 {
 	/* The selection for this tab has changed, so invalidate any
 	folder size calculations that are occurring for this tab
@@ -340,13 +340,13 @@ void Explorerplusplus::OnTabListViewSelectionChanged(const Tab &tab)
 }
 
 // TabNavigationInterface
-void Explorerplusplus::CreateNewTab(NavigateParams &navigateParams, bool selected)
+void Starryfilesplusplus::CreateNewTab(NavigateParams &navigateParams, bool selected)
 {
 	GetActivePane()->GetTabContainer()->CreateNewTab(navigateParams,
 		TabSettings(_selected = selected));
 }
 
-void Explorerplusplus::SelectTabById(int tabId)
+void Starryfilesplusplus::SelectTabById(int tabId)
 {
 	const Tab &tab = GetActivePane()->GetTabContainer()->GetTab(tabId);
 	GetActivePane()->GetTabContainer()->SelectTab(tab);

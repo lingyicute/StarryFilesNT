@@ -113,7 +113,7 @@ std::variant<Settings, ExitInfo> Parse(const std::wstring &commandLine)
 	// specified by supplying the option multiple times. That's done because allowing multiple items
 	// to be specified at once would create ambiguity with the directories option:
 	//
-	// explorer++.exe --select c:\windows c:\users\public
+	// starryfiles++.exe --select c:\windows c:\users\public
 	//
 	// That could mean: select two items (c:\windows and c:\users\public) or select one item
 	// (c:\windows) and open a directory (c:\users\public).

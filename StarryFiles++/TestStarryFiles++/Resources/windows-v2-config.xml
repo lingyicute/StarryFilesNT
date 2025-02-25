@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- Preference file for StarryFiles++ -->
-<ExplorerPlusPlus>
+<StarryfilesPlusPlus>
 	<Windows>
 		<Window X="618" Y="598" Width="1207" Height="651" ShowState="0" SelectedTab="0"
 			TreeViewWidth="430" DisplayWindowWidth="610" DisplayWindowHeight="429">
@@ -37,4 +37,4 @@
 			<MainToolbarButtons Button0="Search" Button1="Close Tab" />
 		</Window>
 	</Windows>
-</ExplorerPlusPlus>
+</StarryfilesPlusPlus>

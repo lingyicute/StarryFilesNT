@@ -6,7 +6,7 @@ Copyright (c) 2005-2011 David Erceg
 StarryFiles++ is free software released under
 the GNU General Public License.
 
-www.explorerplusplus.com
+404.92li.us.kg
 
 
 About StarryFiles++
@@ -28,4 +28,4 @@ Reporting Problems
 ------------------
 Please send any bugs or problems to:
 
-david@explorerplusplus.com
+david@404.92li.us.kg

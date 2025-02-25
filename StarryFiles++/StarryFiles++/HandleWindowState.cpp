@@ -16,7 +16,7 @@
 #include "TabContainer.h"
 #include "../Helper/MenuHelper.h"
 
-void Explorerplusplus::UpdateWindowStates(const Tab &tab)
+void Starryfilesplusplus::UpdateWindowStates(const Tab &tab)
 {
 	UpdateStatusBarText(tab);
 	UpdateDisplayWindow(tab);
@@ -26,7 +26,7 @@ void Explorerplusplus::UpdateWindowStates(const Tab &tab)
  * Set the state of the items in the main
  * program menu.
  */
-void Explorerplusplus::SetProgramMenuItemStates(HMENU hProgramMenu)
+void Starryfilesplusplus::SetProgramMenuItemStates(HMENU hProgramMenu)
 {
 	const Tab &tab = GetActivePane()->GetTabContainer()->GetSelectedTab();
 

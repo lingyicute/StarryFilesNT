@@ -37,12 +37,12 @@
 #include <fmt/format.h>
 #include <fmt/xchar.h>
 
-Explorerplusplus *Explorerplusplus::Create(App *app, const WindowStorageData *storageData)
+Starryfilesplusplus *Starryfilesplusplus::Create(App *app, const WindowStorageData *storageData)
 {
-	return new Explorerplusplus(app, storageData);
+	return new Starryfilesplusplus(app, storageData);
 }
 
-Explorerplusplus::Explorerplusplus(App *app, const WindowStorageData *storageData) :
+Starryfilesplusplus::Starryfilesplusplus(App *app, const WindowStorageData *storageData) :
 	m_id(idCounter++),
 	m_app(app),
 	m_hContainer(CreateMainWindow(storageData)),
@@ -75,7 +75,7 @@ Explorerplusplus::Explorerplusplus(App *app, const WindowStorageData *storageDat
 	}
 
 	m_windowSubclasses.push_back(std::make_unique<WindowSubclass>(m_hContainer,
-		std::bind_front(&Explorerplusplus::WindowProcedure, this)));
+		std::bind_front(&Starryfilesplusplus::WindowProcedure, this)));
 
 	Initialize(storageData);
 
@@ -92,12 +92,12 @@ Explorerplusplus::Explorerplusplus(App *app, const WindowStorageData *storageDat
 	m_browserTracker = std::make_unique<BrowserTracker>(app->GetBrowserList(), this);
 }
 
-Explorerplusplus::~Explorerplusplus()
+Starryfilesplusplus::~Starryfilesplusplus()
 {
 	m_pDirMon->Release();
 }
 
-HWND Explorerplusplus::CreateMainWindow(const WindowStorageData *storageData)
+HWND Starryfilesplusplus::CreateMainWindow(const WindowStorageData *storageData)
 {
 	static bool mainWindowClassRegistered = false;
 
@@ -127,7 +127,7 @@ HWND Explorerplusplus::CreateMainWindow(const WindowStorageData *storageData)
 	return hwnd;
 }
 
-ATOM Explorerplusplus::RegisterMainWindowClass(HINSTANCE instance)
+ATOM Starryfilesplusplus::RegisterMainWindowClass(HINSTANCE instance)
 {
 	WNDCLASSEX windowClass = {};
 	windowClass.cbSize = sizeof(windowClass);
@@ -147,23 +147,23 @@ ATOM Explorerplusplus::RegisterMainWindowClass(HINSTANCE instance)
 	return RegisterClassEx(&windowClass);
 }
 
-boost::signals2::connection Explorerplusplus::AddBrowserInitializedObserver(
+boost::signals2::connection Starryfilesplusplus::AddBrowserInitializedObserver(
 	const BrowserInitializedSignal::slot_type &observer)
 {
 	return m_browserInitializedSignal.connect(observer);
 }
 
-void Explorerplusplus::CreateTabFromPreservedTab(const PreservedTab *tab)
+void Starryfilesplusplus::CreateTabFromPreservedTab(const PreservedTab *tab)
 {
 	GetActivePane()->GetTabContainer()->CreateNewTab(*tab);
 }
 
-HWND Explorerplusplus::GetHWND() const
+HWND Starryfilesplusplus::GetHWND() const
 {
 	return m_hContainer;
 }
 
-WindowStorageData Explorerplusplus::GetStorageData() const
+WindowStorageData Starryfilesplusplus::GetStorageData() const
 {
 	WINDOWPLACEMENT placement = {};
 	placement.length = sizeof(placement);
@@ -183,17 +183,17 @@ WindowStorageData Explorerplusplus::GetStorageData() const
 		.displayWindowHeight = m_displayWindowHeight };
 }
 
-bool Explorerplusplus::IsActive() const
+bool Starryfilesplusplus::IsActive() const
 {
 	return GetActiveWindow() == m_hContainer;
 }
 
-void Explorerplusplus::Activate()
+void Starryfilesplusplus::Activate()
 {
 	BringWindowToForeground(m_hContainer);
 }
 
-void Explorerplusplus::TryClose()
+void Starryfilesplusplus::TryClose()
 {
 	if (!ConfirmClose())
 	{
@@ -203,7 +203,7 @@ void Explorerplusplus::TryClose()
 	Close();
 }
 
-bool Explorerplusplus::ConfirmClose()
+bool Starryfilesplusplus::ConfirmClose()
 {
 	if (!m_config->confirmCloseTabs)
 	{
@@ -231,34 +231,34 @@ bool Explorerplusplus::ConfirmClose()
 	return true;
 }
 
-void Explorerplusplus::Close()
+void Starryfilesplusplus::Close()
 {
 	m_browserTracker.reset();
 
 	DestroyWindow(m_hContainer);
 }
 
-int Explorerplusplus::GetId() const
+int Starryfilesplusplus::GetId() const
 {
 	return m_id;
 }
 
-BrowserCommandController *Explorerplusplus::GetCommandController()
+BrowserCommandController *Starryfilesplusplus::GetCommandController()
 {
 	return &m_commandController;
 }
 
-BrowserPane *Explorerplusplus::GetActivePane() const
+BrowserPane *Starryfilesplusplus::GetActivePane() const
 {
 	return m_browserPane.get();
 }
 
-ShellBrowser *Explorerplusplus::GetActiveShellBrowser()
+ShellBrowser *Starryfilesplusplus::GetActiveShellBrowser()
 {
 	return GetActivePane()->GetTabContainer()->GetSelectedTab().GetShellBrowserImpl();
 }
 
-void Explorerplusplus::OnShellBrowserCreated(ShellBrowser *shellBrowser)
+void Starryfilesplusplus::OnShellBrowserCreated(ShellBrowser *shellBrowser)
 {
 	HistoryShellBrowserHelper::CreateAndAttachToShellBrowser(shellBrowser,
 		m_app->GetHistoryModel());

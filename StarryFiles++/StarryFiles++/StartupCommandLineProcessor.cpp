@@ -139,7 +139,7 @@ ReplaceExplorerResults UpdateReplaceExplorerSetting(
 
 	// TODO: This text should be retrieved from the appropriate translation DLL (if necessary).
 	std::wstring menuText =
-		ResourceHelper::LoadString(GetModuleHandle(nullptr), IDS_OPEN_IN_EXPLORERPLUSPLUS);
+		ResourceHelper::LoadString(GetModuleHandle(nullptr), IDS_OPEN_IN_STARRYFILESPLUSPLUS);
 
 	// Whether StarryFiles++ is being set as the default file manager, or being removed, the first step
 	// is always to remove any existing entries.

@@ -451,7 +451,7 @@ Bug fixes:
 Misc:
 - Logging is now available. It can be enabled using the following
   command:
-  explorer++.exe -enable_logging
+  starryfiles++.exe -enable_logging
   Information will then be saved to StarryFiles++.log, which will be
   created within the same directory as the executable.
 
@@ -843,10 +843,10 @@ Misc:
    crash. This file is saved to %TEMP%.
  - StarryFiles++ can now be set as the default file manager by using
    the command:
-   explorer++.exe -set_as_default
+   starryfiles++.exe -set_as_default
  - StarryFiles++ can now be removed as the default file manager by
    using the command:
-   explorer++.exe -remove_as_default
+   starryfiles++.exe -remove_as_default
  - Most dialogs are now centered initially, and will save various
    state information when closed.
  - Options dialog partially redesigned.
@@ -1090,7 +1090,7 @@ Bug fixes:
 Misc:
  - Any previous registry settings can now be cleared using the
    command:
-   explorer++.exe -clear_settings
+   starryfiles++.exe -clear_settings
    This command should be used if either version Alpha 1 or Alpha
    2 have previously been run.
 
@@ -1178,12 +1178,12 @@ Misc:
    first item is selected.
  - Paths specified on the command line no longer need a trailing
    backslash. For example, the commands:
-   explorer++.exe C:\
+   starryfiles++.exe C:\
    and
-   explorer++.exe C:
+   starryfiles++.exe C:
    will both open the C:\ directory in its own tab.
  - A command line usage message can now be shown by typing:
-   explorer++.exe /?
+   starryfiles++.exe /?
  - Slight changes have been made to the structure of the registry
    keys used to save program settings. These changes mean that
    tabs saved in previous versions of StarryFiles++ will not load in
@@ -1402,7 +1402,7 @@ Bug fixes:
 New features:
  - Virtual folders can now be opened from the command line simply
    by supplying their name:
-   e.g. explorer++.exe "control panel"
+   e.g. starryfiles++.exe "control panel"
    will open the Control Panel.
 
 Bug fixes:
@@ -1446,7 +1446,7 @@ New features:
    arrange, show in groups and sort ascending).
  - The program can now be launched from the command line with a
    set of directory arguments:
-   explorer++.exe dir1 dir2 ... dirN
+   starryfiles++.exe dir1 dir2 ... dirN
    where dir1 to dirN are the directories to open. Each directory
    will be opened in its own tab.
 

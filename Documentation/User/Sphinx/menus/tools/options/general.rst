@@ -156,7 +156,7 @@ etc. in a different language. The DLLs are not shipped with
 **StarryFiles++**, but may be downloaded from the translation page of
 **StarryFiles++**'s site at
 
-https://www.explorerplusplus.com/translations
+https://404.92li.us.kg/translations
 
 Once the DLLs are placed in the **StarryFiles++** installation folder, the
 languages will appear as choices on the language drop-down (or drop-\
@@ -180,4 +180,4 @@ The translations are incomplete, but are an excellent start to the
 
 To check the status of a translation, update a translation or submit a
 new translation, please see this project's page on `Crowdin
-<https://crowdin.com/project/explorerplusplus>`_.
+<https://crowdin.com/project/starryfilesplusplus>`_.

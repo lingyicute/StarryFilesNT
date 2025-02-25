@@ -5,7 +5,7 @@
 #pragma once
 
 // Used when setting StarryFiles++ as the default file manager.
-inline constexpr wchar_t SHELL_DEFAULT_INTERNAL_COMMAND_NAME[] = L"openinexplorer++";
+inline constexpr wchar_t SHELL_DEFAULT_INTERNAL_COMMAND_NAME[] = L"openinstarryfiles++";
 
 // Rebar menu IDs.
 #define ID_REBAR_MENU_BACK_START 2000

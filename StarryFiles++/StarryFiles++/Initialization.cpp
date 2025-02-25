@@ -24,7 +24,7 @@
 #include "ViewModeHelper.h"
 #include "../Helper/iDirectoryMonitor.h"
 
-void Explorerplusplus::Initialize(const WindowStorageData *storageData)
+void Starryfilesplusplus::Initialize(const WindowStorageData *storageData)
 {
 	m_bookmarksMainMenu =
 		std::make_unique<BookmarksMainMenu>(this, this, m_app->GetIconResourceLoader(),
@@ -79,17 +79,17 @@ void Explorerplusplus::Initialize(const WindowStorageData *storageData)
 	m_browserInitializedSignal();
 }
 
-void Explorerplusplus::InitializeDisplayWindow()
+void Starryfilesplusplus::InitializeDisplayWindow()
 {
 	m_displayWindow = DisplayWindow::Create(m_hContainer, m_config);
 
 	ApplyDisplayWindowPosition();
 
 	m_connections.push_back(
-		m_config->showDisplayWindow.addObserver(std::bind(&Explorerplusplus::UpdateLayout, this)));
+		m_config->showDisplayWindow.addObserver(std::bind(&Starryfilesplusplus::UpdateLayout, this)));
 }
 
-wil::unique_hmenu Explorerplusplus::BuildViewsMenu()
+wil::unique_hmenu Starryfilesplusplus::BuildViewsMenu()
 {
 	wil::unique_hmenu viewsMenu(CreatePopupMenu());
 	AddViewModesToMenu(viewsMenu.get(), 0, TRUE);
@@ -103,7 +103,7 @@ wil::unique_hmenu Explorerplusplus::BuildViewsMenu()
 	return viewsMenu;
 }
 
-void Explorerplusplus::AddViewModesToMenu(HMENU menu, UINT startPosition, BOOL byPosition)
+void Starryfilesplusplus::AddViewModesToMenu(HMENU menu, UINT startPosition, BOOL byPosition)
 {
 	UINT position = startPosition;
 

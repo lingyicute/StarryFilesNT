@@ -57,7 +57,7 @@ class ShellBrowserImpl;
 class StatusBar;
 class TabContainer;
 
-/* Basic interface between Explorerplusplus
+/* Basic interface between Starryfilesplusplus
 and some of the other components (such as the
 dialogs and toolbars). */
 class CoreInterface

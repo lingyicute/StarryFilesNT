@@ -27,12 +27,12 @@
 #include "../Helper/MenuHelper.h"
 #include "../Helper/WindowHelper.h"
 
-void Explorerplusplus::CreateMainRebarAndChildren(const WindowStorageData *storageData)
+void Starryfilesplusplus::CreateMainRebarAndChildren(const WindowStorageData *storageData)
 {
 	m_mainRebarView = MainRebarView::Create(m_hContainer);
 
 	m_windowSubclasses.push_back(std::make_unique<WindowSubclass>(m_mainRebarView->GetHWND(),
-		std::bind_front(&Explorerplusplus::RebarSubclass, this)));
+		std::bind_front(&Starryfilesplusplus::RebarSubclass, this)));
 
 	auto bands = InitializeMainRebarBands(storageData);
 	m_mainRebarView->AddBands(bands);
@@ -42,7 +42,7 @@ void Explorerplusplus::CreateMainRebarAndChildren(const WindowStorageData *stora
 		std::bind_front(&RebarView::LockBands, m_mainRebarView)));
 }
 
-std::vector<RebarView::Band> Explorerplusplus::InitializeMainRebarBands(
+std::vector<RebarView::Band> Starryfilesplusplus::InitializeMainRebarBands(
 	const WindowStorageData *storageData)
 {
 	std::vector<RebarView::Band> mainRebarBands;
@@ -95,7 +95,7 @@ std::vector<RebarView::Band> Explorerplusplus::InitializeMainRebarBands(
 	return mainRebarBands;
 }
 
-RebarView::Band Explorerplusplus::InitializeToolbarBand(UINT id, HWND toolbar, bool showBand)
+RebarView::Band Starryfilesplusplus::InitializeToolbarBand(UINT id, HWND toolbar, bool showBand)
 {
 	auto toolbarSize = static_cast<DWORD>(SendMessage(toolbar, TB_GETBUTTONSIZE, 0, 0));
 
@@ -114,7 +114,7 @@ RebarView::Band Explorerplusplus::InitializeToolbarBand(UINT id, HWND toolbar, b
 	return band;
 }
 
-RebarView::Band Explorerplusplus::InitializeNonToolbarBand(UINT id, HWND child, bool showBand)
+RebarView::Band Starryfilesplusplus::InitializeNonToolbarBand(UINT id, HWND child, bool showBand)
 {
 	RECT rect;
 	auto res = GetWindowRect(child, &rect);
@@ -130,7 +130,7 @@ RebarView::Band Explorerplusplus::InitializeNonToolbarBand(UINT id, HWND child, 
 	return band;
 }
 
-void Explorerplusplus::UpdateMainRebarBandsFromLoadedInfo(
+void Starryfilesplusplus::UpdateMainRebarBandsFromLoadedInfo(
 	std::vector<RebarView::Band> &mainRebarBands,
 	const std::vector<RebarBandStorageInfo> &rebarStorageInfo)
 {
@@ -158,7 +158,7 @@ void Explorerplusplus::UpdateMainRebarBandsFromLoadedInfo(
 	}
 }
 
-void Explorerplusplus::UpdateMainRebarBandFromLoadedInfo(RebarView::Band &band,
+void Starryfilesplusplus::UpdateMainRebarBandFromLoadedInfo(RebarView::Band &band,
 	const std::vector<RebarBandStorageInfo> &rebarStorageInfo)
 {
 	auto itr = std::find_if(rebarStorageInfo.begin(), rebarStorageInfo.end(),
@@ -173,7 +173,7 @@ void Explorerplusplus::UpdateMainRebarBandFromLoadedInfo(RebarView::Band &band,
 	band.length = itr->length;
 }
 
-LRESULT Explorerplusplus::RebarSubclass(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT Starryfilesplusplus::RebarSubclass(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg)
 	{
@@ -205,7 +205,7 @@ LRESULT Explorerplusplus::RebarSubclass(HWND hwnd, UINT msg, WPARAM wParam, LPAR
 	return DefSubclassProc(hwnd, msg, wParam, lParam);
 }
 
-void Explorerplusplus::OnToolbarRClick(HWND sourceWindow)
+void Starryfilesplusplus::OnToolbarRClick(HWND sourceWindow)
 {
 	auto parentMenu = wil::unique_hmenu(
 		LoadMenu(m_app->GetResourceInstance(), MAKEINTRESOURCE(IDR_TOOLBAR_MENU)));
@@ -246,7 +246,7 @@ void Explorerplusplus::OnToolbarRClick(HWND sourceWindow)
 	OnToolbarMenuItemSelected(sourceWindow, menuItemId);
 }
 
-void Explorerplusplus::OnToolbarMenuItemSelected(HWND sourceWindow, int menuItemId)
+void Starryfilesplusplus::OnToolbarMenuItemSelected(HWND sourceWindow, int menuItemId)
 {
 	switch (menuItemId)
 	{
@@ -284,77 +284,77 @@ void Explorerplusplus::OnToolbarMenuItemSelected(HWND sourceWindow, int menuItem
 	}
 }
 
-void Explorerplusplus::OnToggleAddressBar()
+void Starryfilesplusplus::OnToggleAddressBar()
 {
 	m_config->showAddressBar = !m_config->showAddressBar.get();
 }
 
-void Explorerplusplus::OnToggleMainToolbar()
+void Starryfilesplusplus::OnToggleMainToolbar()
 {
 	m_config->showMainToolbar = !m_config->showMainToolbar.get();
 }
 
-void Explorerplusplus::OnToggleBookmarksToolbar()
+void Starryfilesplusplus::OnToggleBookmarksToolbar()
 {
 	m_config->showBookmarksToolbar = !m_config->showBookmarksToolbar.get();
 }
 
-void Explorerplusplus::OnToggleDrivesToolbar()
+void Starryfilesplusplus::OnToggleDrivesToolbar()
 {
 	m_config->showDrivesToolbar = !m_config->showDrivesToolbar.get();
 }
 
-void Explorerplusplus::OnToggleApplicationToolbar()
+void Starryfilesplusplus::OnToggleApplicationToolbar()
 {
 	m_config->showApplicationToolbar = !m_config->showApplicationToolbar.get();
 }
 
-void Explorerplusplus::OnToggleLockToolbars()
+void Starryfilesplusplus::OnToggleLockToolbars()
 {
 	m_config->lockToolbars = !m_config->lockToolbars.get();
 }
 
-void Explorerplusplus::OnCustomizeMainToolbar()
+void Starryfilesplusplus::OnCustomizeMainToolbar()
 {
 	m_mainToolbar->StartCustomization();
 }
 
-boost::signals2::connection Explorerplusplus::AddToolbarContextMenuObserver(
+boost::signals2::connection Starryfilesplusplus::AddToolbarContextMenuObserver(
 	const ToolbarContextMenuSignal::slot_type &observer)
 {
 	return m_toolbarContextMenuSignal.connect(observer);
 }
 
-boost::signals2::connection Explorerplusplus::AddToolbarContextMenuSelectedObserver(
+boost::signals2::connection Starryfilesplusplus::AddToolbarContextMenuSelectedObserver(
 	const ToolbarContextMenuSelectedSignal::slot_type &observer)
 {
 	return m_toolbarContextMenuSelectedSignal.connect(observer);
 }
 
-void Explorerplusplus::CreateAddressBar()
+void Starryfilesplusplus::CreateAddressBar()
 {
 	m_addressBar = AddressBar::Create(m_mainRebarView->GetHWND(), m_app, this, this);
 	m_addressBar->sizeUpdatedSignal.AddObserver(
-		std::bind_front(&Explorerplusplus::OnAddressBarSizeUpdated, this));
+		std::bind_front(&Starryfilesplusplus::OnAddressBarSizeUpdated, this));
 }
 
-void Explorerplusplus::OnAddressBarSizeUpdated()
+void Starryfilesplusplus::OnAddressBarSizeUpdated()
 {
 	RECT rect;
 	GetWindowRect(m_addressBar->GetHWND(), &rect);
 	m_mainRebarView->UpdateBandSize(m_addressBar->GetHWND(), 0, GetRectHeight(&rect));
 }
 
-void Explorerplusplus::CreateMainToolbar(
+void Starryfilesplusplus::CreateMainToolbar(
 	const std::optional<MainToolbarStorage::MainToolbarButtons> &initialButtons)
 {
 	m_mainToolbar = MainToolbar::Create(m_mainRebarView->GetHWND(), m_app->GetResourceInstance(),
 		this, this, m_app->GetIconResourceLoader(), &m_shellIconLoader, m_config, initialButtons);
 	m_mainToolbar->sizeUpdatedSignal.AddObserver(
-		std::bind(&Explorerplusplus::OnRebarToolbarSizeUpdated, this, m_mainToolbar->GetHWND()));
+		std::bind(&Starryfilesplusplus::OnRebarToolbarSizeUpdated, this, m_mainToolbar->GetHWND()));
 }
 
-void Explorerplusplus::CreateBookmarksToolbar()
+void Starryfilesplusplus::CreateBookmarksToolbar()
 {
 	auto bookmarksToolbarView = new BookmarksToolbarView(m_mainRebarView->GetHWND(), m_config);
 
@@ -362,11 +362,11 @@ void Explorerplusplus::CreateBookmarksToolbar()
 		BookmarksToolbar::Create(bookmarksToolbarView, this, this, m_app->GetIconResourceLoader(),
 			&m_iconFetcher, m_app->GetBookmarkTree(), m_app->GetThemeManager());
 	m_bookmarksToolbar->GetView()->AddToolbarSizeUpdatedObserver(
-		std::bind(&Explorerplusplus::OnRebarToolbarSizeUpdated, this,
+		std::bind(&Starryfilesplusplus::OnRebarToolbarSizeUpdated, this,
 			m_bookmarksToolbar->GetView()->GetHWND()));
 }
 
-void Explorerplusplus::CreateDrivesToolbar()
+void Starryfilesplusplus::CreateDrivesToolbar()
 {
 	auto drivesToolbarView = DrivesToolbarView::Create(m_mainRebarView->GetHWND(), m_config);
 
@@ -377,10 +377,10 @@ void Explorerplusplus::CreateDrivesToolbar()
 
 	m_drivesToolbar = DrivesToolbar::Create(drivesToolbarView, std::move(driveModel), this, this);
 	m_drivesToolbar->GetView()->AddToolbarSizeUpdatedObserver(std::bind(
-		&Explorerplusplus::OnRebarToolbarSizeUpdated, this, m_drivesToolbar->GetView()->GetHWND()));
+		&Starryfilesplusplus::OnRebarToolbarSizeUpdated, this, m_drivesToolbar->GetView()->GetHWND()));
 }
 
-void Explorerplusplus::CreateApplicationToolbar()
+void Starryfilesplusplus::CreateApplicationToolbar()
 {
 	auto applicationToolbarView =
 		Applications::ApplicationToolbarView::Create(m_mainRebarView->GetHWND(), m_config);
@@ -388,11 +388,11 @@ void Explorerplusplus::CreateApplicationToolbar()
 	m_applicationToolbar = Applications::ApplicationToolbar::Create(applicationToolbarView,
 		m_app->GetApplicationModel(), this, m_app->GetThemeManager());
 	m_applicationToolbar->GetView()->AddToolbarSizeUpdatedObserver(
-		std::bind(&Explorerplusplus::OnRebarToolbarSizeUpdated, this,
+		std::bind(&Starryfilesplusplus::OnRebarToolbarSizeUpdated, this,
 			m_applicationToolbar->GetView()->GetHWND()));
 }
 
-void Explorerplusplus::OnRebarToolbarSizeUpdated(HWND toolbar)
+void Starryfilesplusplus::OnRebarToolbarSizeUpdated(HWND toolbar)
 {
 	SIZE size;
 	[[maybe_unused]] auto res =
@@ -402,7 +402,7 @@ void Explorerplusplus::OnRebarToolbarSizeUpdated(HWND toolbar)
 	m_mainRebarView->UpdateBandSize(toolbar, size.cx, size.cy);
 }
 
-HMENU Explorerplusplus::CreateRebarHistoryMenu(BOOL bBack)
+HMENU Starryfilesplusplus::CreateRebarHistoryMenu(BOOL bBack)
 {
 	HMENU hSubMenu = nullptr;
 	std::vector<HistoryEntry *> history;

@@ -11,7 +11,7 @@ PreserveMaximizedState := false
 
 #e::
 
-if PreserveMaximizedState AND WinExist("ahk_exe explorer++.exe")
+if PreserveMaximizedState AND WinExist("ahk_exe starryfiles++.exe")
   WinActivate
 else
   Run()
