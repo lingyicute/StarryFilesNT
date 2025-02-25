@@ -175,12 +175,12 @@ Early termination
 ~~~~~~~~~~~~~~~~~
 
 On the :ref:`hardware <destroy_files_hardware>` listed above, the
-Windows Task Manager reports that **Explorer++** is using between 95%
+Windows Task Manager reports that **StarryFiles++** is using between 95%
 and 99% of the CPU time during a **Destroy File(s)** operation, despite
 the fact that the process is operating at *Normal* priority. The effect
 of this is that
 
-- the appearance of **Explorer++** (not the **Destroy File(s)** dialog)
+- the appearance of **StarryFiles++** (not the **Destroy File(s)** dialog)
   is that of a program that has "stopped responding to the system", and
 - attempting to switch to another application (via the taskbar) and do
   something else is a waste of time.
@@ -190,15 +190,15 @@ If **Destroy File(s)** is launched in error on a large file (see
 terminated using the Task Manager by
 
 #. opening the Task Manager using **Ctrl+Alt+Delete**
-#. selecting the process **Explorer++.exe**
+#. selecting the process **StarryFiles++.exe**
 #. clicking *End Process*
 #. agreeing to the warning dialog
 
-The effect of this is to forcefully close **Explorer++** and, of course,
+The effect of this is to forcefully close **StarryFiles++** and, of course,
 the **Destroy File(s)** dialog (a child window), freeing up your system
 resources. However, take note that
 
-- settings for **Explorer++** (ie. open tabs, views, etc.) may not have
+- settings for **StarryFiles++** (ie. open tabs, views, etc.) may not have
   been saved, and
 - the file(s) targeted for secure deletion were, in all likelihood,
   damaged (partially overwritten), but not fully deleted.
@@ -207,7 +207,7 @@ Disclaimer
 ~~~~~~~~~~
 
 Although the **Destroy File(s)** action is deemed to be secure,
-**Explorer++** is released under the GNU General Public `License
+**StarryFiles++** is released under the GNU General Public `License
 <https://www.gnu.org/licenses/gpl-3.0.en.html>`_ and no warranty as to
 suitability is offered. Section 15 of the GNU license states that the
 program is provided "as-is" without warranty of any kind.

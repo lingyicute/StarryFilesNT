@@ -28,7 +28,7 @@ Example
 
 ::
 
-    H:\Projects\Explorer++\html\mnu_file\New ß Folder
+    H:\Projects\StarryFiles++\html\mnu_file\New ß Folder
 
 .. note::
 

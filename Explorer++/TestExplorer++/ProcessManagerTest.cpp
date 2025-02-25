@@ -38,7 +38,7 @@ protected:
 		// ProcessManager will create a message-only window. To find an existing process, it will
 		// search for an existing message-only window that has the appropriate class name and window
 		// name. A random value will be returned here to ensure that each test runs correctly, even
-		// if Explorer++, or another test is currently running.
+		// if StarryFiles++, or another test is currently running.
 		return CreateGUID();
 	}
 };

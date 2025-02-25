@@ -138,7 +138,7 @@ header) for convenience when numerous results are visible.
 
   The Microsoft .NET framework, when present on a system, creates a
   subfolder in the Windows folder called "*assembly*". The nature of the
-  .NET installation may interfere with **Explorer++** (Windows
+  .NET installation may interfere with **StarryFiles++** (Windows
   Explorer's exploration is *modified*) successfully browsing this
   folder. If this folder is included in your search (usually by virtue
   of using the :ref:`Search Subfolders <menus/tools/search:Search

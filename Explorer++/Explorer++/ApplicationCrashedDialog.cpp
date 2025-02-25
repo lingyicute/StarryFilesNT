@@ -40,7 +40,7 @@ void ApplicationCrashedDialog::Show()
 	dialogConfig.dwCommonButtons = TDCBF_CLOSE_BUTTON;
 	dialogConfig.pszWindowTitle = App::APP_NAME;
 	dialogConfig.pszMainIcon = TD_ERROR_ICON;
-	dialogConfig.pszMainInstruction = L"Explorer++ has encountered an error.";
+	dialogConfig.pszMainInstruction = L"StarryFiles++ has encountered an error.";
 	dialogConfig.pszContent = message.c_str();
 	dialogConfig.cButtons = static_cast<UINT>(customButtons.size());
 	dialogConfig.pButtons = &customButtons[0];

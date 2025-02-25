@@ -3,7 +3,7 @@
 // See LICENSE in the top level directory
 
 #include "pch.h"
-#include "../Explorer++/ViewModeHelper.h"
+#include "../StarryFiles++/ViewModeHelper.h"
 #include <gtest/gtest.h>
 #include <array>
 

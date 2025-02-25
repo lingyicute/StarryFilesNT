@@ -37,8 +37,8 @@ Close the main window when closing the last tab
 | System Default: | Yes |
 +-----------------+-----+
 
-**Explorer++** usually disallows closure of the last open tab, but with
-this option enabled, this can be done, and results in **Explorer++**
+**StarryFiles++** usually disallows closure of the last open tab, but with
+this option enabled, this can be done, and results in **StarryFiles++**
 closing completely.
 
 With this setting active, you cannot use the :ref:`close

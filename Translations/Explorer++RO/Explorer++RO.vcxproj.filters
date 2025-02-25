@@ -11,13 +11,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Explorer++Main.rc">
+    <ResourceCompile Include="StarryFiles++Main.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-    <ResourceCompile Include="Explorer++VersionInfo.rc">
+    <ResourceCompile Include="StarryFiles++VersionInfo.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-    <ResourceCompile Include="Explorer++.rc">
+    <ResourceCompile Include="StarryFiles++.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -25,7 +25,7 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Explorer++VersionInfo.h">
+    <ClInclude Include="StarryFiles++VersionInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

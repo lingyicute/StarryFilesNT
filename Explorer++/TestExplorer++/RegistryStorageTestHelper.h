@@ -16,7 +16,7 @@ protected:
 
 	void ImportRegistryResource(const std::wstring &filename);
 
-	static inline const std::wstring APPLICATION_TEST_KEY = L"Software\\Explorer++Test";
+	static inline const std::wstring APPLICATION_TEST_KEY = L"Software\\StarryFiles++Test";
 
 	wil::unique_hkey m_applicationTestKey;
 };

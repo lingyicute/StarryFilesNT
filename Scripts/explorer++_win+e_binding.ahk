@@ -1,5 +1,5 @@
-; This script runs Explorer++ on Win+E.
-; The Explorer++ executable must be in the same directory as this script file.
+; This script runs StarryFiles++ on Win+E.
+; The StarryFiles++ executable must be in the same directory as this script file.
 
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #SingleInstance force ; Only one copy of this script should run at a time.
@@ -20,8 +20,8 @@ return
 Run()
 {
   try {
-      Run %A_ScriptDir%\Explorer++.exe
+      Run %A_ScriptDir%\StarryFiles++.exe
   } catch e {
-      MsgBox Couldn't run Explorer++.`nPlease make sure it's in the same directory as this script (%A_ScriptDir%).
+      MsgBox Couldn't run StarryFiles++.`nPlease make sure it's in the same directory as this script (%A_ScriptDir%).
   }
 }

@@ -28,11 +28,11 @@ This view displays thumbnail images for each file. Using **Thumbnails**
 is primarily useful when displaying images; other files may simply
 display a *generic* image assigned by Windows.
 
-**Explorer++** presents a view of each folder, as well, showing a few
+**StarryFiles++** presents a view of each folder, as well, showing a few
 thumbnails of images (if any) contained therein.
 
-Currently, the thumbnail size is fixed (internal to **Explorer++**) at
-120x120 pixels. **Explorer++** does **not** cache thumbnails as Windows
+Currently, the thumbnail size is fixed (internal to **StarryFiles++**) at
+120x120 pixels. **StarryFiles++** does **not** cache thumbnails as Windows
 Explorer does (optionally creates "Thumbs.db" file).
 
 Tiles

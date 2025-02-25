@@ -109,16 +109,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Explorer++VersionInfo.h" />
+    <ClInclude Include="StarryFiles++VersionInfo.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Explorer++Main.rc" />
-    <ResourceCompile Include="Explorer++.rc">
+    <ResourceCompile Include="StarryFiles++Main.rc" />
+    <ResourceCompile Include="StarryFiles++.rc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ResourceCompile>
-    <ResourceCompile Include="Explorer++VersionInfo.rc">
+    <ResourceCompile Include="StarryFiles++VersionInfo.rc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ResourceCompile>

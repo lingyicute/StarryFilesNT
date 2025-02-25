@@ -1,4 +1,4 @@
-Welcome to Explorer++'s documentation!
+Welcome to StarryFiles++'s documentation!
 ======================================
 
 .. toctree::

@@ -35,7 +35,7 @@
     <VerboseOutput>False</VerboseOutput>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Explorer++.wxs" />
+    <Compile Include="StarryFiles++.wxs" />
   </ItemGroup>
   <ItemGroup>
     <WixExtension Include="WixUIExtension">
@@ -44,216 +44,216 @@
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Translations\Explorer++CA\Explorer++CA.vcxproj">
-      <Name>Explorer++CA</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++CA\StarryFiles++CA.vcxproj">
+      <Name>StarryFiles++CA</Name>
       <Project>{b04f5fb8-e387-46ca-95e3-fb5eb9ba13aa}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++CS\Explorer++CS.vcxproj">
-      <Name>Explorer++CS</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++CS\StarryFiles++CS.vcxproj">
+      <Name>StarryFiles++CS</Name>
       <Project>{41a8e3d6-1da0-4659-92e4-4da770a3301e}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++DA\Explorer++DA.vcxproj">
-      <Name>Explorer++DA</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++DA\StarryFiles++DA.vcxproj">
+      <Name>StarryFiles++DA</Name>
       <Project>{f7e8d901-b316-447d-95f7-7fc45a34e2b0}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++DE\Explorer++DE.vcxproj">
-      <Name>Explorer++DE</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++DE\StarryFiles++DE.vcxproj">
+      <Name>StarryFiles++DE</Name>
       <Project>{866a029f-39b3-4fa4-9fbd-45c2f24cdb11}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++ES\Explorer++ES.vcxproj">
-      <Name>Explorer++ES</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++ES\StarryFiles++ES.vcxproj">
+      <Name>StarryFiles++ES</Name>
       <Project>{0556bc85-8759-4df3-b000-8861c1df5ffb}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++FA\Explorer++FA.vcxproj">
-      <Name>Explorer++FA</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++FA\StarryFiles++FA.vcxproj">
+      <Name>StarryFiles++FA</Name>
       <Project>{3009733d-08d2-4050-b7e6-f1d691cd00ed}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++FI\Explorer++FI.vcxproj">
-      <Name>Explorer++FI</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++FI\StarryFiles++FI.vcxproj">
+      <Name>StarryFiles++FI</Name>
       <Project>{41047779-715c-4018-b21c-2aead581e54d}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++FR\Explorer++FR.vcxproj">
-      <Name>Explorer++FR</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++FR\StarryFiles++FR.vcxproj">
+      <Name>StarryFiles++FR</Name>
       <Project>{1610cd3c-0f28-46d8-8bb3-8df637614aa0}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++HE\Explorer++HE.vcxproj">
-      <Name>Explorer++HE</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++HE\StarryFiles++HE.vcxproj">
+      <Name>StarryFiles++HE</Name>
       <Project>{ad497d19-0b88-4e37-95b9-991c6514b156}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++HU\Explorer++HU.vcxproj">
-      <Name>Explorer++HU</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++HU\StarryFiles++HU.vcxproj">
+      <Name>StarryFiles++HU</Name>
       <Project>{f71cbedc-07f5-4c44-acaf-2e4c1ff83f44}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++IT\Explorer++IT.vcxproj">
-      <Name>Explorer++IT</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++IT\StarryFiles++IT.vcxproj">
+      <Name>StarryFiles++IT</Name>
       <Project>{a6ed4294-d661-433d-aa3b-6e08377e8660}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++JA\Explorer++JA.vcxproj">
-      <Name>Explorer++JA</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++JA\StarryFiles++JA.vcxproj">
+      <Name>StarryFiles++JA</Name>
       <Project>{56f9de1e-4a09-4295-b79d-e77f8ef7a72f}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++KO\Explorer++KO.vcxproj">
-      <Name>Explorer++KO</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++KO\StarryFiles++KO.vcxproj">
+      <Name>StarryFiles++KO</Name>
       <Project>{ea394f59-ea04-49be-85fe-8801452bfce3}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++NL\Explorer++NL.vcxproj">
-      <Name>Explorer++NL</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++NL\StarryFiles++NL.vcxproj">
+      <Name>StarryFiles++NL</Name>
       <Project>{36663c1c-afc5-4ae6-a3e0-df35fd0a529e}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++NO\Explorer++NO.vcxproj">
-      <Name>Explorer++NO</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++NO\StarryFiles++NO.vcxproj">
+      <Name>StarryFiles++NO</Name>
       <Project>{9eebe31b-c6ec-4602-af18-70a1b2655ed3}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++PL\Explorer++PL.vcxproj">
-      <Name>Explorer++PL</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++PL\StarryFiles++PL.vcxproj">
+      <Name>StarryFiles++PL</Name>
       <Project>{8d9a2712-7719-4a37-95f2-032cbc4433fa}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++PT\Explorer++PT.vcxproj">
-      <Name>Explorer++PT</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++PT\StarryFiles++PT.vcxproj">
+      <Name>StarryFiles++PT</Name>
       <Project>{b17d5217-d79b-4a19-b439-a96743862558}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++RO\Explorer++RO.vcxproj">
-      <Name>Explorer++RO</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++RO\StarryFiles++RO.vcxproj">
+      <Name>StarryFiles++RO</Name>
       <Project>{db50fb8f-1547-4d64-a892-d29500e7cbb3}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++RU\Explorer++RU.vcxproj">
-      <Name>Explorer++RU</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++RU\StarryFiles++RU.vcxproj">
+      <Name>StarryFiles++RU</Name>
       <Project>{fbe246f1-7c03-4238-b771-801523bfcbda}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++SI\Explorer++SI.vcxproj">
-      <Name>Explorer++SI</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++SI\StarryFiles++SI.vcxproj">
+      <Name>StarryFiles++SI</Name>
       <Project>{9c2de9f7-9181-4fa4-8dc0-05779a631c32}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++SV\Explorer++SV.vcxproj">
-      <Name>Explorer++SV</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++SV\StarryFiles++SV.vcxproj">
+      <Name>StarryFiles++SV</Name>
       <Project>{d9350b7e-1eb4-41fc-81db-feb223a911f4}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++TR\Explorer++TR.vcxproj">
-      <Name>Explorer++TR</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++TR\StarryFiles++TR.vcxproj">
+      <Name>StarryFiles++TR</Name>
       <Project>{e885f322-0ee6-4bd3-a35d-b262efa94639}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++UK\Explorer++UK.vcxproj">
-      <Name>Explorer++UK</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++UK\StarryFiles++UK.vcxproj">
+      <Name>StarryFiles++UK</Name>
       <Project>{b31026c5-6baf-4c69-bb4c-9c811b1beec7}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++VI\Explorer++VI.vcxproj">
-      <Name>Explorer++VI</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++VI\StarryFiles++VI.vcxproj">
+      <Name>StarryFiles++VI</Name>
       <Project>{d480b32c-bdf2-4364-92c9-2a0e446ae9cd}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++ZH_CN\Explorer++ZH_CN.vcxproj">
-      <Name>Explorer++ZH_CN</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++ZH_CN\StarryFiles++ZH_CN.vcxproj">
+      <Name>StarryFiles++ZH_CN</Name>
       <Project>{c12096bf-f80b-4abe-892c-247af2a5458a}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\..\Translations\Explorer++ZH_TW\Explorer++ZH_TW.vcxproj">
-      <Name>Explorer++ZH_TW</Name>
+    <ProjectReference Include="..\..\Translations\StarryFiles++ZH_TW\StarryFiles++ZH_TW.vcxproj">
+      <Name>StarryFiles++ZH_TW</Name>
       <Project>{c76e8ef4-b0bd-4b8a-87bf-09f4cd129d7b}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
-    <ProjectReference Include="..\Explorer++\Explorer++.vcxproj">
-      <Name>Explorer++</Name>
+    <ProjectReference Include="..\StarryFiles++\StarryFiles++.vcxproj">
+      <Name>StarryFiles++</Name>
       <Project>{7544a240-2ebf-4dc1-b55b-c8ae32672ed0}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>

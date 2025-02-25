@@ -1,7 +1,7 @@
 Application Toolbar
 -------------------
 
-For general information about **Explorer++**'s toolbars, ie. moving,
+For general information about **StarryFiles++**'s toolbars, ie. moving,
 resizing, customizing, etc., see the toolbars
 :doc:`Overview <index>`.
 
@@ -105,7 +105,7 @@ this dialog.
   application, they may be re-ordered.
 
   #. open Regedit and navigate to
-     ``HKEY_CURRENT_USER\Software\Explorer++\ApplicationToolbar``
+     ``HKEY_CURRENT_USER\Software\StarryFiles++\ApplicationToolbar``
   #. select the **ApplicationToolbar** key in the left panel, and
      **Export** its contents to a suitable location using the context
      menu
@@ -113,12 +113,12 @@ this dialog.
      must always be numbered 0, 1, 2, etc. The first button is 0, the
      second is 1, and so on. The actual order they appear in (inside the
      file) is not important.
-  #. **make sure Explorer++ is closed**
+  #. **make sure StarryFiles++ is closed**
   #. Double-click on the edited file to re-enter the data into the
      registry.
   #. That's it!
 
-  A similar technique applies to using **Explorer++** as a portable
+  A similar technique applies to using **StarryFiles++** as a portable
   application - edit the **config.xml** file to re-order the application
   button lines. A number is not used; the order of the lines (under
   <ApplicationToolbar>) determines the button order.

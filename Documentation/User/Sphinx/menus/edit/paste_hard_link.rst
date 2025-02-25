@@ -29,7 +29,7 @@ In the diagram, the original name points to (and accesses) an MFT entry
 which contains all file attributes (timestamps, read-only flag, etc.)
 and in turn points to the actual file data. When the hard link is
 created, it points to the **same** MFT entry, but could have a different
-name. The **Explorer++** function - *Paste Hard Link* - always creates
+name. The **StarryFiles++** function - *Paste Hard Link* - always creates
 the hard link with the original file name; obviously, then it cannot be
 created in the original folder or else a naming conflict will exist.
 Since the original name and hard link name use the same MFT entry, etc.,
@@ -53,7 +53,7 @@ Hard links may **only** be created for files on the same volume (ie. the
 same drive letter); attempting to paste a hard link to a file on a
 different volume results in a true copy of the file.
 
-**Explorer++** can view the hard link count by enabling *Hard links* as
+**StarryFiles++** can view the hard link count by enabling *Hard links* as
 a :doc:`column heading <../view/select_columns>` in the files pane.
 
 If you use hard links frequently, you might consider a useful freeware

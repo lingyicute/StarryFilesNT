@@ -1,7 +1,7 @@
 Toolbars
 ========
 
-**Explorer++** has 5 internal toolbars, any of which may be enabled
+**StarryFiles++** has 5 internal toolbars, any of which may be enabled
 (made visible) by checking one of the
 :doc:`menu <../menus/view/toolbars>` items. They are
 
@@ -34,7 +34,7 @@ Toolbars
     - yes
     - houses *shortcuts* to selected applications
 
-\* IDs are maintained internal to **Explorer++**, but may be useful when
+\* IDs are maintained internal to **StarryFiles++**, but may be useful when
 editing the Windows registry, or the "config.xml" (ie. :ref:`portable
 <menus/tools/options/general:Run in portable mode>` settings) file.
 
@@ -56,13 +56,13 @@ Dragging a toolbar **up** will place it on a row with another toolbar,
 while dragging a toolbar **down** (to the bottom-most row) places it on
 its own row.
 
-Toolbar positions are preserved by **Explorer++** for the next session.
+Toolbar positions are preserved by **StarryFiles++** for the next session.
 
 .. admonition:: Bug
 
   If the **Address Bar** has a second toolbar on the same line to the
   right of it, it may be partially obscured, even after restarting
-  **Explorer++**.
+  **StarryFiles++**.
 
 *Chevrons*
 ~~~~~~~~~~

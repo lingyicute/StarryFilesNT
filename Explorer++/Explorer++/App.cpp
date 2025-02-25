@@ -4,7 +4,7 @@
 
 #include "stdafx.h"
 #include "App.h"
-#include "Explorer++.h"
+#include "StarryFiles++.h"
 #include "AsyncIconFetcher.h"
 #include "BrowserWindow.h"
 #include "ColorRuleModel.h"

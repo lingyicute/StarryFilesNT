@@ -1,4 +1,4 @@
-Explorer++ Version History
+StarryFiles++ Version History
 --------------------------
 
 Version 1.5.0
@@ -23,13 +23,13 @@ New features:
 - It's now possible to select a set of folders that should be
   opened on startup. The list of folders can be set by selecting
   Tools > Options > On Startup > Open a set of folders, and then
-  adding folders to the associated list. When Explorer++ starts,
+  adding folders to the associated list. When StarryFiles++ starts,
   each of the folders that have been added will be opened.
 - The way in which command line paths are handled has been
   updated. The change means that relative paths like ".." should
   now be correctly handled and a wider range of paths should be
   accepted. The updated handling also applies to the address bar.
-- If Explorer++ is running when the session is ended (e.g. when
+- If StarryFiles++ is running when the session is ended (e.g. when
   logging off), the settings will now be saved first. Previously,
   the application would simply be terminated.
 - DPI changes are now better handled.
@@ -41,10 +41,10 @@ New features:
   folders, with folders accessed more frequently appearing first.
 - When navigating to a history entry, the file selection will now
   be restored.
-- When being used as the default file manager, Explorer++ now
+- When being used as the default file manager, StarryFiles++ now
   registers itself as a shell window. That means that in certain
   situations, like when opening an item in Explorer from another
-  application, Explorer++ should be opened instead. See #270.
+  application, StarryFiles++ should be opened instead. See #270.
 - When items are grouped, the sort mode can now be changed. This
   allows items to be grouped in one way but sorted in another.
   See #381.
@@ -80,7 +80,7 @@ New features:
 - When renaming an item, the display name is switched with the
   editing name. That ensures that the text being changed is
   correct when the item is a drive.
-- It's now possible to delete a folder that's open in Explorer++.
+- It's now possible to delete a folder that's open in StarryFiles++.
   In that situation, the associated tab will navigate to the
   parent folder.
 - When a folder is opened in a tab and the folder icon changes,
@@ -190,11 +190,11 @@ Bug fixes:
 Misc:
 - ARM64 builds are now available.
 - When changing the default file manager setting (via Tools >
-  Options > General > Default File Manager), Explorer++ will only
+  Options > General > Default File Manager), StarryFiles++ will only
   be set/removed as the default file manager for the current
-  user. Previously, Explorer++ was set as the default for all
+  user. Previously, StarryFiles++ was set as the default for all
   users.
-  If you set Explorer++ as the default in a previous version,
+  If you set StarryFiles++ as the default in a previous version,
   remove it as the default before you update, then change it back
   to the default after you've updated.
 - The HTML Help (chm) documentation has been removed. The help
@@ -210,7 +210,7 @@ Misc:
   a bookmark to a file will now open that file and a bookmark can
   now contain a relative path.
 - If a navigation fails, the current folder won't change.
-  Previously, Explorer++ would seemingly open the folder, though
+  Previously, StarryFiles++ would seemingly open the folder, though
   display no items.
 - The clipboard data generated when copying items is now
   retrieved from the shell, rather than being manually generated.
@@ -322,7 +322,7 @@ Bug fixes:
     once a column result/icon/thumbnail had been retrieved. This
     is no longer possible.
 - When right-clicking on the listview background in Windows 10,
-  Explorer++ would crash. To resolve this, the OneDrive shell
+  StarryFiles++ would crash. To resolve this, the OneDrive shell
   extension is now ignored when showing the menu. See #35.
 - Items in virtual folders (e.g. library folders) can now be
   renamed and deleted.
@@ -340,7 +340,7 @@ Bug fixes:
   Fixed. See #50.
 - Previously, when creating a file via the new menu in Windows
   10, the file would not be put into edit mode. Fixed. See #48.
-- The Explorer++ icon shown in the volume mixer was larger than
+- The StarryFiles++ icon shown in the volume mixer was larger than
   it should have been. Fixed. See #24.
 - Under certain conditions, switching to a tab using the taskbar
   thumbnails would result in the wrong tab being selected. Fixed.
@@ -391,7 +391,7 @@ Misc:
 - All menus are now drawn in the standard system style, rather
   than a custom style.
 - More detailed help information is now available when starting
-  Explorer++ from the command line with the --help flag. Each of
+  StarryFiles++ from the command line with the --help flag. Each of
   the available options is listed and briefly described. The
   names of some of the options have also been updated.
 - Starting a command prompt via the file menu opens a command
@@ -452,7 +452,7 @@ Misc:
 - Logging is now available. It can be enabled using the following
   command:
   explorer++.exe -enable_logging
-  Information will then be saved to Explorer++.log, which will be
+  Information will then be saved to StarryFiles++.log, which will be
   created within the same directory as the executable.
 
 Version 1.3.4 (12/11/2011)
@@ -498,7 +498,7 @@ Bug fixes:
   was been overwritten (because the text selection was modified).
   Fixed.
 - Links to zip files will now be opened in an external program,
-  if 'Open zip files in Explorer++' is unchecked.
+  if 'Open zip files in StarryFiles++' is unchecked.
 
 Version 1.3.1 (05/09/2011)
 --------------------------
@@ -511,8 +511,8 @@ Bug fixes:
 
 Misc:
 - The help file (if present) can now be launched from the
-  Help|Help menu. It must be named "Explorer++ Help.chm" and be
-  in the same folder as the Explorer++ executable.
+  Help|Help menu. It must be named "StarryFiles++ Help.chm" and be
+  in the same folder as the StarryFiles++ executable.
 - Updated 'Always hide the link (.lnk) extension' option to read
   'Hide the link (.lnk) extension'.
 
@@ -593,7 +593,7 @@ Misc:
 - The current directory is now set when the directory or tab
   selection changes.
 - Updated 'Handle zip files' option to read 'Open zip files in
-  Explorer++'.
+  StarryFiles++'.
 - The error message shown on a translation DLL version mismatch
   will now be shown in the target language (when possible).
 - The (main) right click context menu is no longer owner drawn.
@@ -665,7 +665,7 @@ Misc:
 - All settings are now saved to the registry (or XML file) when
   'Ok' or 'Apply' is clicked in the Options dialog.
 - The treeview no longer syncs with network/UNC paths.
-- Copied data now remains on the clipboard after Explorer++
+- Copied data now remains on the clipboard after StarryFiles++
   exits.
 - Search dialog now turns patterns of the form '???' into '*???*'
   before searching.
@@ -680,7 +680,7 @@ Misc:
 Version 1.1 (05/04/2010)
 ------------------------
 New features:
- - Explorer++ can now replace Windows Explorer for all folders
+ - StarryFiles++ can now replace Windows Explorer for all folders
    (Vista and later only).
  - New drag and drop type supported (this will now allow files to
    be dropped from Outlook and url's from a web browser's address
@@ -731,7 +731,7 @@ Bug fixes:
  - Fixed drives toolbar issue.
 
 Misc:
- - Explorer++ will now only load translation DLL's that match the
+ - StarryFiles++ will now only load translation DLL's that match the
    version of the main executable.
  - Updated About dialog and image.
  - Added menu image for Edit->Paste Shortcut.
@@ -748,7 +748,7 @@ New features:
  - Tiles view now shows basic file information.
  - New tabs can now be created by double clicking in the blank
    space to the right of the last tab.
- - Explorer++ can now be restricted to only running one instance
+ - StarryFiles++ can now be restricted to only running one instance
    by deselecting 'Allow multiple instances' in the options
    dialog.
  - 'Large Icons' and 'Extra Large Icons' view modes added (Vista
@@ -839,12 +839,12 @@ Bug fixes:
  - Improved mass rename dialog.
 
 Misc:
- - Explorer++ will now save a minidump file in the event of a
+ - StarryFiles++ will now save a minidump file in the event of a
    crash. This file is saved to %TEMP%.
- - Explorer++ can now be set as the default file manager by using
+ - StarryFiles++ can now be set as the default file manager by using
    the command:
    explorer++.exe -set_as_default
- - Explorer++ can now be removed as the default file manager by
+ - StarryFiles++ can now be removed as the default file manager by
    using the command:
    explorer++.exe -remove_as_default
  - Most dialogs are now centered initially, and will save various
@@ -874,7 +874,7 @@ Misc:
 Version 0.9.5.4 (31/05/2009)
 ----------------------------
 New features:
- - Explorer++ can now be used in place of Explorer for filesystem
+ - StarryFiles++ can now be used in place of Explorer for filesystem
    folders by selecting 'Replace Explorer for filesystem folders'
    in the 'Options' dialog (requires Administrator privileges).
  - The positions of the main toolbars are now saved and restored
@@ -886,7 +886,7 @@ New features:
  - Icons are automatically updated when a file association
    changes.
  - Any file that can be previewed in Explorer can now be
-   previewed in Explorer++.
+   previewed in StarryFiles++.
  - Pasted files are now selected upon creation (provided no other
    files are selected).
  - The apps key can now be used to show the main context menu.
@@ -915,7 +915,7 @@ Bug fixes:
  - If file extensions were hidden, and a filename started with a
    dot, no text would be shown for that item.
  - If file extensions were hidden in Explorer, they would be
-   hidden in Explorer++ as well, regardless of settings. Fixed.
+   hidden in StarryFiles++ as well, regardless of settings. Fixed.
  - Drives are now added/removed correctly from the listview,
    treeview and drives toolbar.
  - If a cd/dvd was inserted/removed, the entire drive would be
@@ -960,7 +960,7 @@ New features:
    access to any program.
  - Drag and drop modifier keys (Ctrl+Shift, Ctrl, Shift, Alt) now
    work.
- - Explorer++ is now compatible with paths containing embedded
+ - StarryFiles++ is now compatible with paths containing embedded
    environment variables, such as %systemroot%.
  - The tab control can now be extended across the entire window.
  - Full row selection in details mode can now be turned on or
@@ -968,7 +968,7 @@ New features:
 
 Bug fixes:
  - Removable drives can now be ejected and removed safely while
-   Explorer++ is running.
+   StarryFiles++ is running.
  - Drives are now inserted and removed from the drives toolbar
    dynamically, as they are connected and disconnected from the
    system.
@@ -982,7 +982,7 @@ Bug fixes:
    a period, everything before the period would be selected (as
    for files).
  - Corrected folder system infotip bug.
- - Previously, if files were dragged into Explorer++, and the
+ - Previously, if files were dragged into StarryFiles++, and the
    auto arrange listview style was on, the files would not be
    repositioned.
  - Fixed drag and drop selection bug.
@@ -1003,7 +1003,7 @@ Bug fixes:
 Misc:
  - The languages shown in the 'Options' dialog are now generated
    dynamically, based on any translation DLL's within the same
-   directory as Explorer++.
+   directory as StarryFiles++.
  - The normal rename/replace dialog is now shown when a collision
    is encountered during a copy/move operation.
  - The main windows can now be cycled through in reverse using
@@ -1020,7 +1020,7 @@ New features:
    the tabs' current directory).
  - The default directory for new tabs can now be set from within
    the 'Default Settings' pane of the 'Options' dialog.
- - Explorer++ is now compatible with application command buttons
+ - StarryFiles++ is now compatible with application command buttons
    and keys, such as the back and forward buttons found on some
    mice and keyboards.
  - Infotips can now be turned off, set to the system ones (i.e.
@@ -1046,7 +1046,7 @@ Bug fixes:
  - The address bar would not scroll horizontally. Fixed.
  - Fixed tab highlight bug.
  - Because of a timing problem, it was possible that when
-   Explorer++ was opened, the first icon(s) shown may not have
+   StarryFiles++ was opened, the first icon(s) shown may not have
    been correct. Fixed.
 
 Misc:
@@ -1097,14 +1097,14 @@ Misc:
 Version 0.9.0.0 (30/01/2009)
 ----------------------------
 New features:
- - Explorer++ is now built as a Unicode executable.
- - Explorer++ can now save its settings to an XML preference file
-   (config.xml). Explorer++ will attempt to load its settings in
+ - StarryFiles++ is now built as a Unicode executable.
+ - StarryFiles++ can now save its settings to an XML preference file
+   (config.xml). StarryFiles++ will attempt to load its settings in
    the following order:
     1. config.xml (this file must be in the
-      same directory as Explorer++)
+      same directory as StarryFiles++)
     2. the registry
-   If neither of these options are available, Explorer++ will
+   If neither of these options are available, StarryFiles++ will
    switch to using its internal defaults.
    To save to the config file initially, check the 'Save
    preferences to XML file' in the 'Options' dialog.
@@ -1124,7 +1124,7 @@ New features:
  - 'Lock Tab and Address' now works. This option, when selected,
    will block any directory changes from occurring within the
    current tab.
- - Folder shortcuts are now opened within Explorer++.
+ - Folder shortcuts are now opened within StarryFiles++.
  - When in thumbnails view, image thumbnails are now gathered
    independently of the main thread.
  - Added 'Open Parent in New Tab' menu item to tab context menu.
@@ -1163,7 +1163,7 @@ Bug fixes:
    arrange would be set anyway. Fixed.
  - Fixed selection bug.
  - When items (such as executable files) are opened from within
-   Explorer++, their start directory is now set to the directory
+   StarryFiles++, their start directory is now set to the directory
    they reside within.
  - Fixed several small memory leaks that occurred when closing a
    tab.
@@ -1186,7 +1186,7 @@ Misc:
    explorer++.exe /?
  - Slight changes have been made to the structure of the registry
    keys used to save program settings. These changes mean that
-   tabs saved in previous versions of Explorer++ will not load in
+   tabs saved in previous versions of StarryFiles++ will not load in
    this version.
 
 Version Alpha 2
@@ -1194,7 +1194,7 @@ Version Alpha 2
 26/09/2008:
 New features:
  - The language to use can now be selected in the 'Options'
-   dialog, in the 'Language' tab. The language Explorer++ uses is
+   dialog, in the 'Language' tab. The language StarryFiles++ uses is
    based on the following (in order of importance):
    1. Any language specified on the command line.
    2. Any language saved from a previous session (using the above
@@ -1486,8 +1486,8 @@ Bug fixes:
  - Fixed slight problem involved with swapping tabs.
 
 Misc:
- - Changed main window title from 'Explorer++ - Current
-   directory' to 'Current directory - Explorer++'.
+ - Changed main window title from 'StarryFiles++ - Current
+   directory' to 'Current directory - StarryFiles++'.
  - Display window can now be vertically resized.
 
 06/06/2008:

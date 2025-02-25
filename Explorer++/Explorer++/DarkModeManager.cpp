@@ -96,7 +96,7 @@ void DarkModeManager::CreateEventWindow()
 		return;
 	}
 
-	static constexpr wchar_t className[] = L"Explorer++EventWindowClass";
+	static constexpr wchar_t className[] = L"StarryFiles++EventWindowClass";
 
 	WNDCLASS windowClass = {};
 	windowClass.lpfnWndProc = DefWindowProc;

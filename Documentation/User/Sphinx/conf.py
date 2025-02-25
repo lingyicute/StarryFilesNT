@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Explorer++'
-copyright = '2023, Explorer++'
+project = 'StarryFiles++'
+copyright = '2023, StarryFiles++'
 author = 'Allen Titley'
 version = '1.4.0'
 release = '1.4.0'

@@ -3,7 +3,7 @@ Forward
 
 :kbd:`Alt` + :kbd:`→`
 
-**Explorer++** maintains a list of previous locations, or history, for
+**StarryFiles++** maintains a list of previous locations, or history, for
 each tab. The **Forward** (and :doc:`Back <back>`) items on the **Go**
 menu can walk through this history, much like hyperlinks in HTML
 browsers (eg. Mozilla Firefox).

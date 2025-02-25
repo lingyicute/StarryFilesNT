@@ -7,7 +7,7 @@
 #include "App.h"
 #include "Config.h"
 #include "CoreInterface.h"
-#include "Explorer++_internal.h"
+#include "StarryFiles++_internal.h"
 #include "LanguageHelper.h"
 #include "MainResource.h"
 #include "ResourceHelper.h"
@@ -143,7 +143,7 @@ void GeneralOptionsPage::AddLanguages()
 	GetProcessImageName(GetCurrentProcessId(), szImageDirectory, std::size(szImageDirectory));
 	PathRemoveFileSpec(szImageDirectory);
 	StringCchCopy(szNamePattern, std::size(szNamePattern), szImageDirectory);
-	PathAppend(szNamePattern, L"Explorer++*.dll");
+	PathAppend(szNamePattern, L"StarryFiles++*.dll");
 
 	hFindFile = FindFirstFile(szNamePattern, &wfd);
 

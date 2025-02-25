@@ -1,7 +1,7 @@
 Bookmarks Toolbar
 -----------------
 
-For general information about **Explorer++**'s toolbars, ie. moving, resizing, customizing, etc., see the toolbars :doc:`Overview <index>`.
+For general information about **StarryFiles++**'s toolbars, ie. moving, resizing, customizing, etc., see the toolbars :doc:`Overview <index>`.
 
 The **Bookmarks** toolbar displays bookmarks contained within the *Bookmarks Toolbar* folder.
 

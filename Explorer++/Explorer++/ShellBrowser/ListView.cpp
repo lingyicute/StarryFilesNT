@@ -1109,9 +1109,9 @@ BOOL ShellBrowserImpl::OnListViewBeginLabelEdit(const NMLVDISPINFO *dispInfo)
 	// Disk". Since the editing name is affected by the file name extensions setting in Explorer, it
 	// won't be used if:
 	//
-	// - Extensions are hidden in Explorer, but shown in Explorer++ (since the editing name would
+	// - Extensions are hidden in Explorer, but shown in StarryFiles++ (since the editing name would
 	//   contain no extension)
-	// - Extensions are shown in Explorer, but hidden in Explorer++ (since the editing name would
+	// - Extensions are shown in Explorer, but hidden in StarryFiles++ (since the editing name would
 	//   contain an extension). Note that this case is handled when editing is finished - if
 	//   extensions are hidden, the extension will be manually re-added when renaming an item.
 	if (!WI_IsFlagSet(item.wfd.dwFileAttributes, FILE_ATTRIBUTE_DIRECTORY))
@@ -1220,9 +1220,9 @@ BOOL ShellBrowserImpl::OnListViewEndLabelEdit(const NMLVDISPINFO *dispInfo)
 	// extensions are displayed in Explorer. If extensions are displayed and the SHGDN_INFOLDER name
 	// is set, then the name should contain an extension. On the other hand, if extensions aren't
 	// displayed and the SHGDN_INFOLDER name is set, then the name shouldn't contain an extension.
-	// Given that extensions can be independently hidden and shown in Explorer++, this behavior is
+	// Given that extensions can be independently hidden and shown in StarryFiles++, this behavior is
 	// undesirable and incompatible.
-	// For example, if extensions are hidden in Explorer, but shown in Explorer++, then it wouldn't
+	// For example, if extensions are hidden in Explorer, but shown in StarryFiles++, then it wouldn't
 	// be possible to change a file's extension. When setting the SHGDN_INFOLDER name, the original
 	// extension would always be re-added by the shell.
 	// Therefore, if a file is being edited, the parsing name (which will always contain an

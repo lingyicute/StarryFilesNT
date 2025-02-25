@@ -1,1 +1,1 @@
-#include "../../Explorer++/Explorer++/resource.h"
+#include "../../StarryFiles++/StarryFiles++/resource.h"

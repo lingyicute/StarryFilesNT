@@ -9,17 +9,17 @@ if ($env:configuration -ne "Release") {
 Set-Location $env:APPVEYOR_BUILD_FOLDER
 
 $archiveName = "explorerpp_$env:arch.zip"
-7z a $archiveName $env:APPVEYOR_BUILD_FOLDER\Explorer++\Explorer++\$env:platform\$env:configuration\Explorer++.exe
+7z a $archiveName $env:APPVEYOR_BUILD_FOLDER\StarryFiles++\StarryFiles++\$env:platform\$env:configuration\StarryFiles++.exe
 7z a $archiveName $env:APPVEYOR_BUILD_FOLDER\Documentation\User\History.txt
 7z a $archiveName $env:APPVEYOR_BUILD_FOLDER\Documentation\User\License.txt
 7z a $archiveName $env:APPVEYOR_BUILD_FOLDER\Documentation\User\Readme.txt
 
-7z a explorerpp_${env:arch}_symbols.zip $env:APPVEYOR_BUILD_FOLDER\Explorer++\Explorer++\$env:platform\$env:configuration\Explorer++.pdb
+7z a explorerpp_${env:arch}_symbols.zip $env:APPVEYOR_BUILD_FOLDER\StarryFiles++\StarryFiles++\$env:platform\$env:configuration\StarryFiles++.pdb
 
 if ($env:platform -ne "ARM64") {
-    Copy-Item $env:APPVEYOR_BUILD_FOLDER\Explorer++\Installer\bin\$env:arch\$env:configuration\explorerpp_${env:arch}_setup.msi .
+    Copy-Item $env:APPVEYOR_BUILD_FOLDER\StarryFiles++\Installer\bin\$env:arch\$env:configuration\explorerpp_${env:arch}_setup.msi .
 }
 
-7z a explorerpp_translations.zip $env:APPVEYOR_BUILD_FOLDER\Explorer++\Win32\$env:configuration\Explorer++*.dll
+7z a explorerpp_translations.zip $env:APPVEYOR_BUILD_FOLDER\StarryFiles++\Win32\$env:configuration\StarryFiles++*.dll
 
 $env:APPVEYOR_BUILD_VERSION | Out-File -NoNewline latest_version.txt

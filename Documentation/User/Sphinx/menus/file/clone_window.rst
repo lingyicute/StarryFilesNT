@@ -1,7 +1,7 @@
 Clone Window
 ------------
 
-This operation opens a new **Explorer++** window (instance), complete
+This operation opens a new **StarryFiles++** window (instance), complete
 with all settings and panes copied from the original window. Clone
 Window only clones the active tab; other (non-active) tabs are ignored.
 

@@ -17,7 +17,7 @@ Viewing tabs
 ~~~~~~~~~~~~
 
 If more tabs are open than will fit on the tab bar (depending on current
-sizing of **Explorer++**'s window and other panes), a set of scrolling
+sizing of **StarryFiles++**'s window and other panes), a set of scrolling
 buttons are available, allowing you to scroll left or right to
 view/select other tabs which are currently not visible.
 

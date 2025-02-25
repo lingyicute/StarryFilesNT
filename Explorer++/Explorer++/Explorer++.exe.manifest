@@ -3,10 +3,10 @@
   <assemblyIdentity
      version="1.0.0.0"
      processorArchitecture="*"
-     name="Explorer++"
+     name="StarryFiles++"
      type="win32"
   />
-  <description>Explorer++</description>
+  <description>StarryFiles++</description>
   <dependency>
      <dependentAssembly>
        <assemblyIdentity

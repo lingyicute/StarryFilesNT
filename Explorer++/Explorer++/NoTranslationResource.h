@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by Explorer++_NoTranslation.rc
+// Used by StarryFiles++_NoTranslation.rc
 //
 #define IDI_MAIN                        105
 #define IDI_DISPLAYWINDOW               106

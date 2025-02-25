@@ -67,7 +67,7 @@ namespace ctpl {
 			std::mutex mutex;
 		};
 
-		// Explorer++ custom notification changes.
+		// StarryFiles++ custom notification changes.
 		class Notifier {
 		public:
 			Notifier(std::function<void()> onConstruction, std::function<void()> onDestruction) : onDestruction(onDestruction) {
@@ -94,7 +94,7 @@ namespace ctpl {
 		thread_pool() { this->init(); }
 		thread_pool(int nThreads) { this->init(); this->resize(nThreads); }
 
-		// Explorer++ custom notification changes.
+		// StarryFiles++ custom notification changes.
 		thread_pool(int nThreads, std::function<void()> onConstruction, std::function<void()> onDestruction) {
 			this->init();
 			this->resize(nThreads);
@@ -236,7 +236,7 @@ namespace ctpl {
 		void set_thread(int i) {
 			std::shared_ptr<std::atomic<bool>> flag(this->flags[i]); // a copy of the shared ptr to the flag
 			auto f = [this, i, flag/* a copy of the shared ptr to the flag */]() {
-				// Explorer++ custom notification changes.
+				// StarryFiles++ custom notification changes.
 				detail::Notifier notifier(this->onConstruction, this->onDestruction);
 
 				std::atomic<bool> & _flag = *flag;
@@ -272,7 +272,7 @@ namespace ctpl {
 		std::atomic<bool> isStop;
 		std::atomic<int> nWaiting;  // how many threads are waiting
 
-		// Explorer++ custom notification changes.
+		// StarryFiles++ custom notification changes.
 		std::function<void()> onConstruction;
 		std::function<void()> onDestruction;
 

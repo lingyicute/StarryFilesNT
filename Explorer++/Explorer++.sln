@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++", "Explorer++\Explorer++.vcxproj", "{7544A240-2EBF-4DC1-B55B-C8AE32672ED0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++", "StarryFiles++\StarryFiles++.vcxproj", "{7544A240-2EBF-4DC1-B55B-C8AE32672ED0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Helper", "Helper\Helper.vcxproj", "{FAADBE00-9376-45F8-AEAC-1BA3A8E58A1D}"
 EndProject
@@ -13,70 +13,70 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestHelper", "TestHelper\Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Translations", "Translations", "{F29F24CD-0668-462F-80AE-649CB12F1860}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++CA", "..\Translations\Explorer++CA\Explorer++CA.vcxproj", "{B04F5FB8-E387-46CA-95E3-FB5EB9BA13AA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++CA", "..\Translations\StarryFiles++CA\StarryFiles++CA.vcxproj", "{B04F5FB8-E387-46CA-95E3-FB5EB9BA13AA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++CS", "..\Translations\Explorer++CS\Explorer++CS.vcxproj", "{41A8E3D6-1DA0-4659-92E4-4DA770A3301E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++CS", "..\Translations\StarryFiles++CS\StarryFiles++CS.vcxproj", "{41A8E3D6-1DA0-4659-92E4-4DA770A3301E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++DA", "..\Translations\Explorer++DA\Explorer++DA.vcxproj", "{F7E8D901-B316-447D-95F7-7FC45A34E2B0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++DA", "..\Translations\StarryFiles++DA\StarryFiles++DA.vcxproj", "{F7E8D901-B316-447D-95F7-7FC45A34E2B0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++DE", "..\Translations\Explorer++DE\Explorer++DE.vcxproj", "{866A029F-39B3-4FA4-9FBD-45C2F24CDB11}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++DE", "..\Translations\StarryFiles++DE\StarryFiles++DE.vcxproj", "{866A029F-39B3-4FA4-9FBD-45C2F24CDB11}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++ES", "..\Translations\Explorer++ES\Explorer++ES.vcxproj", "{0556BC85-8759-4DF3-B000-8861C1DF5FFB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++ES", "..\Translations\StarryFiles++ES\StarryFiles++ES.vcxproj", "{0556BC85-8759-4DF3-B000-8861C1DF5FFB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++FA", "..\Translations\Explorer++FA\Explorer++FA.vcxproj", "{3009733D-08D2-4050-B7E6-F1D691CD00ED}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++FA", "..\Translations\StarryFiles++FA\StarryFiles++FA.vcxproj", "{3009733D-08D2-4050-B7E6-F1D691CD00ED}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++FR", "..\Translations\Explorer++FR\Explorer++FR.vcxproj", "{1610CD3C-0F28-46D8-8BB3-8DF637614AA0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++FR", "..\Translations\StarryFiles++FR\StarryFiles++FR.vcxproj", "{1610CD3C-0F28-46D8-8BB3-8DF637614AA0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++HU", "..\Translations\Explorer++HU\Explorer++HU.vcxproj", "{F71CBEDC-07F5-4C44-ACAF-2E4C1FF83F44}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++HU", "..\Translations\StarryFiles++HU\StarryFiles++HU.vcxproj", "{F71CBEDC-07F5-4C44-ACAF-2E4C1FF83F44}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++IT", "..\Translations\Explorer++IT\Explorer++IT.vcxproj", "{A6ED4294-D661-433D-AA3B-6E08377E8660}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++IT", "..\Translations\StarryFiles++IT\StarryFiles++IT.vcxproj", "{A6ED4294-D661-433D-AA3B-6E08377E8660}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++JA", "..\Translations\Explorer++JA\Explorer++JA.vcxproj", "{56F9DE1E-4A09-4295-B79D-E77F8EF7A72F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++JA", "..\Translations\StarryFiles++JA\StarryFiles++JA.vcxproj", "{56F9DE1E-4A09-4295-B79D-E77F8EF7A72F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++KO", "..\Translations\Explorer++KO\Explorer++KO.vcxproj", "{EA394F59-EA04-49BE-85FE-8801452BFCE3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++KO", "..\Translations\StarryFiles++KO\StarryFiles++KO.vcxproj", "{EA394F59-EA04-49BE-85FE-8801452BFCE3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++NL", "..\Translations\Explorer++NL\Explorer++NL.vcxproj", "{36663C1C-AFC5-4AE6-A3E0-DF35FD0A529E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++NL", "..\Translations\StarryFiles++NL\StarryFiles++NL.vcxproj", "{36663C1C-AFC5-4AE6-A3E0-DF35FD0A529E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++NO", "..\Translations\Explorer++NO\Explorer++NO.vcxproj", "{9EEBE31B-C6EC-4602-AF18-70A1B2655ED3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++NO", "..\Translations\StarryFiles++NO\StarryFiles++NO.vcxproj", "{9EEBE31B-C6EC-4602-AF18-70A1B2655ED3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++PL", "..\Translations\Explorer++PL\Explorer++PL.vcxproj", "{8D9A2712-7719-4A37-95F2-032CBC4433FA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++PL", "..\Translations\StarryFiles++PL\StarryFiles++PL.vcxproj", "{8D9A2712-7719-4A37-95F2-032CBC4433FA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++PT", "..\Translations\Explorer++PT\Explorer++PT.vcxproj", "{B17D5217-D79B-4A19-B439-A96743862558}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++PT", "..\Translations\StarryFiles++PT\StarryFiles++PT.vcxproj", "{B17D5217-D79B-4A19-B439-A96743862558}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++RO", "..\Translations\Explorer++RO\Explorer++RO.vcxproj", "{DB50FB8F-1547-4D64-A892-D29500E7CBB3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++RO", "..\Translations\StarryFiles++RO\StarryFiles++RO.vcxproj", "{DB50FB8F-1547-4D64-A892-D29500E7CBB3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++RU", "..\Translations\Explorer++RU\Explorer++RU.vcxproj", "{FBE246F1-7C03-4238-B771-801523BFCBDA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++RU", "..\Translations\StarryFiles++RU\StarryFiles++RU.vcxproj", "{FBE246F1-7C03-4238-B771-801523BFCBDA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++SI", "..\Translations\Explorer++SI\Explorer++SI.vcxproj", "{9C2DE9F7-9181-4FA4-8DC0-05779A631C32}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++SI", "..\Translations\StarryFiles++SI\StarryFiles++SI.vcxproj", "{9C2DE9F7-9181-4FA4-8DC0-05779A631C32}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++SV", "..\Translations\Explorer++SV\Explorer++SV.vcxproj", "{D9350B7E-1EB4-41FC-81DB-FEB223A911F4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++SV", "..\Translations\StarryFiles++SV\StarryFiles++SV.vcxproj", "{D9350B7E-1EB4-41FC-81DB-FEB223A911F4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++TR", "..\Translations\Explorer++TR\Explorer++TR.vcxproj", "{E885F322-0EE6-4BD3-A35D-B262EFA94639}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++TR", "..\Translations\StarryFiles++TR\StarryFiles++TR.vcxproj", "{E885F322-0EE6-4BD3-A35D-B262EFA94639}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++UK", "..\Translations\Explorer++UK\Explorer++UK.vcxproj", "{B31026C5-6BAF-4C69-BB4C-9C811B1BEEC7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++UK", "..\Translations\StarryFiles++UK\StarryFiles++UK.vcxproj", "{B31026C5-6BAF-4C69-BB4C-9C811B1BEEC7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++ZH_CN", "..\Translations\Explorer++ZH_CN\Explorer++ZH_CN.vcxproj", "{C12096BF-F80B-4ABE-892C-247AF2A5458A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++ZH_CN", "..\Translations\StarryFiles++ZH_CN\StarryFiles++ZH_CN.vcxproj", "{C12096BF-F80B-4ABE-892C-247AF2A5458A}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Installer", "Installer\Installer.wixproj", "{3CD109B0-FB57-446C-AE40-CF4FD45793EF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7544A240-2EBF-4DC1-B55B-C8AE32672ED0} = {7544A240-2EBF-4DC1-B55B-C8AE32672ED0}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestExplorer++", "TestExplorer++\TestExplorer++.vcxproj", "{1964E0F5-1A0F-4CB1-BAB5-B793F130F0FB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestStarryFiles++", "TestStarryFiles++\TestStarryFiles++.vcxproj", "{1964E0F5-1A0F-4CB1-BAB5-B793F130F0FB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++HE", "..\Translations\Explorer++HE\Explorer++HE.vcxproj", "{AD497D19-0B88-4E37-95B9-991C6514B156}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++HE", "..\Translations\StarryFiles++HE\StarryFiles++HE.vcxproj", "{AD497D19-0B88-4E37-95B9-991C6514B156}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++FI", "..\Translations\Explorer++FI\Explorer++FI.vcxproj", "{41047779-715C-4018-B21C-2AEAD581E54D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++FI", "..\Translations\StarryFiles++FI\StarryFiles++FI.vcxproj", "{41047779-715C-4018-B21C-2AEAD581E54D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++VI", "..\Translations\Explorer++VI\Explorer++VI.vcxproj", "{D480B32C-BDF2-4364-92C9-2A0E446AE9CD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++VI", "..\Translations\StarryFiles++VI\StarryFiles++VI.vcxproj", "{D480B32C-BDF2-4364-92C9-2A0E446AE9CD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++ZH_TW", "..\Translations\Explorer++ZH_TW\Explorer++ZH_TW.vcxproj", "{C76E8EF4-B0BD-4B8A-87BF-09F4CD129D7B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++ZH_TW", "..\Translations\StarryFiles++ZH_TW\StarryFiles++ZH_TW.vcxproj", "{C76E8EF4-B0BD-4B8A-87BF-09F4CD129D7B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++PT_BR", "..\Translations\Explorer++PT_BR\Explorer++PT_BR.vcxproj", "{EA5B918A-CE1E-4E03-81A7-C9E7A590627C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++PT_BR", "..\Translations\StarryFiles++PT_BR\StarryFiles++PT_BR.vcxproj", "{EA5B918A-CE1E-4E03-81A7-C9E7A590627C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++EL", "..\Translations\Explorer++EL\Explorer++EL.vcxproj", "{28A90A7D-8A10-4772-9882-1ECA5ADFA72E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++EL", "..\Translations\StarryFiles++EL\StarryFiles++EL.vcxproj", "{28A90A7D-8A10-4772-9882-1ECA5ADFA72E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer++AR_AE", "..\Translations\Explorer++AR_AE\Explorer++AR_AE.vcxproj", "{5A44DA90-E69B-40DF-8CF4-1FBE8EAF6E78}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarryFiles++AR_AE", "..\Translations\StarryFiles++AR_AE\StarryFiles++AR_AE.vcxproj", "{5A44DA90-E69B-40DF-8CF4-1FBE8EAF6E78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

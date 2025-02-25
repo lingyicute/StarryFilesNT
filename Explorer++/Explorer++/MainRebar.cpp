@@ -3,7 +3,7 @@
 // See LICENSE in the top level directory
 
 #include "stdafx.h"
-#include "Explorer++.h"
+#include "StarryFiles++.h"
 #include "AddressBar.h"
 #include "App.h"
 #include "ApplicationToolbar.h"
@@ -16,7 +16,7 @@
 #include "DriveWatcherImpl.h"
 #include "DrivesToolbar.h"
 #include "DrivesToolbarView.h"
-#include "Explorer++_internal.h"
+#include "StarryFiles++_internal.h"
 #include "MainRebarStorage.h"
 #include "MainRebarView.h"
 #include "MainResource.h"

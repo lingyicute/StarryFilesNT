@@ -3,7 +3,7 @@ Back
 
 :kbd:`Alt` + :kbd:`←`
 
-**Explorer++** maintains a list of previous locations, or history, for
+**StarryFiles++** maintains a list of previous locations, or history, for
 each tab. The **Back** (and :doc:`Forward <forward>`) items on the
 **Go** menu can walk through this history, much like hyperlinks in HTML
 browsers (eg. Mozilla Firefox).
@@ -12,7 +12,7 @@ browsers (eg. Mozilla Firefox).
 to the current location in the history. If this item is disabled, the
 Files pane (active tab) is displaying the oldest location in the
 history, the location when the tab was first created, or when
-**Explorer++** was first opened.
+**StarryFiles++** was first opened.
 
 History
 ~~~~~~~
@@ -45,4 +45,4 @@ be duplicated, if they were visited by one of the above methods more
 than once. As **Back** or **Forward** is used (either from the **Go**
 menu or the :doc:`Main toolbar <../../toolbars/main>`), items in history
 are *re-distributed* between the *Back history* and *Forward history*;
-Explorer++ maintains histories in both directions.
+StarryFiles++ maintains histories in both directions.

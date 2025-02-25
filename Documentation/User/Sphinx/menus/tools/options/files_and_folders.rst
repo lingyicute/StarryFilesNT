@@ -10,7 +10,7 @@ Insert new items in their sorted positions
 | System Default: | Yes |
 +-----------------+-----+
 
-**Explorer++** sorts items in the current Files pane (ie. tab) when a
+**StarryFiles++** sorts items in the current Files pane (ie. tab) when a
 :doc:`Refresh <../../view/refresh>` is done, or when refreshing is
 done automatically by changing the column sorting, etc. When new items
 are added to the tab by drag-and-drop, or by using the **New** item of
@@ -43,7 +43,7 @@ Unix/Linux-type operating systems, uses a different approach
 - hover over an item to select it (give it *focus*)
 - click once to activate it or execute it
 
-Enabling this option causes **Explorer++** to behave like an X Window
+Enabling this option causes **StarryFiles++** to behave like an X Window
 application - in the Files pane only. Some users may find this more
 comfortable (less mouse clicks) or faster.
 
@@ -56,7 +56,7 @@ Hover time is the time taken for the item to be selected when using single click
 
   This behavior is available in Windows as a *system-wide* setting. The
   **General** page of the *Folder Options* Control Panel applet provides
-  this functionality. **Explorer++**, as it is not a native Windows
+  this functionality. **StarryFiles++**, as it is not a native Windows
   component, does not obey this setting.
 
 Show folder sizes
@@ -66,7 +66,7 @@ Show folder sizes
 | System Default: | No |
 +-----------------+----+
 
-Checking this box forces **Explorer++** to calculate and display folder
+Checking this box forces **StarryFiles++** to calculate and display folder
 sizes in the Files pane. The feature might be useful if, for example,
 you were *house-cleaning* your drive and wanted to merge smaller folders
 with larger ones; folder sizes would be listed is the **Size** column,
@@ -75,7 +75,7 @@ if :doc:`enabled <../../view/select_columns>`.
 .. caution::
 
   Although it sounds obvious, when this option is enabled,
-  **Explorer++** calculates folder sizes - **always**. If you are
+  **StarryFiles++** calculates folder sizes - **always**. If you are
   *walking* through your folder tree to get to a particular location,
   large folders in the files pane will be calculated, even if they are
   only momentarily displayed. Windows is a multi-tasking, multi-threaded

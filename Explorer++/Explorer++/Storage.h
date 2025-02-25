@@ -16,7 +16,7 @@ enum class OperationType
 };
 
 // Registry keys used to store application settings.
-inline const wchar_t REGISTRY_APPLICATION_KEY_PATH[] = L"Software\\Explorer++";
+inline const wchar_t REGISTRY_APPLICATION_KEY_PATH[] = L"Software\\StarryFiles++";
 inline const wchar_t REGISTRY_SETTINGS_KEY_NAME[] = L"Settings";
 
 // The name of the config file that settings are stored in.

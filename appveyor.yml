@@ -72,7 +72,7 @@ install:
 
     git submodule update
 
-    .\Explorer++\ThirdParty\vcpkg\bootstrap-vcpkg.bat
+    .\StarryFiles++\ThirdParty\vcpkg\bootstrap-vcpkg.bat
 
     nuget install secure-file -ExcludeVersion
 
@@ -89,7 +89,7 @@ before_build:
     }
 
 build:
-  project: Explorer++\Explorer++.sln
+  project: StarryFiles++\StarryFiles++.sln
   verbosity: minimal
 
 after_build:
@@ -119,10 +119,10 @@ before_deploy:
     $releaseBuildVersion = $versionComponents -join '.'
 
     if ($env:APPVEYOR_REPO_TAG_NAME -match '-beta(-\d)?$') {
-      $env:RELEASE_TITLE = "Explorer++ $releaseBuildVersion beta"
+      $env:RELEASE_TITLE = "StarryFiles++ $releaseBuildVersion beta"
       $env:PRERELEASE = $true
     } else {
-      $env:RELEASE_TITLE = "Explorer++ $releaseBuildVersion"
+      $env:RELEASE_TITLE = "StarryFiles++ $releaseBuildVersion"
       $env:PRERELEASE = $false
     }
 

@@ -52,7 +52,7 @@ the numeric variable portion of the new files always starts with 1.
   Be careful with leading zeroes in the output filename; they are
   treated as constants. For example, using NB200_D.00/N as the pattern
   yields files NB200_D.001, NB200_D.002 but would also yield
-  NB200_D.0010 instead of the *anticipated* NB200_D.010! **Explorer++**'
+  NB200_D.0010 instead of the *anticipated* NB200_D.010! **StarryFiles++**'
   s :doc:`Merge Files... <merge_files>` routine can handle this naming,
   but other *split/join* applications may not behave properly.
 
@@ -80,5 +80,5 @@ same as the target file, but with a number appended, that is, if
 
   If **Split File...** involves creating a large number of files (e.g. >
   500), there may be delays in response, depending on the speed of your
-  computer. Be patient - **Explorer++** **will** finish the operations
+  computer. Be patient - **StarryFiles++** **will** finish the operations
   properly.

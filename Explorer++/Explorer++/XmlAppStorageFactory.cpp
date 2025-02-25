@@ -63,7 +63,7 @@ std::unique_ptr<XmlAppStorage> XmlAppStorageFactory::BuildForSave(
 	}
 
 	wil::com_ptr_nothrow<IXMLDOMComment> comment;
-	auto commentText = wil::make_bstr_failfast(L" Preference file for Explorer++ ");
+	auto commentText = wil::make_bstr_failfast(L" Preference file for StarryFiles++ ");
 	HRESULT hr = xmlDocument->createComment(commentText.get(), &comment);
 
 	if (hr != S_OK)

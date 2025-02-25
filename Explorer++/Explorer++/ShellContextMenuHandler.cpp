@@ -3,7 +3,7 @@
 // See LICENSE in the top level directory
 
 #include "stdafx.h"
-#include "Explorer++.h"
+#include "StarryFiles++.h"
 #include "App.h"
 #include "Config.h"
 #include "DirectoryOperationsHelper.h"
@@ -132,7 +132,7 @@ void Explorerplusplus::RemoveNonFunctionalItemsFromBackgroundContextMenu(HMENU m
 			// When it's clicked, the shell will request view information, using IFolderView2, along
 			// with at least one undocumented interface. Because attempting to implement an
 			// undocumented interface is potentially difficult and carries risk, along with the fact
-			// that the view information in Explorer++ doesn't correspond precisely with the view
+			// that the view information in StarryFiles++ doesn't correspond precisely with the view
 			// information in Explorer anyway, this item is removed here.
 			DeleteMenu(menu, i, MF_BYPOSITION);
 		}

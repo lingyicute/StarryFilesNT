@@ -8,7 +8,7 @@
  */
 
 #include "stdafx.h"
-#include "Explorer++.h"
+#include "StarryFiles++.h"
 #include "App.h"
 #include "MainResource.h"
 #include "ResourceHelper.h"

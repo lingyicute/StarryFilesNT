@@ -35,6 +35,6 @@ protected:
 		}
 	};
 
-	static constexpr char SHARED_MEMORY_NAME[] = "Explorer++PasteSymLinksSharedMemory";
+	static constexpr char SHARED_MEMORY_NAME[] = "StarryFiles++PasteSymLinksSharedMemory";
 	static constexpr char SHARED_DATA_NAME[] = "SharedData";
 };

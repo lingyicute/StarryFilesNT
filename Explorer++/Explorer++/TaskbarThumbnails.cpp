@@ -180,7 +180,7 @@ http://channel9.msdn.com/learn/courses/Windows7/Taskbar/Win7TaskbarNative/Exerci
 void TaskbarThumbnails::CreateTabProxy(int iTabId, BOOL bSwitchToNewTab)
 {
 	static int proxyCount = 0;
-	std::wstring proxyClassName = std::format(L"Explorer++TabProxy{}", proxyCount++);
+	std::wstring proxyClassName = std::format(L"StarryFiles++TabProxy{}", proxyCount++);
 
 	ATOM aRet = RegisterTabProxyClass(proxyClassName.c_str());
 

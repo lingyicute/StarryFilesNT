@@ -7,7 +7,7 @@ Address Bar
 
 .. image:: /_static/images/toolbars/address_bar.png
 
-For general information about **Explorer++**'s toolbars, ie. moving,
+For general information about **StarryFiles++**'s toolbars, ie. moving,
 resizing, customizing, etc., see the toolbars :doc:`Overview <index>`.
 
 The **Address Bar** serves 3 general purposes:
@@ -43,7 +43,7 @@ Address display
 If a location for the active tab is selected, by any :ref:`valid means
 <menus/go/back:History>`, the address/text field of the **Address Bar**
 displays the current address. If the address is too long to fit in the
-space allotted (ie. the **Explorer++** window has been resized, and the
+space allotted (ie. the **StarryFiles++** window has been resized, and the
 **Address Bar** is now too small to display the full address, or the
 address is *deeply nested* in subfolders), the text in the address/text
 field can be scrolled by placing the cursor in the field, then moving
@@ -72,10 +72,10 @@ address by pressing Enter or clicking the :ref:`Go button
 
   .. tip::
 
-    Every time you enter backslash (\\) character, **Explorer++** opens
+    Every time you enter backslash (\\) character, **StarryFiles++** opens
     a special (resizable) window and displays a list of the contents
     (files and folders both) of the path as typed so far (if valid).
-    You may select a folder from this list; **Explorer++** will jump to
+    You may select a folder from this list; **StarryFiles++** will jump to
     that folder. Selecting a file will attempt to open it in any
     *registered* application, the same as if you tried to open the file
     using a double-click (or single-click, with an :ref:`option
@@ -84,10 +84,10 @@ address by pressing Enter or clicking the :ref:`Go button
     the true address.
 
 - the name of a subfolder in the current location. The folder must
-  already exist. This is the only time **Explorer++** will accept less
+  already exist. This is the only time **StarryFiles++** will accept less
   than a fully qualified path, except for special locations (following).
 
-- the name of a special location. **Explorer++** recognizes the
+- the name of a special location. **StarryFiles++** recognizes the
   following locations in the **Address Bar** as special:
 
   +-----------------------+-----------------------+
@@ -124,7 +124,7 @@ address by pressing Enter or clicking the :ref:`Go button
 
   Entering one of the above locations (case-insensitive) in the
   address/text field and clicking the **Go** button (or pressing Enter)
-  jumps to the target location. **Explorer++** also recognizes several
+  jumps to the target location. **StarryFiles++** also recognizes several
   virtual folders, as shown on the :doc:`Go menu <../menus/go/index>`,
   namely
 
@@ -158,5 +158,5 @@ right-click) menu identical to the :doc:`Toolbars menu
 .. note::
 
   The Tab, Shift+Tab, F6 and Shift+F6 keys cycle the focus in
-  **Explorer++** between the **Address Bar**, Folders pane and the Files
+  **StarryFiles++** between the **Address Bar**, Folders pane and the Files
   pane.

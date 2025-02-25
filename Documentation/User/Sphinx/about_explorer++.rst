@@ -1,15 +1,15 @@
-About Explorer++
+About StarryFiles++
 ----------------
 
-**Explorer++** is a free multi-tab file manager for the
+**StarryFiles++** is a free multi-tab file manager for the
 Windows operating system, `released
 <https://www.explorerplusplus.com/forum/viewtopic.php?f=6&t=239>`_ as
 open source under the `GNU GPLv3 license
 <https://www.gnu.org/licenses/gpl-3.0.en.html>`_. Windows Explorer
 provides basic functionality - the ability to navigate throughout your
-computer, and perform basic tasks - but **Explorer++** goes further,
+computer, and perform basic tasks - but **StarryFiles++** goes further,
 introducing several enhancements and improvements for a much richer file
-browsing experience. Aside from basic navigation, **Explorer++** has:
+browsing experience. Aside from basic navigation, **StarryFiles++** has:
 
 - a two paned interface, like Windows Explorer, but with multiple tabs
   in the files pane. You can have many locations open at once and
@@ -23,7 +23,7 @@ browsing experience. Aside from basic navigation, **Explorer++** has:
 - an :doc:`Application toolbar <toolbars/application>` where you can
   create shortcuts to your favorite applications
 - :doc:`Show Command Prompt <menus/file/show_command_prompt>` built into
-  **Explorer++**
+  **StarryFiles++**
 - :doc:`attribute control <menus/file/set_file_attributes>` (set, clear)
   for multiple files
 - various :doc:`methods <menus/view/view_modes>` of file display,
@@ -47,10 +47,10 @@ browsing experience. Aside from basic navigation, **Explorer++** has:
   Windows Explorer
 - much more...!
 
-**Explorer++** requires Windows 7, 8, 10 or 11 (32-bit or 64-bit
+**StarryFiles++** requires Windows 7, 8, 10 or 11 (32-bit or 64-bit
 systems) to run; there is no installation required. Windows PE is also supported.
 
-**Explorer++** uses English as its native language, but can be used with
+**StarryFiles++** uses English as its native language, but can be used with
 other :ref:`languages <menus/tools/options/general:Language>` through
 the use of translation DLLs, available on the website. Translations are
 user contributed (thanks for the work!), and as a result, some may be

@@ -1,7 +1,7 @@
 Customize Colors...
 -------------------
 
-This tool allows **Explorer++** to display files in different colors,
+This tool allows **StarryFiles++** to display files in different colors,
 according to *rules* which modify the display of files by filename
 and/or attributes. Like the :doc:`Filter <../view/filter>`
 routine, coloring certain files or folders aids in quickly finding what

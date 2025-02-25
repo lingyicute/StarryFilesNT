@@ -113,7 +113,7 @@ LANGID UpdateSavedLanguageCode(LANGID language)
 
 // The language DLLs use the following naming scheme:
 //
-// Explorer++{language_code}.dll
+// StarryFiles++{language_code}.dll
 //
 // Where {language_code} is of the form:
 //
@@ -279,7 +279,7 @@ std::variant<LanguageInfo, LoadError> MaybeLoadTranslationDll(
 	GetProcessImageName(GetCurrentProcessId(), currentProcessPath, std::size(currentProcessPath));
 
 	std::filesystem::path languageDllPath(currentProcessPath);
-	languageDllPath.replace_filename(std::format(L"Explorer++{}.dll", *languageCode));
+	languageDllPath.replace_filename(std::format(L"StarryFiles++{}.dll", *languageCode));
 
 	WORD loadedLanguage;
 	auto res = GetFileLanguage(languageDllPath.c_str(), &loadedLanguage);

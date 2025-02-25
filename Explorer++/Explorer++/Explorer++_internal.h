@@ -4,7 +4,7 @@
 
 #pragma once
 
-// Used when setting Explorer++ as the default file manager.
+// Used when setting StarryFiles++ as the default file manager.
 inline constexpr wchar_t SHELL_DEFAULT_INTERNAL_COMMAND_NAME[] = L"openinexplorer++";
 
 // Rebar menu IDs.

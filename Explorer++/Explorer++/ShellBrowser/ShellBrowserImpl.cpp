@@ -544,7 +544,7 @@ std::wstring ShellBrowserImpl::GetItemDisplayName(int index) const
 {
 	// Although the display name for an item is retrieved and cached, that might not be exactly the
 	// same as the text that's displayed. For example, if extensions are shown within Explorer, but
-	// hidden within Explorer++, then the display name will contain the file extension, but the text
+	// hidden within StarryFiles++, then the display name will contain the file extension, but the text
 	// displayed to the user won't. Processing the filename here ensures that the extension is
 	// removed, if necessary.
 	BasicItemInfo_t basicItemInfo = getBasicItemInfo(GetItemInternalIndex(index));

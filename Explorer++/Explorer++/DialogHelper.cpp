@@ -3,7 +3,7 @@
 // See LICENSE in the top level directory
 
 #include "stdafx.h"
-#include "Explorer++.h"
+#include "StarryFiles++.h"
 #include "Bookmarks/UI/AddBookmarkDialog.h"
 #include "Bookmarks/UI/ManageBookmarksDialog.h"
 #include "ColorRuleEditorDialog.h"

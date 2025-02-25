@@ -15,7 +15,7 @@
     <RootNamespace>ExplorerZH_CN</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Explorer++ZH_CN</ProjectName>
+    <ProjectName>StarryFiles++ZH_CN</ProjectName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(VisualStudioVersion)' == '14.0'">
     <PlatformToolset>v140</PlatformToolset>
@@ -109,16 +109,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Explorer++VersionInfo.h" />
+    <ClInclude Include="StarryFiles++VersionInfo.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Explorer++Main.rc" />
-    <ResourceCompile Include="Explorer++VersionInfo.rc">
+    <ResourceCompile Include="StarryFiles++Main.rc" />
+    <ResourceCompile Include="StarryFiles++VersionInfo.rc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ResourceCompile>
-    <ResourceCompile Include="Explorer++.rc">
+    <ResourceCompile Include="StarryFiles++.rc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ResourceCompile>

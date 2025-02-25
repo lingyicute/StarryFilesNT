@@ -26,7 +26,7 @@ bool ProcessManager::InitializeCurrentProcess(const CommandLine::Settings *comma
 	m_initializationRun = true;
 
 	wil::unique_mutex_nothrow mutex;
-	bool res = mutex.try_create(L"Explorer++FindExistingWindow");
+	bool res = mutex.try_create(L"StarryFiles++FindExistingWindow");
 
 	if (!res)
 	{

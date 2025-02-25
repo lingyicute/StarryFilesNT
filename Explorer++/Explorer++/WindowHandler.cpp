@@ -3,7 +3,7 @@
 // See LICENSE in the top level directory
 
 #include "stdafx.h"
-#include "Explorer++.h"
+#include "StarryFiles++.h"
 #include "Config.h"
 #include "HolderWindow.h"
 #include "../Helper/WindowHelper.h"

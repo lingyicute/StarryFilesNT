@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by Explorer++.rc
+// Used by StarryFiles++.rc
 //
 #define IDD_OPTIONS_FILES_FOLDERS       9
 #define IDD_MANAGE_BOOKMARKS            10

@@ -61,7 +61,7 @@
     <ClCompile Include="EventSwitcher.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Explorer++.cpp">
+    <ClCompile Include="StarryFiles++.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="HandleWindowState.cpp">
@@ -804,10 +804,10 @@
     <ClInclude Include="DisplayColoursDialog.h">
       <Filter>Dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="Explorer++.h">
+    <ClInclude Include="StarryFiles++.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Explorer++_internal.h">
+    <ClInclude Include="StarryFiles++_internal.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="FilterDialog.h">
@@ -1113,7 +1113,7 @@
     <ClInclude Include="ThirdPartyCreditsDialog.h">
       <Filter>Dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="Explorer++VersionInfo.h">
+    <ClInclude Include="StarryFiles++VersionInfo.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="MainResource.h">
@@ -1631,16 +1631,16 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Explorer++.rc">
+    <ResourceCompile Include="StarryFiles++.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-    <ResourceCompile Include="Explorer++_NoTranslation.rc">
+    <ResourceCompile Include="StarryFiles++_NoTranslation.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-    <ResourceCompile Include="Explorer++Main.rc">
+    <ResourceCompile Include="StarryFiles++Main.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-    <ResourceCompile Include="Explorer++VersionInfo.rc">
+    <ResourceCompile Include="StarryFiles++VersionInfo.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -1648,7 +1648,7 @@
     <None Include="res\Display Window.ico">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\Explorer++.ico">
+    <None Include="res\StarryFiles++.ico">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\Filtering Applied.bmp">
@@ -1826,7 +1826,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Manifest Include="Explorer++.exe.manifest">
+    <Manifest Include="StarryFiles++.exe.manifest">
       <Filter>Resource Files</Filter>
     </Manifest>
   </ItemGroup>

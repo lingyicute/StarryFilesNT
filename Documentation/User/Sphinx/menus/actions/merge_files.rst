@@ -15,7 +15,7 @@ This area contains the list of files to be merged; the order in which
 they appear is the order in which they will be merged. The order may be
 changed through the use of the :ref:`buttons
 <menus/actions/merge_files:Move Up/Down buttons>` to the right. There is
-a good likelihood that - if the files were created by **Explorer++**'s
+a good likelihood that - if the files were created by **StarryFiles++**'s
 :doc:`Split File <split_file>` routine, they will already be in the
 correct order. Note that the **Date Modified** column respects the
 setting of the :ref:`Show user friendly dates

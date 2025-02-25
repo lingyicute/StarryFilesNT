@@ -52,7 +52,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7544A240-2EBF-4DC1-B55B-C8AE32672ED0}</ProjectGuid>
-    <RootNamespace>Explorer++</RootNamespace>
+    <RootNamespace>StarryFiles++</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -348,16 +348,16 @@
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0c09</Culture>
-      <ResourceOutputFileName>$(IntDir)Explorer++Main.res</ResourceOutputFileName>
+      <ResourceOutputFileName>$(IntDir)StarryFiles++Main.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
-      <ProgramDatabaseFile>$(OutDir)Explorer++.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)StarryFiles++.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>
@@ -406,16 +406,16 @@
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0c09</Culture>
-      <ResourceOutputFileName>$(IntDir)Explorer++Main.res</ResourceOutputFileName>
+      <ResourceOutputFileName>$(IntDir)StarryFiles++Main.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
-      <ProgramDatabaseFile>$(OutDir)Explorer++.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)StarryFiles++.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>
@@ -461,16 +461,16 @@
     </ClCompile>
     <ResourceCompile>
       <Culture>0x0c09</Culture>
-      <ResourceOutputFileName>$(IntDir)Explorer++Main.res</ResourceOutputFileName>
+      <ResourceOutputFileName>$(IntDir)StarryFiles++Main.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
-      <ProgramDatabaseFile>$(OutDir)Explorer++.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)StarryFiles++.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>
@@ -526,12 +526,12 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
-      <ProgramDatabaseFile>$(OutDir)Explorer++.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)StarryFiles++.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>
       </OptimizeReferences>
@@ -585,12 +585,12 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
-      <ProgramDatabaseFile>$(OutDir)Explorer++.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)StarryFiles++.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>
       </OptimizeReferences>
@@ -642,12 +642,12 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
-      <ProgramDatabaseFile>$(OutDir)Explorer++.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)StarryFiles++.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>
       </OptimizeReferences>
@@ -698,12 +698,12 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
-      <ProgramDatabaseFile>$(OutDir)Explorer++.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)StarryFiles++.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>
       </OptimizeReferences>
@@ -753,12 +753,12 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
-      <ProgramDatabaseFile>$(OutDir)Explorer++.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)StarryFiles++.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>
       </OptimizeReferences>
@@ -807,12 +807,12 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
-      <ProgramDatabaseFile>$(OutDir)Explorer++.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)StarryFiles++.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>
       </OptimizeReferences>
@@ -857,11 +857,11 @@
       <AdditionalOptions>/w15038 /utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
-      <ResourceOutputFileName>$(IntDir)Explorer++Main.res</ResourceOutputFileName>
+      <ResourceOutputFileName>$(IntDir)StarryFiles++Main.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <TypeLibraryFile>
       </TypeLibraryFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -911,11 +911,11 @@
       <AdditionalOptions>/w15038 /utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
-      <ResourceOutputFileName>$(IntDir)Explorer++Main.res</ResourceOutputFileName>
+      <ResourceOutputFileName>$(IntDir)StarryFiles++Main.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <TypeLibraryFile>shobjidl.idl</TypeLibraryFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -962,11 +962,11 @@
       <AdditionalOptions>/w15038 /utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
-      <ResourceOutputFileName>$(IntDir)Explorer++Main.res</ResourceOutputFileName>
+      <ResourceOutputFileName>$(IntDir)StarryFiles++Main.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;shell32.lib;gdiplus.lib;msimg32.lib;shlwapi.lib;psapi.lib;mpr.lib;uxtheme.lib;vfw32.lib;winmm.lib;urlmon.lib;wininet.lib;rpcrt4.lib;propsys.lib;msxml2.lib;dwmapi.lib;windowscodecs.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Explorer++.exe</OutputFile>
+      <OutputFile>$(OutDir)StarryFiles++.exe</OutputFile>
       <TypeLibraryFile>shobjidl.idl</TypeLibraryFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -1156,7 +1156,7 @@
     <ClCompile Include="DrivesToolbar.cpp" />
     <ClCompile Include="Plugins\Event.cpp" />
     <ClCompile Include="EventSwitcher.cpp" />
-    <ClCompile Include="Explorer++.cpp" />
+    <ClCompile Include="StarryFiles++.cpp" />
     <ClCompile Include="FileSelectionTests.cpp" />
     <ClCompile Include="FilterDialog.cpp" />
     <ClCompile Include="HandleWindowState.cpp" />
@@ -1458,9 +1458,9 @@
     <ClInclude Include="DisplayWindow\DisplayWindow.h" />
     <ClInclude Include="DrivesToolbar.h" />
     <ClInclude Include="Plugins\Event.h" />
-    <ClInclude Include="Explorer++.h" />
-    <ClInclude Include="Explorer++VersionInfo.h" />
-    <ClInclude Include="Explorer++_internal.h" />
+    <ClInclude Include="StarryFiles++.h" />
+    <ClInclude Include="StarryFiles++VersionInfo.h" />
+    <ClInclude Include="StarryFiles++_internal.h" />
     <ClInclude Include="FilterDialog.h" />
     <ClInclude Include="DriveWatcherImpl.h" />
     <ClInclude Include="HolderWindow.h" />
@@ -1555,14 +1555,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Display Window.ico" />
-    <None Include="res\Explorer++.ico" />
+    <None Include="res\StarryFiles++.ico" />
     <None Include="res\Filtering Applied.bmp" />
     <None Include="res\Folder Empty.bmp" />
     <None Include="res\No Preview Available.bmp" />
     <None Include="VersionConstants.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Explorer++.rc">
+    <ResourceCompile Include="StarryFiles++.rc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug-Asan|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug-LLVM|Win32'">true</ExcludedFromBuild>
@@ -1576,7 +1576,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</ExcludedFromBuild>
     </ResourceCompile>
-    <ResourceCompile Include="Explorer++VersionInfo.rc">
+    <ResourceCompile Include="StarryFiles++VersionInfo.rc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -1590,7 +1590,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug-LLVM|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug-LLVM|ARM64'">true</ExcludedFromBuild>
     </ResourceCompile>
-    <ResourceCompile Include="Explorer++_NoTranslation.rc">
+    <ResourceCompile Include="StarryFiles++_NoTranslation.rc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug-Asan|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug-LLVM|Win32'">true</ExcludedFromBuild>
@@ -1604,10 +1604,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</ExcludedFromBuild>
     </ResourceCompile>
-    <ResourceCompile Include="Explorer++Main.rc" />
+    <ResourceCompile Include="StarryFiles++Main.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Manifest Include="Explorer++.exe.manifest" />
+    <Manifest Include="StarryFiles++.exe.manifest" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Helper\Helper.vcxproj">
@@ -1619,7 +1619,7 @@
   <ImportGroup Label="ExtensionTargets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties RESOURCE_FILE="Explorer++.rc" />
+      <UserProperties RESOURCE_FILE="StarryFiles++.rc" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

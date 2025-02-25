@@ -6,7 +6,7 @@
 // clang-format off
 #include "ThemeManager.h"
 // clang-format on
-#include "Explorer++.h"
+#include "StarryFiles++.h"
 #include "DarkModeManager.h"
 #include "SystemFontHelper.h"
 #include "../Helper/Controls.h"

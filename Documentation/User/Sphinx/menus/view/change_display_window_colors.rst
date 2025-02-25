@@ -42,7 +42,7 @@ color>`.
 Restore Defaults
 ~~~~~~~~~~~~~~~~
 
-This button restores **Explorer++**'s built-in defaults for the Display
+This button restores **StarryFiles++**'s built-in defaults for the Display
 Window, that is
 
 - Center color = RGB (0,0,0)

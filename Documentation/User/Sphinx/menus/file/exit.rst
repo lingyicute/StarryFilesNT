@@ -1,10 +1,10 @@
 Exit
 ----
 
-This menu item exits **Explorer++**. Prior to closing, **Explorer++**
+This menu item exits **StarryFiles++**. Prior to closing, **StarryFiles++**
 
 - saves settings to an XML file (config.xml) in the same folder as
-  *Explorer++.exe*, or
+  *StarryFiles++.exe*, or
 - saves settings to the Windows registry,
 
 depending on the setting for :ref:`portable

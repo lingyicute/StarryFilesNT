@@ -3,7 +3,7 @@ Select Columns...
 
 .. image:: /_static/images/mnu_view/sel_col.png
 
-**Explorer++** allows you to set data column visibility for folder
+**StarryFiles++** allows you to set data column visibility for folder
 listings on a **tab-by-tab** basis. Columns available also depends on
 the current tab's :ref:`folder type <menus/view/select_columns:Folder
 type>`. The settings here apply only to the current tab; future (new)
@@ -80,7 +80,7 @@ Default <save_column_layout>` menu item.
 .. admonition:: Incomplete
 
   Columns marked as "**n/a**" (not available) may not be implemented as
-  of this version of **Explorer++**, ie. they may be present but contain
+  of this version of **StarryFiles++**, ie. they may be present but contain
   no data.
 
 Control Panel

@@ -23,12 +23,12 @@ void TestGetFileProductVersion(const TCHAR *szFile, DWORD dwExpectedLS, DWORD dw
 
 TEST(GetFileProductVersion, Catalan)
 {
-	TestGetFileProductVersion(L"Explorer++CA.dll", 327680, 65539);
+	TestGetFileProductVersion(L"StarryFiles++CA.dll", 327680, 65539);
 }
 
 TEST(GetFileProductVersion, French)
 {
-	TestGetFileProductVersion(L"Explorer++FR.dll", 327684, 9);
+	TestGetFileProductVersion(L"StarryFiles++FR.dll", 327684, 9);
 }
 
 void TestGetFileLanguage(const TCHAR *szFile, WORD wExpectedLanguage)
@@ -44,12 +44,12 @@ void TestGetFileLanguage(const TCHAR *szFile, WORD wExpectedLanguage)
 
 TEST(GetFileLanguage, Catalan)
 {
-	TestGetFileLanguage(L"Explorer++CA.dll", LANG_CATALAN);
+	TestGetFileLanguage(L"StarryFiles++CA.dll", LANG_CATALAN);
 }
 
 TEST(GetFileLanguage, French)
 {
-	TestGetFileLanguage(L"Explorer++FR.dll", LANG_FRENCH);
+	TestGetFileLanguage(L"StarryFiles++FR.dll", LANG_FRENCH);
 }
 
 void TestVersionInfoString(TCHAR *szDLL, const TCHAR *szVersionInfo, const TCHAR *szExpectedValue)
@@ -184,7 +184,7 @@ TEST(ReadImageProperty, EquipModel)
 TEST(GetFileSizeEx, Simple)
 {
 	TCHAR szFullFileName[MAX_PATH];
-	GetTestResourceFilePath(L"Explorer++CA.dll", szFullFileName, SIZEOF_ARRAY(szFullFileName));
+	GetTestResourceFilePath(L"StarryFiles++CA.dll", szFullFileName, SIZEOF_ARRAY(szFullFileName));
 
 	LARGE_INTEGER lFileSize;
 	BOOL bRes = GetFileSizeEx(szFullFileName, &lFileSize);
@@ -207,10 +207,10 @@ void TestCompareFileTypes(const TCHAR *szFile1, const TCHAR *szFile2, BOOL bSame
 
 TEST(CompareFileTypes, Same)
 {
-	TestCompareFileTypes(L"Explorer++CA.dll", L"Explorer++FR.dll", TRUE);
+	TestCompareFileTypes(L"StarryFiles++CA.dll", L"StarryFiles++FR.dll", TRUE);
 }
 
 TEST(CompareFileTypes, Different)
 {
-	TestCompareFileTypes(L"Explorer++CA.dll", L"Metadata.jpg", FALSE);
+	TestCompareFileTypes(L"StarryFiles++CA.dll", L"Metadata.jpg", FALSE);
 }

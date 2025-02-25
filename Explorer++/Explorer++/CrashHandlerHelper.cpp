@@ -120,7 +120,7 @@ LPTOP_LEVEL_EXCEPTION_FILTER WINAPI DetouredSetUnhandledExceptionFilter(
 	return nullptr;
 }
 
-// This handles the notification that an Explorer++ process (not this one) has crashed.
+// This handles the notification that an StarryFiles++ process (not this one) has crashed.
 void HandleProcessCrashedNotification(const CrashedData &crashedData)
 {
 	auto crashDumpFileName = CreateMiniDumpForCrashedProcess(crashedData);

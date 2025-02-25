@@ -21,10 +21,10 @@ Example
 
 ::
 
-    H:\Projects\Explorer++\html\mnu_file\New Folder
-    H:\Projects\Explorer++\html\mnu_file\clone_win.htm
-    H:\Projects\Explorer++\html\mnu_file\close_tab.htm
-    H:\Projects\Explorer++\html\mnu_file\copy_col_text.htm
+    H:\Projects\StarryFiles++\html\mnu_file\New Folder
+    H:\Projects\StarryFiles++\html\mnu_file\clone_win.htm
+    H:\Projects\StarryFiles++\html\mnu_file\close_tab.htm
+    H:\Projects\StarryFiles++\html\mnu_file\copy_col_text.htm
 
 .. note::
 

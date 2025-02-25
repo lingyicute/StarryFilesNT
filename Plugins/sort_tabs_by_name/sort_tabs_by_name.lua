@@ -10,7 +10,7 @@ commands.onCommand.addListener(function (command)
   end
 )
 
--- Retrieves all current tabs in Explorer++ and then sorts them by name.
+-- Retrieves all current tabs in StarryFiles++ and then sorts them by name.
 function sortTabs()
   tabList = tabs.getAll()
 

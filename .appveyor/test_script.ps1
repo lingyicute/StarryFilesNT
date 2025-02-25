@@ -41,11 +41,11 @@ if ($env:configuration -eq "Debug-Asan") {
     $env:Path = $asanDllPath + ";" + $env:Path
 }
 
-Set-Location $env:APPVEYOR_BUILD_FOLDER\Explorer++\TestExplorer++\$env:platform\$env:configuration
+Set-Location $env:APPVEYOR_BUILD_FOLDER\StarryFiles++\TestStarryFiles++\$env:platform\$env:configuration
 
 # Run the tests.
-.\TestExplorer++.exe --gtest_output=xml:TestExplorer++Output.xml
+.\TestStarryFiles++.exe --gtest_output=xml:TestStarryFiles++Output.xml
 
 # Upload results to AppVeyor.
 $wc = New-Object "System.Net.WebClient"
-$wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\TestExplorer++Output.xml))
+$wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\TestStarryFiles++Output.xml))

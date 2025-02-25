@@ -479,7 +479,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="TestExplorer++.rc">
+    <ResourceCompile Include="TestStarryFiles++.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
     <ResourceCompile Include="TestResources.rc">

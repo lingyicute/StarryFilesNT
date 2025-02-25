@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by Explorer++Main.rc
+// Used by StarryFiles++Main.rc
 //
 
 #include "resource.h"

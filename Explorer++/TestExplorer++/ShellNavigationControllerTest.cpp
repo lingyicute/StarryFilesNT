@@ -3,12 +3,12 @@
 // See LICENSE in the top level directory
 
 #include "pch.h"
-#include "../Explorer++/ShellBrowser/ShellNavigationController.h"
+#include "../StarryFiles++/ShellBrowser/ShellNavigationController.h"
 #include "ShellBrowserFake.h"
 #include "ShellTestHelper.h"
 #include "TabNavigationMock.h"
-#include "../Explorer++/ShellBrowser/HistoryEntry.h"
-#include "../Explorer++/ShellBrowser/PreservedHistoryEntry.h"
+#include "../StarryFiles++/ShellBrowser/HistoryEntry.h"
+#include "../StarryFiles++/ShellBrowser/PreservedHistoryEntry.h"
 #include "../Helper/ShellHelper.h"
 #include <gtest/gtest.h>
 #include <ShlObj.h>

@@ -41,7 +41,7 @@ namespace CommandLine
 
 std::variant<Settings, ExitInfo> Parse(const std::wstring &commandLine)
 {
-	CLI::App app("Explorer++");
+	CLI::App app("StarryFiles++");
 	app.allow_extras();
 
 	Settings settings;
@@ -50,11 +50,11 @@ std::variant<Settings, ExitInfo> Parse(const std::wstring &commandLine)
 		"Clear existing registry settings");
 
 	auto removeAsDefaultOption = app.add_flag("--remove-as-default", settings.removeAsDefault,
-		"Remove Explorer++ as the default file manager");
+		"Remove StarryFiles++ as the default file manager");
 
 	auto setAsDefaultOption =
 		app.add_option("--set-as-default", settings.replaceExplorerMode,
-			   "Set Explorer++ as the default file manager for the current user")
+			   "Set StarryFiles++ as the default file manager for the current user")
 			->transform(CLI::CheckedTransformer(
 				CLI::TransformPairs<DefaultFileManager::ReplaceExplorerMode>{
 					{ "filesystem", DefaultFileManager::ReplaceExplorerMode::FileSystem },

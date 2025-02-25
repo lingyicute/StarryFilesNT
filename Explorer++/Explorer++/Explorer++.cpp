@@ -3,7 +3,7 @@
 // See LICENSE in the top level directory
 
 #include "stdafx.h"
-#include "Explorer++.h"
+#include "StarryFiles++.h"
 #include "App.h"
 #include "Application.h"
 #include "Bookmarks/BookmarkIconManager.h"

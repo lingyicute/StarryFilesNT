@@ -10,29 +10,29 @@ Allow multiple instances
 | System Default: | Yes |
 +-----------------+-----+
 
-By default, **Explorer++** allows multiple instances of itself, that is,
-you may open more a one copy of **Explorer++**. Each new copy can have
+By default, **StarryFiles++** allows multiple instances of itself, that is,
+you may open more a one copy of **StarryFiles++**. Each new copy can have
 its own set of tabs and settings, etc., subject to information below.
 If this option is disabled (box unchecked), ie. *do not allow multiple
-instances*, then attempting to open a second copy of **Explorer++** (eg.
+instances*, then attempting to open a second copy of **StarryFiles++** (eg.
 by double-clicking on a shortcut) will open a :doc:`new tab
 <../../file/new_tab>` instead.
 
 .. note::
 
-  While multiple instances of **Explorer++** are open, each copy
+  While multiple instances of **StarryFiles++** are open, each copy
   maintains tab and settings information in its own memory space.
   However, on closing, each copy will write complete settings
   information to the Windows registry (or :ref:`config.xml
   <menus/tools/options/general:Run in portable mode>` file). Closing the
   next copy will **also** do this, overwriting the settings from the
-  first. This means that the **last** closed instance of **Explorer++**
+  first. This means that the **last** closed instance of **StarryFiles++**
   ultimately determines the settings (and tab information) saved for the
   next session. This behavior is by design.
 
 .. tip::
 
-  If you have multiple copies of **Explorer++** open, the one with your
+  If you have multiple copies of **StarryFiles++** open, the one with your
   **preferred tabs** (and settings) should be **closed last**. If
   multiple instances are being used along with :ref:`portable
   <menus/tools/options/general:Run in portable mode>` mode, you can make
@@ -79,8 +79,8 @@ this mode.
 Title bar settings
 ~~~~~~~~~~~~~~~~~~
 
-These settings modify **Explorer++**'s title bar, which normally only
-displays the current folder, followed by "Explorer++". A sample title
+These settings modify **StarryFiles++**'s title bar, which normally only
+displays the current folder, followed by "StarryFiles++". A sample title
 bar follows, showing only the current folder ("AtomExplorer").
 
 .. image:: /_static/images/mnu_tools/titlebar_normal.png
@@ -108,7 +108,7 @@ Show username in title bar
 +-----------------+----+
 
 Enabling this setting displays the current user's name (actually the
-*owner* of the **Explorer++** process), preceded by the domain name. The
+*owner* of the **StarryFiles++** process), preceded by the domain name. The
 domain name refers to the location of the user's account, which could be
 another computer on a network. In most cases, individual computers will
 just show "DESKTOP" signifying this is a local account/user.
@@ -161,7 +161,7 @@ Disable treeview delay
 | System Default: | Yes |
 +-----------------+-----+
 
-**Explorer++** can, if desired, introduce a 500 millisecond delay
+**StarryFiles++** can, if desired, introduce a 500 millisecond delay
 between selecting a folder in the Folders pane (ie. treeview control)
 and opening its contents in the Files pane. This delay is entirely
 *cosmetic*; it may prove useful for users who navigate the folder tree

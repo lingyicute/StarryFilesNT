@@ -18,7 +18,7 @@ struct Config;
 namespace LanguageHelper
 {
 
-// This matches the language declaration within Explorer++.rc.
+// This matches the language declaration within StarryFiles++.rc.
 inline constexpr LANGID DEFAULT_LANGUAGE = MAKELANGID(LANG_ENGLISH, SUBLANG_ENGLISH_AUS);
 
 struct LanguageInfo
