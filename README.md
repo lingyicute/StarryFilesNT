@@ -2,13 +2,13 @@
 [![Documentation Status](https://readthedocs.org/projects/explorerplusplus/badge/?version=latest)](https://explorerplusplus.readthedocs.io/en/latest/?badge=latest)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/explorerplusplus/localized.svg)](https://crowdin.com/project/explorerplusplus)
 
-# Explorer++
+# StarryFiles
 
-Explorer++ is a lightweight and fast file manager for Windows.
+StarryFiles is a lightweight and fast file manager for Windows.
 
 ## Features
 
-* With the option to save to the registry or a configuration file, Explorer++ is __completely portable__
+* With the option to save to the registry or a configuration file, StarryFiles is __completely portable__
 * __Tabbed browsing__ for easy management of multiple folders
 * Display window shows previews of files as they are selected
 * __Easy-to-remember keyboard shortcuts__ for quick navigation
@@ -42,9 +42,9 @@ Explorer++ is a lightweight and fast file manager for Windows.
 
 For a full list of builds, see https://explorerplusplus.com/builds.
 
-## Building Explorer++
+## Building StarryFiles
 
-For instructions on how to build Explorer++, see [BUILDING.md](BUILDING.md).
+For instructions on how to build StarryFiles, see [BUILDING.md](BUILDING.md).
 
 ## Documentation
 

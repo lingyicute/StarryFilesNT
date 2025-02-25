@@ -1,4 +1,4 @@
-// Copyright (C) Explorer++ Project
+// Copyright (C) 2025 lingyicute
 // SPDX-License-Identifier: GPL-3.0-only
 // See LICENSE in the top level directory
 
@@ -60,7 +60,7 @@ public:
 		return m_entries[index].get();
 	}
 
-	std::optional<int> GetIndexOfEntry(HistoryEntryType *entry) const
+	std::optional<int> GetIndexOfEntry(const HistoryEntryType *entry) const
 	{
 		auto itr = std::find_if(m_entries.begin(), m_entries.end(),
 			[entry](auto &currentEntry) { return currentEntry.get() == entry; });
