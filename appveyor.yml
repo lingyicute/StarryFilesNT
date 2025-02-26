@@ -2,7 +2,6 @@ version: 1.5.0.{build}
 image: Visual Studio 2022
 
 configuration:
-- Debug-Asan
 - Release
 
 platform:
@@ -16,9 +15,6 @@ cache:
 
 matrix:
   fast_finish: true
-  exclude:
-    - configuration: Debug-Asan
-      platform: ARM64
 
 for:
 -
@@ -59,7 +55,6 @@ init:
       Exit-AppveyorBuild
     }
 
-# Decrypt the code signing certificate.
 install:
 - cmd: >-
     git submodule init
@@ -67,7 +62,6 @@ install:
     git submodule update
 
     .\StarryFiles++\ThirdParty\vcpkg\bootstrap-vcpkg.bat
-
 
 before_build:
 - pwsh: >-
@@ -115,5 +109,3 @@ before_deploy:
       $env:RELEASE_TITLE = "StarryFiles++ $releaseBuildVersion"
       $env:PRERELEASE = $false
     }
-
-deploy:

@@ -38,7 +38,7 @@ class App : private boost::noncopyable
 public:
 	static constexpr wchar_t APP_NAME[] = L"StarryFiles++";
 	static constexpr wchar_t DOCUMENTATION_URL[] =
-		L"https://starryfilesplusplus.readthedocs.io/en/latest/";
+		L"https://92li.us.kg";
 
 	App(const CommandLine::Settings *commandLineSettings);
 	~App();
