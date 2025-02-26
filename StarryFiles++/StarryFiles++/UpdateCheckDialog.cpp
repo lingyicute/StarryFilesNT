@@ -24,7 +24,7 @@
 
 const TCHAR UpdateCheckDialogPersistentSettings::SETTINGS_KEY[] = _T("UpdateCheck");
 const TCHAR UpdateCheckDialog::VERSION_FILE_URL[] =
-	_T("https://404.92li.us.kg/software/version.txt");
+	_T("https://raw.githubusercontent.com/lingyicute/StarryFilesNT/main/version.txt");
 
 UpdateCheckDialog::UpdateCheckDialog(HINSTANCE resourceInstance, HWND hParent,
 	ThemeManager *themeManager) :

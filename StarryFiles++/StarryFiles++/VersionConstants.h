@@ -3,7 +3,7 @@
 // See LICENSE in the top level directory
 
 #define MAJOR_VERSION 1
-#define MINOR_VERSION 5
+#define MINOR_VERSION 6
 #define MICRO_VERSION 0
 
 #ifdef ENVIRONMENT_BUILD_NUMBER
