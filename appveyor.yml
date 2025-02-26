@@ -1,13 +1,13 @@
-version: 1.5.0.{build}
+version: 1.6.0.{build}
 image: Visual Studio 2022
 
 configuration:
 - Release
 
 platform:
-- Win32
 - x64
 - ARM64
+- Win32
 
 cache:
   - vcpkg_installed -> vcpkg.json
@@ -27,14 +27,6 @@ for:
 -
   matrix:
     only:
-      - platform: Win32
-
-  environment:
-    arch: x86
-
--
-  matrix:
-    only:
       - platform: x64
 
   environment:
@@ -47,6 +39,14 @@ for:
 
   environment:
     arch: arm64
+
+-
+  matrix:
+    only:
+      - platform: Win32
+
+  environment:
+    arch: x86
 
 init:
 - pwsh: >-
@@ -84,15 +84,15 @@ test_script:
 - pwsh: .appveyor\test_script.ps1
 
 artifacts:
-- path: explorerpp_x86.zip
-- path: explorerpp_x86_symbols.zip
-- path: explorerpp_x64.zip
-- path: explorerpp_x64_symbols.zip
-- path: explorerpp_arm64.zip
-- path: explorerpp_arm64_symbols.zip
-- path: explorerpp_x86_setup.msi
-- path: explorerpp_x64_setup.msi
-- path: explorerpp_translations.zip
+- path: starryfilespp_x64.zip
+- path: starryfilespp_x64_symbols.zip
+- path: starryfilespp_arm64.zip
+- path: starryfilespp_arm64_symbols.zip
+- path: starryfilespp_x86.zip
+- path: starryfilespp_x86_symbols.zip
+- path: starryfilespp_x64_setup.msi
+- path: starryfilespp_x86_setup.msi
+- path: starryfilespp_translations.zip
 
 before_deploy:
 - pwsh: >-
