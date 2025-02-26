@@ -1,7 +1,7 @@
 StarryFiles++
 ----------
 
-Copyright (c) 2005-2011 David Erceg
+Copyright (c) 2005-2011 lingyicute
 
 StarryFiles++ is free software released under
 the GNU General Public License.
