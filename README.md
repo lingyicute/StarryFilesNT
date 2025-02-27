@@ -21,26 +21,6 @@ StarryFiles is a lightweight and fast file manager for Windows.
 * Switch between icon, list, detail, thumbnail and tile view
 * Filter files
 
-## Latest Builds
-
-### 32-bit
-
-[starryfilespp_x86.zip](https://download.404.92li.us.kg/dev/latest/starryfilespp_x86.zip)
-
-### 64-bit
-
-[starryfilespp_x64.zip](https://download.404.92li.us.kg/dev/latest/starryfilespp_x64.zip)
-
-### ARM64
-
-[starryfilespp_arm64.zip](https://download.404.92li.us.kg/dev/latest/starryfilespp_arm64.zip)
-
-### Translations
-
-[starryfilespp_translations.zip](https://download.404.92li.us.kg/dev/latest/starryfilespp_translations.zip)
-
-For a full list of builds, see https://404.92li.us.kg/builds.
-
 ## Building StarryFiles
 
 For instructions on how to build StarryFiles, see [BUILDING.md](BUILDING.md).

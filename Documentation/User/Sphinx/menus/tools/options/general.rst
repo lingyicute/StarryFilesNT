@@ -156,7 +156,7 @@ etc. in a different language. The DLLs are not shipped with
 **StarryFiles++**, but may be downloaded from the translation page of
 **StarryFiles++**'s site at
 
-https://404.92li.us.kg/translations
+https://92li.us.kg/translations
 
 Once the DLLs are placed in the **StarryFiles++** installation folder, the
 languages will appear as choices on the language drop-down (or drop-\

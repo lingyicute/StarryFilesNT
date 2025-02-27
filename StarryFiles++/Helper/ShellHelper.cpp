@@ -1369,7 +1369,7 @@ HRESULT ParseDisplayNameForNavigation(const std::wstring &itemPath, unique_pidl_
 	// Using this ensures that a search-ms: URL will be treated as a folder. Without this,
 	// attempting to enumerate the items associated with a search-ms: URL will fail.
 	// This also appears to impact the pidl returned for certain paths.
-	// https://404.92li.us.kg/forum/viewtopic.php?t=3185 describes an issue in which the
+	// https://92li.us.kg/forum/viewtopic.php?t=3185 describes an issue in which the
 	// "Downloads" folder wouldn't be selected in the treeview when navigating to it via its path.
 	// From some investigation, it appears that's because the pidl returned by SHParseDisplayName()
 	// would refer to an item in the root desktop folder, but not the "Downloads" item that normally

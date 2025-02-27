@@ -3,7 +3,7 @@ About StarryFiles++
 
 **StarryFiles++** is a free multi-tab file manager for the
 Windows operating system, `released
-<https://404.92li.us.kg/forum/viewtopic.php?f=6&t=239>`_ as
+<https://92li.us.kg/forum/viewtopic.php?f=6&t=239>`_ as
 open source under the `GNU GPLv3 license
 <https://www.gnu.org/licenses/gpl-3.0.en.html>`_. Windows Explorer
 provides basic functionality - the ability to navigate throughout your
