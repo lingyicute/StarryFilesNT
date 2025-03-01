@@ -18,6 +18,7 @@ public:
 
 protected:
 	ThemeManager *GetThemeManager() const;
+	wil::unique_hicon GetDialogIcon(int iconWidth, int iconHeight) const override;
 
 private:
 	void OnInitDialogBase() override final;

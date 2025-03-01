@@ -8,201 +8,201 @@
     <?define UpgradeCode = "5FCCCA87-38B5-44DA-AB5A-20D784DF0461" ?>
 <?endif ?>
 
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
-     xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
-
-    <Fragment>
-        <Directory Id="TARGETDIR" Name="SourceDir">
-            <Directory Id="$(var.PlatformProgramFilesFolder)">
-                <Directory Id="INSTALLFOLDER" Name="StarryFiles++" />
-            </Directory>
-            <Directory Id="CommonProgramsFolder">
-                <Directory Id="ApplicationProgramsFolder" Name="StarryFiles++" />
-            </Directory>
-            <Directory Id="CommonDesktopFolder" Name="Desktop" />
-        </Directory>
-    </Fragment>
-
-    <Fragment>
-        <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-            <Component Id="MainExecutable" Guid="64A067D6-381D-4C81-A24D-F0FC735B5E19">
-                <File Id="StarryfilesppEXE" Name="StarryFiles++.exe" Source="$(var.StarryFiles++.TargetPath)" KeyPath="yes" />
-            </Component>
-
-            <Component Id="History" Guid="0CB49788-9CBD-403C-863C-A02060659179">
-				<File Id="History" Source="$(var.SolutionDir)..\Documentation\User\History.txt" KeyPath="yes" />
-			</Component>
-			<Component Id="License" Guid="975F5EE5-957C-457F-BE1A-EF50CFFB5E0C">
-				<File Id="License" Source="$(var.SolutionDir)..\Documentation\User\License.txt" KeyPath="yes" />
-			</Component>
-			<Component Id="Readme" Guid="184D8A24-6930-4639-8C51-703DF78C6EA2">
-				<File Id="Readme" Source="$(var.SolutionDir)..\Documentation\User\Readme.txt" KeyPath="yes" />
-			</Component>
-			<Component Id="CatalanTranslation" Guid="F991E89C-C776-4F58-926A-B8EA63292AAE">
-				<File Id="CatalanDLL" Source="$(var.StarryFiles++CA.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="CzechTranslation" Guid="21502F40-6E55-4D6C-9DD7-DEDC8FE2D70A">
-				<File Id="CzechDLL" Source="$(var.StarryFiles++CS.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="DanishTranslation" Guid="0DE4D191-6B28-42B5-B9EE-09D2F07BF817">
-				<File Id="DanishDLL" Source="$(var.StarryFiles++DA.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="GermanTranslation" Guid="253F8457-6861-468B-ADAA-A291FA8941D7">
-				<File Id="GermanDLL" Source="$(var.StarryFiles++DE.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="SpanishTranslation" Guid="94A01289-2368-4414-AE1E-91F36CB7B6A4">
-				<File Id="SpanishDLL" Source="$(var.StarryFiles++ES.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="PersianTranslation" Guid="6E06E678-6E38-40CD-88EA-D73B639DD64C">
-				<File Id="PersianDLL" Source="$(var.StarryFiles++FA.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="FinnishTranslation" Guid="BA70C501-2865-4B59-A257-C23E0A7D68AD">
-				<File Id="FinnishDLL" Source="$(var.StarryFiles++FI.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="FrenchTranslation" Guid="C89702B5-8DF8-40D8-BDC4-D51AA845907C">
-				<File Id="FrenchDLL" Source="$(var.StarryFiles++FR.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="HebrewTranslation" Guid="0035482C-7253-41CA-9FDD-849B954FD452">
-				<File Id="HebrewDLL" Source="$(var.StarryFiles++HE.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="HungarianTranslation" Guid="194FB780-6CF3-485E-A782-2B7FE21DEAC7">
-				<File Id="HungarianDLL" Source="$(var.StarryFiles++HU.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="ItalianTranslation" Guid="32591CF9-DA7F-4244-8648-4BBCA8D67B45">
-				<File Id="ItalianDLL" Source="$(var.StarryFiles++IT.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="JapaneseTranslation" Guid="3ADAE17A-53D9-48E9-8522-2774F4AD028B">
-				<File Id="JapaneseDLL" Source="$(var.StarryFiles++JA.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="KoreanTranslation" Guid="BE1C5FF6-E813-46C8-BDB9-A23296E73DAA">
-				<File Id="KoreanDLL" Source="$(var.StarryFiles++KO.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="DutchTranslation" Guid="11395C79-2998-4C32-BEB0-A68EBAA3B7F8">
-				<File Id="DutchDLL" Source="$(var.StarryFiles++NL.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="NorwegianTranslation" Guid="1C298559-442C-4EC7-B2D1-2B12A749175E">
-				<File Id="NorwegianDLL" Source="$(var.StarryFiles++NO.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="PolishTranslation" Guid="C6A8C4D0-2183-428E-B1CA-341BA0D305CB">
-				<File Id="PolishDLL" Source="$(var.StarryFiles++PL.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="PortugueseTranslation" Guid="EA28EA7D-B509-4807-ABC3-F432002DA4DA">
-				<File Id="PortugueseDLL" Source="$(var.StarryFiles++PT.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="RomanianTranslation" Guid="342F8272-E702-4594-A329-0C60E27584B4">
-				<File Id="RomanianDLL" Source="$(var.StarryFiles++RO.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="RussianTranslation" Guid="68AD9176-B5BD-4E17-911A-EF3A142D03C3">
-				<File Id="RussianDLL" Source="$(var.StarryFiles++RU.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="SinhalaTranslation" Guid="9498A177-47D8-40E8-B86E-7602D1BCBBD1">
-				<File Id="SinhalaDLL" Source="$(var.StarryFiles++SI.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="SwedishTranslation" Guid="B93F6D2B-B490-4C03-BD41-68F3C73D821D">
-				<File Id="SwedishDLL" Source="$(var.StarryFiles++SV.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="TurkishTranslation" Guid="181D5945-8026-4756-BA1F-85696E7629F7">
-				<File Id="TurkishDLL" Source="$(var.StarryFiles++TR.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="UkrainianTranslation" Guid="343C6FDF-FE50-476E-9BC2-FCD89E108631">
-				<File Id="UkrainianDLL" Source="$(var.StarryFiles++UK.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="VietnameseTranslation" Guid="540EBC40-9950-4FC7-840B-0E2242006818">
-				<File Id="VietnameseDLL" Source="$(var.StarryFiles++VI.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="ChineseSimplifiedTranslation" Guid="06FB3620-50FD-46E3-BF77-C5C4546C0A75">
-				<File Id="ChineseSimplifiedDLL" Source="$(var.StarryFiles++ZH_CN.TargetPath)" KeyPath="yes" />
-			</Component>
-			<Component Id="ChineseTraditionalTranslation" Guid="C3D6AF88-F6BC-4E62-BC01-7FA08CC8C32C">
-				<File Id="ChineseTraditionalDLL" Source="$(var.StarryFiles++ZH_TW.TargetPath)" KeyPath="yes" />
-			</Component>
-		</ComponentGroup>
+<Product Id="*" 
+         Name="StarryFiles++" 
+         Language="2052" 
+         Version="!(bind.FileVersion.StarryfilesppEXE)" 
+         Manufacturer="StarryFiles++ contributors" 
+         UpgradeCode="$(var.UpgradeCode)"
+         xmlns="http://schemas.microsoft.com/wix/2006/wi"
+         xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
         
-        <DirectoryRef Id="ApplicationProgramsFolder">
-            <Component Id="StartMenuShortcut" Guid="E3B9C9A2-1F47-4A3D-9D7A-5B2E7D1C4F6A">
-                <Shortcut Id="ApplicationStartMenuShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
-                <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="StartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
-            </Component>
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Languages="2052" />
 
-            <Component Id="UninstallShortcut" Guid="F0F35050-BCA2-4688-BB89-FEA2BA4C4AF1">
-                <Shortcut Id="UninstallProduct" Name="卸载 StarryFiles++" Description="卸载 StarryFiles++" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" />
-                <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="UninstallShortcut" Type="integer" Value="1" KeyPath="yes" />
-                <RemoveFolder Id="CleanUpShortcut" Directory="ApplicationProgramsFolder" On="uninstall" />
-            </Component>
-        </DirectoryRef>
+    <MajorUpgrade DowngradeErrorMessage="已安装更高版本的 [ProductName]。" />
+    <MediaTemplate EmbedCab="yes" />
 
-        <DirectoryRef Id="CommonDesktopFolder">
-            <Component Id="DesktopShortcut" Guid="D6C3A1B7-8E2F-4D8E-9A6F-1B2C3D4E5F60">
-                <Shortcut Id="ApplicationDesktopShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
-                <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes" />
-            </Component>
-        </DirectoryRef>
-	</Fragment>
+    <Feature Id="Complete" Level="1">
+        <ComponentGroupRef Id="ProductComponents" />
+        <ComponentRef Id="StartMenuShortcut" />
+        <ComponentRef Id="DesktopShortcut" />
+        <ComponentRef Id="UninstallShortcut" />
+    </Feature>
 
-	<Product Id="*" Name="StarryFiles++" Language="2052" Version="!(bind.FileVersion.StarryfilesppEXE)" Manufacturer="StarryFiles++ contributors" UpgradeCode="$(var.UpgradeCode)">
-        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Languages="2052" />
+    <WixVariable Id="WixUILangId" Value="2052" />
 
-        <MajorUpgrade DowngradeErrorMessage="已安装更高版本的 [ProductName]。" />
-        <MediaTemplate EmbedCab="yes" />
+    <Icon Id="Starryfilespp.ico" SourceFile="$(var.StarryFiles++.ProjectDir)res\StarryFiles++.ico" />
 
-        <Feature Id="Complete" Level="1">
-            <ComponentGroupRef Id="ProductComponents" />
-            <ComponentRef Id="StartMenuShortcut" />
-            <ComponentRef Id="DesktopShortcut" />
-            <ComponentRef Id="UninstallShortcut" />
-        </Feature>
+    <Property Id="ARPPRODUCTICON" Value="Starryfilespp.ico" />
 
-		<WixVariable Id="WixUILangId" Value="2052" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    
+    <UI Id="CustomInstallDir">
+        <UIRef Id="WixUI_InstallDir" />
+        
+        <Publish Dialog="WelcomeDlg" 
+                Control="Next" 
+                Event="NewDialog" 
+                Value="InstallDirDlg" 
+                Order="2">1</Publish>
+        <Publish Dialog="InstallDirDlg" 
+                Control="Back" 
+                Event="NewDialog" 
+                Value="WelcomeDlg" 
+                Order="2">1</Publish>
+    </UI>
+    
+    <UIRef Id="CustomInstallDir" />
 
-		<Icon Id="Starryfilespp.ico" SourceFile="$(var.StarryFiles++.ProjectDir)res\StarryFiles++.ico" />
+    <UI>
+        <UIText Id="ButtonBack">上一步(&lt;)</UIText>
+        <UIText Id="ButtonNext">下一步(&gt;)</UIText>
+        <UIText Id="ButtonCancel">取消</UIText>
+        <UIText Id="ButtonInstall">安装</UIText>
+        <UIText Id="ButtonFinish">完成</UIText>
+        <UIText Id="ButtonBrowse">浏览...</UIText>
+        <UIText Id="ButtonExit">退出</UIText>
+        
+        <UIText Id="WelcomeDlgTitle">欢迎使用 [ProductName] ！</UIText>
+        <UIText Id="WelcomeDlgDescription">此安装程序会帮助你完成 [ProductName] 的安装。</UIText>
+        
+        <UIText Id="InstallDirDlgTitle">安装目标文件夹</UIText>
+        <UIText Id="InstallDirDlgDescription">点击"安装"开始安装。</UIText>
+        <UIText Id="InstallDirDlgFolderLabel">请选择安装目标文件夹：</UIText>
+        
+        <UIText Id="ProgressDlgTitleInstalling">正在安装 [ProductName]</UIText>
+        <UIText Id="ProgressDlgTextInstalling">请等待 [ProductName] 安装完成。</UIText>
+        
+        <UIText Id="VerifyReadyDlgInstallTitle">准备安装 [ProductName]</UIText>
+        <UIText Id="VerifyReadyDlgInstallText">安装程序已准备好开始安装 [ProductName]。点击"安装"开始安装。如果需要检查或更改任何安装设置，请点击"上一步"。</UIText>
+        
+        <UIText Id="MaintenanceWelcomeDlgTitle">欢迎使用 [ProductName] 安装向导</UIText>
+        
+        <UIText Id="ExitDialogTitle">[ProductName] 安装完成</UIText>
+        <UIText Id="ExitDialogDescription">[ProductName] 已成功安装在您的计算机上。</UIText>
+    </UI>
 
-		<Property Id="ARPPRODUCTICON" Value="Starryfilespp.ico" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+        <Directory Id="$(var.PlatformProgramFilesFolder)">
+            <Directory Id="INSTALLFOLDER" Name="StarryFiles++" />
+        </Directory>
+        <Directory Id="CommonProgramsFolder">
+            <Directory Id="ApplicationProgramsFolder" Name="StarryFiles++" />
+        </Directory>
+        <Directory Id="CommonDesktopFolder" Name="Desktop" />
+    </Directory>
 
-		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
-		
-		<UI Id="CustomInstallDir">
-			<UIRef Id="WixUI_InstallDir" />
-			
-			<Publish Dialog="WelcomeDlg" 
-					Control="Next" 
-					Event="NewDialog" 
-					Value="InstallDirDlg" 
-					Order="2">1</Publish>
-			<Publish Dialog="InstallDirDlg" 
-					Control="Back" 
-					Event="NewDialog" 
-					Value="WelcomeDlg" 
-					Order="2">1</Publish>
-		</UI>
-		
-		<UIRef Id="CustomInstallDir" />
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+        <Component Id="MainExecutable" Guid="64A067D6-381D-4C81-A24D-F0FC735B5E19">
+            <File Id="StarryfilesppEXE" Name="StarryFiles++.exe" Source="$(var.StarryFiles++.TargetPath)" KeyPath="yes" />
+        </Component>
 
-		<UI>
-			<UIText Id="ButtonBack">上一步(&lt;)</UIText>
-			<UIText Id="ButtonNext">下一步(&gt;)</UIText>
-			<UIText Id="ButtonCancel">取消</UIText>
-			<UIText Id="ButtonInstall">安装</UIText>
-			<UIText Id="ButtonFinish">完成</UIText>
-			<UIText Id="ButtonBrowse">浏览...</UIText>
-			<UIText Id="ButtonExit">退出</UIText>
-			
-			<UIText Id="WelcomeDlgTitle">欢迎使用 [ProductName] ！</UIText>
-			<UIText Id="WelcomeDlgDescription">此安装程序会帮助你完成 [ProductName] 的安装。</UIText>
-			
-			<UIText Id="InstallDirDlgTitle">安装目标文件夹</UIText>
-			<UIText Id="InstallDirDlgDescription">点击“安装”开始安装。</UIText>
-			<UIText Id="InstallDirDlgFolderLabel">请选择安装目标文件夹：</UIText>
-			
-			<UIText Id="ProgressDlgTitleInstalling">正在安装 [ProductName]</UIText>
-			<UIText Id="ProgressDlgTextInstalling">请等待 [ProductName] 安装完成。</UIText>
-			
-			<UIText Id="VerifyReadyDlgInstallTitle">准备安装 [ProductName]</UIText>
-			<UIText Id="VerifyReadyDlgInstallText">安装程序已准备好开始安装 [ProductName]。点击“安装”开始安装。如果需要检查或更改任何安装设置，请点击“上一步”。</UIText>
-			
-			<UIText Id="MaintenanceWelcomeDlgTitle">欢迎使用 [ProductName] 安装向导</UIText>
-			
-			<UIText Id="ExitDialogTitle">[ProductName] 安装完成</UIText>
-			<UIText Id="ExitDialogDescription">[ProductName] 已成功安装在您的计算机上。</UIText>
-		</UI>
-    </Product>
-</Wix>
+        <Component Id="History" Guid="0CB49788-9CBD-403C-863C-A02060659179">
+            <File Id="History" Source="$(var.SolutionDir)..\Documentation\User\History.txt" KeyPath="yes" />
+        </Component>
+        <Component Id="License" Guid="975F5EE5-957C-457F-BE1A-EF50CFFB5E0C">
+            <File Id="License" Source="$(var.SolutionDir)..\Documentation\User\License.txt" KeyPath="yes" />
+        </Component>
+        <Component Id="Readme" Guid="184D8A24-6930-4639-8C51-703DF78C6EA2">
+            <File Id="Readme" Source="$(var.SolutionDir)..\Documentation\User\Readme.txt" KeyPath="yes" />
+        </Component>
+        <Component Id="CatalanTranslation" Guid="F991E89C-C776-4F58-926A-B8EA63292AAE">
+            <File Id="CatalanDLL" Source="$(var.StarryFiles++CA.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="CzechTranslation" Guid="21502F40-6E55-4D6C-9DD7-DEDC8FE2D70A">
+            <File Id="CzechDLL" Source="$(var.StarryFiles++CS.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="DanishTranslation" Guid="0DE4D191-6B28-42B5-B9EE-09D2F07BF817">
+            <File Id="DanishDLL" Source="$(var.StarryFiles++DA.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="GermanTranslation" Guid="253F8457-6861-468B-ADAA-A291FA8941D7">
+            <File Id="GermanDLL" Source="$(var.StarryFiles++DE.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="SpanishTranslation" Guid="94A01289-2368-4414-AE1E-91F36CB7B6A4">
+            <File Id="SpanishDLL" Source="$(var.StarryFiles++ES.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="PersianTranslation" Guid="6E06E678-6E38-40CD-88EA-D73B639DD64C">
+            <File Id="PersianDLL" Source="$(var.StarryFiles++FA.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="FinnishTranslation" Guid="BA70C501-2865-4B59-A257-C23E0A7D68AD">
+            <File Id="FinnishDLL" Source="$(var.StarryFiles++FI.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="FrenchTranslation" Guid="C89702B5-8DF8-40D8-BDC4-D51AA845907C">
+            <File Id="FrenchDLL" Source="$(var.StarryFiles++FR.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="HebrewTranslation" Guid="0035482C-7253-41CA-9FDD-849B954FD452">
+            <File Id="HebrewDLL" Source="$(var.StarryFiles++HE.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="HungarianTranslation" Guid="194FB780-6CF3-485E-A782-2B7FE21DEAC7">
+            <File Id="HungarianDLL" Source="$(var.StarryFiles++HU.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="ItalianTranslation" Guid="32591CF9-DA7F-4244-8648-4BBCA8D67B45">
+            <File Id="ItalianDLL" Source="$(var.StarryFiles++IT.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="JapaneseTranslation" Guid="3ADAE17A-53D9-48E9-8522-2774F4AD028B">
+            <File Id="JapaneseDLL" Source="$(var.StarryFiles++JA.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="KoreanTranslation" Guid="BE1C5FF6-E813-46C8-BDB9-A23296E73DAA">
+            <File Id="KoreanDLL" Source="$(var.StarryFiles++KO.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="DutchTranslation" Guid="11395C79-2998-4C32-BEB0-A68EBAA3B7F8">
+            <File Id="DutchDLL" Source="$(var.StarryFiles++NL.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="NorwegianTranslation" Guid="1C298559-442C-4EC7-B2D1-2B12A749175E">
+            <File Id="NorwegianDLL" Source="$(var.StarryFiles++NO.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="PolishTranslation" Guid="C6A8C4D0-2183-428E-B1CA-341BA0D305CB">
+            <File Id="PolishDLL" Source="$(var.StarryFiles++PL.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="PortugueseTranslation" Guid="EA28EA7D-B509-4807-ABC3-F432002DA4DA">
+            <File Id="PortugueseDLL" Source="$(var.StarryFiles++PT.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="RomanianTranslation" Guid="342F8272-E702-4594-A329-0C60E27584B4">
+            <File Id="RomanianDLL" Source="$(var.StarryFiles++RO.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="RussianTranslation" Guid="68AD9176-B5BD-4E17-911A-EF3A142D03C3">
+            <File Id="RussianDLL" Source="$(var.StarryFiles++RU.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="SinhalaTranslation" Guid="9498A177-47D8-40E8-B86E-7602D1BCBBD1">
+            <File Id="SinhalaDLL" Source="$(var.StarryFiles++SI.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="SwedishTranslation" Guid="B93F6D2B-B490-4C03-BD41-68F3C73D821D">
+            <File Id="SwedishDLL" Source="$(var.StarryFiles++SV.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="TurkishTranslation" Guid="181D5945-8026-4756-BA1F-85696E7629F7">
+            <File Id="TurkishDLL" Source="$(var.StarryFiles++TR.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="UkrainianTranslation" Guid="343C6FDF-FE50-476E-9BC2-FCD89E108631">
+            <File Id="UkrainianDLL" Source="$(var.StarryFiles++UK.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="VietnameseTranslation" Guid="540EBC40-9950-4FC7-840B-0E2242006818">
+            <File Id="VietnameseDLL" Source="$(var.StarryFiles++VI.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="ChineseSimplifiedTranslation" Guid="06FB3620-50FD-46E3-BF77-C5C4546C0A75">
+            <File Id="ChineseSimplifiedDLL" Source="$(var.StarryFiles++ZH_CN.TargetPath)" KeyPath="yes" />
+        </Component>
+        <Component Id="ChineseTraditionalTranslation" Guid="C3D6AF88-F6BC-4E62-BC01-7FA08CC8C32C">
+            <File Id="ChineseTraditionalDLL" Source="$(var.StarryFiles++ZH_TW.TargetPath)" KeyPath="yes" />
+        </Component>
+    </ComponentGroup>
+    
+    <DirectoryRef Id="ApplicationProgramsFolder">
+        <Component Id="StartMenuShortcut" Guid="E3B9C9A2-1F47-4A3D-9D7A-5B2E7D1C4F6A">
+            <Shortcut Id="ApplicationStartMenuShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
+            <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="StartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
+        </Component>
+
+        <Component Id="UninstallShortcut" Guid="F0F35050-BCA2-4688-BB89-FEA2BA4C4AF1">
+            <Shortcut Id="UninstallProduct" Name="卸载 StarryFiles++" Description="卸载 StarryFiles++" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" />
+            <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="UninstallShortcut" Type="integer" Value="1" KeyPath="yes" />
+            <RemoveFolder Id="CleanUpShortcut" Directory="ApplicationProgramsFolder" On="uninstall" />
+        </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="CommonDesktopFolder">
+        <Component Id="DesktopShortcut" Guid="D6C3A1B7-8E2F-4D8E-9A6F-1B2C3D4E5F60">
+            <Shortcut Id="ApplicationDesktopShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
+            <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes" />
+        </Component>
+    </DirectoryRef>
+</Product>
