@@ -8,11 +8,12 @@
 <?define UpgradeCode = "5FCCCA87-38B5-44DA-AB5A-20D784DF0461" ?>
 <?endif ?>
 
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="StarryFiles++" Language="1033" Version="!(bind.FileVersion.StarryfilesppEXE)" Manufacturer="StarryFiles++ contributors" UpgradeCode="$(var.UpgradeCode)">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
+	<Product Id="*" Name="StarryFiles++" Language="2052" Version="!(bind.FileVersion.StarryfilesppEXE)" Manufacturer="StarryFiles++ contributors" UpgradeCode="$(var.UpgradeCode)">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Languages="2052" />
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MajorUpgrade DowngradeErrorMessage="已安装更高版本的 [ProductName]。" />
 		<MediaTemplate EmbedCab="yes" />
 
 		<Feature Id="Complete" Level="1">
@@ -20,7 +21,7 @@
 			<ComponentRef Id="ApplicationShortcut" />
 		</Feature>
 
-		<WixVariable Id="WixUILicenseRtf" Value="res/gpl-3.0.rtf" />
+		<WixVariable Id="WixUILangId" Value="2052" />
 
 		<Icon Id="Starryfilespp.ico" SourceFile="$(var.StarryFiles++.ProjectDir)res\StarryFiles++.ico" />
 
@@ -28,7 +29,51 @@
 		<Property Id="ARPPRODUCTICON" Value="Starryfilespp.ico" />
 
 		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
-		<UIRef Id="WixUI_InstallDir" />
+		
+		<UI Id="CustomInstallDir">
+			<UIRef Id="WixUI_InstallDir" />
+			
+			<Publish Dialog="WelcomeDlg" 
+					Control="Next" 
+					Event="NewDialog" 
+					Value="InstallDirDlg" 
+					Order="2">1</Publish>
+			<Publish Dialog="InstallDirDlg" 
+					Control="Back" 
+					Event="NewDialog" 
+					Value="WelcomeDlg" 
+					Order="2">1</Publish>
+		</UI>
+		
+		<UIRef Id="CustomInstallDir" />
+
+		<UI>
+			<UIText Id="ButtonBack" Value="上一步(&lt;)" />
+			<UIText Id="ButtonNext" Value="下一步(&gt;)" />
+			<UIText Id="ButtonCancel" Value="取消" />
+			<UIText Id="ButtonInstall" Value="安装" />
+			<UIText Id="ButtonFinish" Value="完成" />
+			<UIText Id="ButtonBrowse" Value="浏览..." />
+			<UIText Id="ButtonExit" Value="退出" />
+			
+			<UIText Id="WelcomeDlgTitle" Value="欢迎使用 [ProductName] ！" />
+			<UIText Id="WelcomeDlgDescription" Value="此安装程序会帮助你完成 [ProductName] 的安装。" />
+			
+			<UIText Id="InstallDirDlgTitle" Value="安装目标文件夹" />
+			<UIText Id="InstallDirDlgDescription" Value="点击"安装"开始安装。" />
+			<UIText Id="InstallDirDlgFolderLabel" Value="请选择安装目标文件夹：" />
+			
+			<UIText Id="ProgressDlgTitleInstalling" Value="正在安装 [ProductName]" />
+			<UIText Id="ProgressDlgTextInstalling" Value="请等待 [ProductName] 安装完成。" />
+			
+			<UIText Id="VerifyReadyDlgInstallTitle" Value="准备安装 [ProductName]" />
+			<UIText Id="VerifyReadyDlgInstallText" Value="安装程序已准备好开始安装 [ProductName]。点击"安装"开始安装。如果需要检查或更改任何安装设置，请点击"上一步"。" />
+			
+			<UIText Id="MaintenanceWelcomeDlgTitle" Value="欢迎使用 [ProductName] 安装向导" />
+			
+			<UIText Id="ExitDialogTitle" Value="[ProductName] 安装完成" />
+			<UIText Id="ExitDialogDescription" Value="[ProductName] 已成功安装在您的计算机上。" />
+		</UI>
 	</Product>
 
 	<Fragment>
@@ -39,7 +84,7 @@
 			<Directory Id="ProgramMenuFolder">
 				<Directory Id="ApplicationProgramsFolder" Name="StarryFiles++">
 					<Component Id="ApplicationShortcut" Guid="F0F35050-BCA2-4688-BB89-FEA2BA4C4AF1">
-						<Shortcut Id="UninstallProduct" Name="Uninstall StarryFiles++" Description="Uninstalls StarryFiles++" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" />
+						<Shortcut Id="UninstallProduct" Name="卸载 StarryFiles++" Description="卸载 StarryFiles++" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" />
 						<RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
 						<RemoveFolder Id="CleanUpShortct" Directory="ApplicationProgramsFolder" On="uninstall" />
 					</Component>
