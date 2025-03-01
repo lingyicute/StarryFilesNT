@@ -29,23 +29,7 @@
                 <File Id="StarryfilesppEXE" Name="StarryFiles++.exe" Source="$(var.StarryFiles++.TargetPath)" KeyPath="yes" />
             </Component>
 
-            <Component Id="StartMenuShortcut" Guid="E3B9C9A2-1F47-4A3D-9D7A-5B2E7D1C4F6A" Directory="ApplicationProgramsFolder">
-                <Shortcut Id="ApplicationStartMenuShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
-                <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="StartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
-            </Component>
-
-            <Component Id="DesktopShortcut" Guid="D6C3A1B7-8E2F-4D8E-9A6F-1B2C3D4E5F60" Directory="CommonDesktopFolder">
-                <Shortcut Id="ApplicationDesktopShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
-                <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes" />
-            </Component>
-
-            <Component Id="UninstallShortcut" Guid="F0F35050-BCA2-4688-BB89-FEA2BA4C4AF1" Directory="ApplicationProgramsFolder">
-                <Shortcut Id="UninstallProduct" Name="卸载 StarryFiles++" Description="卸载 StarryFiles++" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" />
-                <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="UninstallShortcut" Type="integer" Value="1" KeyPath="yes" />
-                <RemoveFolder Id="CleanUpShortcut" Directory="ApplicationProgramsFolder" On="uninstall" />
-            </Component>
-
-			<Component Id="History" Guid="0CB49788-9CBD-403C-863C-A02060659179">
+            <Component Id="History" Guid="0CB49788-9CBD-403C-863C-A02060659179">
 				<File Id="History" Source="$(var.SolutionDir)..\Documentation\User\History.txt" KeyPath="yes" />
 			</Component>
 			<Component Id="License" Guid="975F5EE5-957C-457F-BE1A-EF50CFFB5E0C">
@@ -133,6 +117,26 @@
 				<File Id="ChineseTraditionalDLL" Source="$(var.StarryFiles++ZH_TW.TargetPath)" KeyPath="yes" />
 			</Component>
 		</ComponentGroup>
+        
+        <DirectoryRef Id="ApplicationProgramsFolder">
+            <Component Id="StartMenuShortcut" Guid="E3B9C9A2-1F47-4A3D-9D7A-5B2E7D1C4F6A">
+                <Shortcut Id="ApplicationStartMenuShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
+                <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="StartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+
+            <Component Id="UninstallShortcut" Guid="F0F35050-BCA2-4688-BB89-FEA2BA4C4AF1">
+                <Shortcut Id="UninstallProduct" Name="卸载 StarryFiles++" Description="卸载 StarryFiles++" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" />
+                <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="UninstallShortcut" Type="integer" Value="1" KeyPath="yes" />
+                <RemoveFolder Id="CleanUpShortcut" Directory="ApplicationProgramsFolder" On="uninstall" />
+            </Component>
+        </DirectoryRef>
+
+        <DirectoryRef Id="CommonDesktopFolder">
+            <Component Id="DesktopShortcut" Guid="D6C3A1B7-8E2F-4D8E-9A6F-1B2C3D4E5F60">
+                <Shortcut Id="ApplicationDesktopShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
+                <RegistryValue Root="HKLM" Key="Software\StarryFiles++" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+        </DirectoryRef>
 	</Fragment>
 
 	<Product Id="*" Name="StarryFiles++" Language="2052" Version="!(bind.FileVersion.StarryfilesppEXE)" Manufacturer="StarryFiles++ contributors" UpgradeCode="$(var.UpgradeCode)">
@@ -174,31 +178,31 @@
 		<UIRef Id="CustomInstallDir" />
 
 		<UI>
-			<UIText Id="ButtonBack" Value="上一步(&lt;)" />
-			<UIText Id="ButtonNext" Value="下一步(&gt;)" />
-			<UIText Id="ButtonCancel" Value="取消" />
-			<UIText Id="ButtonInstall" Value="安装" />
-			<UIText Id="ButtonFinish" Value="完成" />
-			<UIText Id="ButtonBrowse" Value="浏览..." />
-			<UIText Id="ButtonExit" Value="退出" />
+			<UIText Id="ButtonBack">上一步(&lt;)</UIText>
+			<UIText Id="ButtonNext">下一步(&gt;)</UIText>
+			<UIText Id="ButtonCancel">取消</UIText>
+			<UIText Id="ButtonInstall">安装</UIText>
+			<UIText Id="ButtonFinish">完成</UIText>
+			<UIText Id="ButtonBrowse">浏览...</UIText>
+			<UIText Id="ButtonExit">退出</UIText>
 			
-			<UIText Id="WelcomeDlgTitle" Value="欢迎使用 [ProductName] ！" />
-			<UIText Id="WelcomeDlgDescription" Value="此安装程序会帮助你完成 [ProductName] 的安装。" />
+			<UIText Id="WelcomeDlgTitle">欢迎使用 [ProductName] ！</UIText>
+			<UIText Id="WelcomeDlgDescription">此安装程序会帮助你完成 [ProductName] 的安装。</UIText>
 			
-			<UIText Id="InstallDirDlgTitle" Value="安装目标文件夹" />
-			<UIText Id="InstallDirDlgDescription" Value="点击“安装”开始安装。" />
-			<UIText Id="InstallDirDlgFolderLabel" Value="请选择安装目标文件夹：" />
+			<UIText Id="InstallDirDlgTitle">安装目标文件夹</UIText>
+			<UIText Id="InstallDirDlgDescription">点击“安装”开始安装。</UIText>
+			<UIText Id="InstallDirDlgFolderLabel">请选择安装目标文件夹：</UIText>
 			
-			<UIText Id="ProgressDlgTitleInstalling" Value="正在安装 [ProductName]" />
-			<UIText Id="ProgressDlgTextInstalling" Value="请等待 [ProductName] 安装完成。" />
+			<UIText Id="ProgressDlgTitleInstalling">正在安装 [ProductName]</UIText>
+			<UIText Id="ProgressDlgTextInstalling">请等待 [ProductName] 安装完成。</UIText>
 			
-			<UIText Id="VerifyReadyDlgInstallTitle" Value="准备安装 [ProductName]" />
-			<UIText Id="VerifyReadyDlgInstallText" Value="安装程序已准备好开始安装 [ProductName]。点击“安装”开始安装。如果需要检查或更改任何安装设置，请点击“上一步”。" />
+			<UIText Id="VerifyReadyDlgInstallTitle">准备安装 [ProductName]</UIText>
+			<UIText Id="VerifyReadyDlgInstallText">安装程序已准备好开始安装 [ProductName]。点击“安装”开始安装。如果需要检查或更改任何安装设置，请点击“上一步”。</UIText>
 			
-			<UIText Id="MaintenanceWelcomeDlgTitle" Value="欢迎使用 [ProductName] 安装向导" />
+			<UIText Id="MaintenanceWelcomeDlgTitle">欢迎使用 [ProductName] 安装向导</UIText>
 			
-			<UIText Id="ExitDialogTitle" Value="[ProductName] 安装完成" />
-			<UIText Id="ExitDialogDescription" Value="[ProductName] 已成功安装在您的计算机上。" />
+			<UIText Id="ExitDialogTitle">[ProductName] 安装完成</UIText>
+			<UIText Id="ExitDialogDescription">[ProductName] 已成功安装在您的计算机上。</UIText>
 		</UI>
     </Product>
 </Wix>
