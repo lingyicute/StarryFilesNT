@@ -15,9 +15,8 @@
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate EmbedCab="yes" />
 
-		<!-- 请求管理员权限 -->
 		<Property Id="MSIUSEREALADMINDETECTION" Value="1" />
-		<Condition Message="安装此应用程序需要管理员权限。请以管理员身份运行此安装程序。">Privileged</Condition>
+		<Condition Message="You need administrator privileges to install this application. Please run this installer as administrator.">Privileged</Condition>
 
 		<Feature Id="Complete" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
