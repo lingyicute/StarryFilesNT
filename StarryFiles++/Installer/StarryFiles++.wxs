@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
 
-<?if $(var.Platform) = "x64" ?>
-    <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
-    <?define UpgradeCode = "5A4AE2AB-6246-4C67-8D0F-5DBD4FBE93C8" ?>
-<?else ?>
-    <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
-    <?define UpgradeCode = "5FCCCA87-38B5-44DA-AB5A-20D784DF0461" ?>
-<?endif ?>
+    <?if $(var.Platform) = "x64" ?>
+        <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+        <?define UpgradeCode = "5A4AE2AB-6246-4C67-8D0F-5DBD4FBE93C8" ?>
+    <?else ?>
+        <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+        <?define UpgradeCode = "5FCCCA87-38B5-44DA-AB5A-20D784DF0461" ?>
+    <?endif ?>
 
-<Product Id="*" 
-         Name="StarryFiles++" 
-         Language="2052" 
-         Version="!(bind.FileVersion.StarryfilesppEXE)" 
-         Manufacturer="StarryFiles++ contributors" 
-         UpgradeCode="$(var.UpgradeCode)"
-         xmlns="http://schemas.microsoft.com/wix/2006/wi"
-         xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
+    <Product Id="*" 
+             Name="StarryFiles++" 
+             Language="2052" 
+             Version="!(bind.FileVersion.StarryfilesppEXE)" 
+             Manufacturer="StarryFiles++ contributors" 
+             UpgradeCode="$(var.UpgradeCode)">
         
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Languages="2052" />
 
@@ -206,3 +206,4 @@
         </Component>
     </DirectoryRef>
 </Product>
+</Wix>
