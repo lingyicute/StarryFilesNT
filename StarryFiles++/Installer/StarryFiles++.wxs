@@ -19,8 +19,10 @@
 		<Condition Message="You need administrator privileges to install this application. Please run this installer as administrator.">Privileged</Condition>
 
 		<Feature Id="Complete" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
-			<ComponentRef Id="ApplicationShortcut" />
+		    <ComponentGroupRef Id="ProductComponents" />
+  		    <ComponentRef Id="ApplicationShortcut" />
+   		    <ComponentRef Id="StartMenuShortcut" />
+   		    <ComponentRef Id="DesktopShortcut" />
 		</Feature>
 
 		<Icon Id="Starryfilespp.ico" SourceFile="$(var.StarryFiles++.ProjectDir)res\StarryFiles++.ico" />
@@ -39,11 +41,20 @@
 			</Directory>
 			<Directory Id="ProgramMenuFolder">
 				<Directory Id="ApplicationProgramsFolder" Name="StarryFiles++">
-					<Component Id="ApplicationShortcut" Guid="F0F35050-BCA2-4688-BB89-FEA2BA4C4AF1">
-						<Shortcut Id="UninstallProduct" Name="Uninstall StarryFiles++" Description="Uninstalls StarryFiles++" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" />
-						<RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
-						<RemoveFolder Id="CleanUpShortct" Directory="ApplicationProgramsFolder" On="uninstall" />
-					</Component>
+                                        <Component Id="ApplicationShortcut" Guid="F0F35050-BCA2-4688-BB89-FEA2BA4C4AF1">
+                                            <Shortcut Id="UninstallProduct" Name="Uninstall StarryFiles++" Description="Uninstalls StarryFiles++" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" />
+                                            <RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
+                                            <RemoveFolder Id="CleanUpShortct" Directory="ApplicationProgramsFolder" On="uninstall" />
+                                        </Component>
+                                        <Component Id="StartMenuShortcut" Guid="F3335050-BCA2-4688-BB89-FEA2BA4C4AF1" Directory="ApplicationProgramsFolder">
+                                            <RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="StartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
+                                            <Shortcut Id="ApplicationStartMenuShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
+                                        </Component>
+
+                                        <Component Id="DesktopShortcut" Guid="F0F45950-BCA3-4618-BB89-FEA2BA4C6BF1" Directory="DesktopFolder">
+                                            <RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes" />
+                                            <Shortcut Id="ApplicationDesktopShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
+                                        </Component>
 				</Directory>
 			</Directory>
 			<Directory Id="DesktopFolder" Name="Desktop" />
@@ -53,10 +64,8 @@
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 			<Component Id="MainExecutable" Guid="64A067D6-381D-4C81-A24D-F0FC735B5E19">
-					<File Id="StarryfilesppEXE" Name="StarryFiles++.exe" DiskId="1" Source="$(var.StarryFiles++.TargetPath)" Checksum="yes" />
-					<RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="MainExeInstalled" Type="integer" Value="1" KeyPath="yes" />
-					<Shortcut Id="ApplicationStartMenuShortcut" Directory="ApplicationProgramsFolder" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" IconIndex="0" />
-					<Shortcut Id="ApplicationDesktopShortcut" Directory="DesktopFolder" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" IconIndex="0" />
+			    <File Id="StarryfilesppEXE" Name="StarryFiles++.exe" DiskId="1" Source="$(var.StarryFiles++.TargetPath)" KeyPath="yes" Checksum="yes" />
+			    <RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="MainExeInstalled" Type="integer" Value="1" />
 			</Component>
 			<Component Id="History" Guid="0CB49788-9CBD-403C-863C-A02060659179">
 				<File Id="History" Source="$(var.SolutionDir)..\Documentation\User\History.txt" />
