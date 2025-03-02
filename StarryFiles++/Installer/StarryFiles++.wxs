@@ -1,188 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?if $(var.Platform) = "x64" ?>
-	<?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
-	<?define UpgradeCode = "5A4AE2AB-6246-4C67-8D0F-5DBD4FBE93C8" ?>
+    <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+    <?define UpgradeCode = "5A4AE2AB-6246-4C67-8D0F-5DBD4FBE93C8" ?>
 <?else ?>
-	<?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
-<?define UpgradeCode = "5FCCCA87-38B5-44DA-AB5A-20D784DF0461" ?>
+    <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+    <?define UpgradeCode = "5FCCCA87-38B5-44DA-AB5A-20D784DF0461" ?>
 <?endif ?>
 
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
-	<Product Id="*" Name="StarryFiles++" Language="1033" Version="!(bind.FileVersion.StarryfilesppEXE)" Manufacturer="StarryFiles++ contributors" UpgradeCode="$(var.UpgradeCode)">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <Product Id="*" Name="StarryFiles++" Language="1033" Version="!(bind.FileVersion.StarryfilesppEXE)" Manufacturer="StarryFiles++ contributors" UpgradeCode="$(var.UpgradeCode)">
+        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate EmbedCab="yes" />
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+        <MediaTemplate EmbedCab="yes" />
 
-		<Property Id="MSIUSEREALADMINDETECTION" Value="1" />
-		<Condition Message="You need administrator privileges to install this application. Please run this installer as administrator.">Privileged</Condition>
+        <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
+        <Condition Message="You need administrator privileges to install this application. Please run this installer as administrator.">Privileged</Condition>
 
-		<Feature Id="Complete" Level="1">
-		    <ComponentGroupRef Id="ProductComponents" />
-  		    <ComponentRef Id="ApplicationShortcut" />
-   		    <ComponentRef Id="StartMenuShortcut" />
-   		    <ComponentRef Id="DesktopShortcut" />
-		</Feature>
+        <Feature Id="Complete" Level="1">
+            <ComponentGroupRef Id="ProductComponents" />
+            <ComponentRef Id="ApplicationShortcut" />
+            <ComponentRef Id="StartMenuShortcut" />
+            <ComponentRef Id="DesktopShortcut" />
+        </Feature>
 
-		<Icon Id="Starryfilespp.ico" SourceFile="$(var.StarryFiles++.ProjectDir)res\StarryFiles++.ico" />
+        <Icon Id="Starryfilespp.ico" SourceFile="$(var.StarryFiles++.ProjectDir)res\StarryFiles++.ico" />
 
-		<!-- This is the icon used in the add/remove programs dialog. -->
-		<Property Id="ARPPRODUCTICON" Value="Starryfilespp.ico" />
+        <!-- This is the icon used in the add/remove programs dialog. -->
+        <Property Id="ARPPRODUCTICON" Value="Starryfilespp.ico" />
 
-		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
-		<UIRef Id="WixUI_Minimal" />
-	</Product>
+        <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+        <UIRef Id="WixUI_Minimal" />
+    </Product>
 
-	<Fragment>
-		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="$(var.PlatformProgramFilesFolder)">
-				<Directory Id="INSTALLFOLDER" Name="StarryFiles++" />
-			</Directory>
-			<Directory Id="ProgramMenuFolder">
-				<Directory Id="ApplicationProgramsFolder" Name="StarryFiles++">
-                                        <Component Id="ApplicationShortcut" Guid="F0F35050-BCA2-4688-BB89-FEA2BA4C4AF1">
-                                            <Shortcut Id="UninstallProduct" Name="Uninstall StarryFiles++" Description="Uninstalls StarryFiles++" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" />
-                                            <RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
-                                            <RemoveFolder Id="CleanUpShortct" Directory="ApplicationProgramsFolder" On="uninstall" />
-                                        </Component>
-                                        <Component Id="StartMenuShortcut" Guid="F3335050-BCA2-4688-BB89-FEA2BA4C4AF1" Directory="ApplicationProgramsFolder">
-                                            <RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="StartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
-                                            <Shortcut Id="ApplicationStartMenuShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
-                                        </Component>
+    <Fragment>
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="$(var.PlatformProgramFilesFolder)">
+                <Directory Id="INSTALLFOLDER" Name="StarryFiles++" />
+            </Directory>
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder" Name="StarryFiles++">
+                    <!-- ApplicationShortcut 组件 -->
+                    <Component Id="ApplicationShortcut" Guid="F0F35050-BCA2-4688-BB89-FEA2BA4C4AF1">
+                        <Shortcut Id="UninstallProduct" Name="Uninstall StarryFiles++" Description="Uninstalls StarryFiles++" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" />
+                        <RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
+                        <RemoveFolder Id="CleanUpShortct" Directory="ApplicationProgramsFolder" On="uninstall" />
+                    </Component>
 
-                                        <Component Id="DesktopShortcut" Guid="F0F45950-BCA3-4618-BB89-FEA2BA4C6BF1" Directory="DesktopFolder">
-                                            <RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes" />
-                                            <Shortcut Id="ApplicationDesktopShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
-                                        </Component>
-				</Directory>
-			</Directory>
-			<Directory Id="DesktopFolder" Name="Desktop" />
-		</Directory>
-	</Fragment>
+                    <Component Id="StartMenuShortcut" Guid="F3335050-BCA2-4688-BB89-FEA2BA4C4AF1">
+                        <RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="StartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
+                        <Shortcut Id="ApplicationStartMenuShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
+                    </Component>
+                </Directory>
+            </Directory>
+            
+            <!-- 桌面快捷方式组件必须放在 DesktopFolder 下 -->
+            <Directory Id="DesktopFolder" Name="Desktop">
+                <Component Id="DesktopShortcut" Guid="F0F45950-BCA3-4618-BB89-FEA2BA4C6BF1">
+                    <RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes" />
+                    <Shortcut Id="ApplicationDesktopShortcut" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" />
+                </Component>
+            </Directory>
+        </Directory>
+    </Fragment>
 
-	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-			<Component Id="MainExecutable" Guid="64A067D6-381D-4C81-A24D-F0FC735B5E19">
-			    <File Id="StarryfilesppEXE" Name="StarryFiles++.exe" DiskId="1" Source="$(var.StarryFiles++.TargetPath)" KeyPath="yes" Checksum="yes" />
-			    <RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="MainExeInstalled" Type="integer" Value="1" />
-			</Component>
-			<Component Id="History" Guid="0CB49788-9CBD-403C-863C-A02060659179">
-				<File Id="History" Source="$(var.SolutionDir)..\Documentation\User\History.txt" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="HistoryInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="License" Guid="975F5EE5-957C-457F-BE1A-EF50CFFB5E0C">
-				<File Id="License" Source="$(var.SolutionDir)..\Documentation\User\License.txt" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="LicenseInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="Readme" Guid="184D8A24-6930-4639-8C51-703DF78C6EA2">
-				<File Id="Readme" Source="$(var.SolutionDir)..\Documentation\User\Readme.txt" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="ReadmeInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="CatalanTranslation" Guid="F991E89C-C776-4F58-926A-B8EA63292AAE">
-				<File Id="CatalanDLL" Source="$(var.StarryFiles++CA.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="CatalanInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="CzechTranslation" Guid="21502F40-6E55-4D6C-9DD7-DEDC8FE2D70A">
-				<File Id="CzechDLL" Source="$(var.StarryFiles++CS.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="CzechInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="DanishTranslation" Guid="0DE4D191-6B28-42B5-B9EE-09D2F07BF817">
-				<File Id="DanishDLL" Source="$(var.StarryFiles++DA.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="DanishInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="GermanTranslation" Guid="253F8457-6861-468B-ADAA-A291FA8941D7">
-				<File Id="GermanDLL" Source="$(var.StarryFiles++DE.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="GermanInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="SpanishTranslation" Guid="94A01289-2368-4414-AE1E-91F36CB7B6A4">
-				<File Id="SpanishDLL" Source="$(var.StarryFiles++ES.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="SpanishInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="PersianTranslation" Guid="6E06E678-6E38-40CD-88EA-D73B639DD64C">
-				<File Id="PersianDLL" Source="$(var.StarryFiles++FA.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="PersianInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="FinnishTranslation" Guid="BA70C501-2865-4B59-A257-C23E0A7D68AD">
-				<File Id="FinnishDLL" Source="$(var.StarryFiles++FI.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="FinnishInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="FrenchTranslation" Guid="C89702B5-8DF8-40D8-BDC4-D51AA845907C">
-				<File Id="FrenchDLL" Source="$(var.StarryFiles++FR.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="FrenchInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="HebrewTranslation" Guid="0035482C-7253-41CA-9FDD-849B954FD452">
-				<File Id="HebrewDLL" Source="$(var.StarryFiles++HE.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="HebrewInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="HungarianTranslation" Guid="194FB780-6CF3-485E-A782-2B7FE21DEAC7">
-				<File Id="HungarianDLL" Source="$(var.StarryFiles++HU.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="HungarianInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="ItalianTranslation" Guid="32591CF9-DA7F-4244-8648-4BBCA8D67B45">
-				<File Id="ItalianDLL" Source="$(var.StarryFiles++IT.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="ItalianInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="JapaneseTranslation" Guid="3ADAE17A-53D9-48E9-8522-2774F4AD028B">
-				<File Id="JapaneseDLL" Source="$(var.StarryFiles++JA.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="JapaneseInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="KoreanTranslation" Guid="BE1C5FF6-E813-46C8-BDB9-A23296E73DAA">
-				<File Id="KoreanDLL" Source="$(var.StarryFiles++KO.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="KoreanInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="DutchTranslation" Guid="11395C79-2998-4C32-BEB0-A68EBAA3B7F8">
-				<File Id="DutchDLL" Source="$(var.StarryFiles++NL.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="DutchInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="NorwegianTranslation" Guid="1C298559-442C-4EC7-B2D1-2B12A749175E">
-				<File Id="NorwegianDLL" Source="$(var.StarryFiles++NO.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="NorwegianInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="PolishTranslation" Guid="C6A8C4D0-2183-428E-B1CA-341BA0D305CB">
-				<File Id="PolishDLL" Source="$(var.StarryFiles++PL.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="PolishInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="PortugueseTranslation" Guid="EA28EA7D-B509-4807-ABC3-F432002DA4DA">
-				<File Id="PortugueseDLL" Source="$(var.StarryFiles++PT.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="PortugueseInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="RomanianTranslation" Guid="342F8272-E702-4594-A329-0C60E27584B4">
-				<File Id="RomanianDLL" Source="$(var.StarryFiles++RO.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="RomanianInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="RussianTranslation" Guid="68AD9176-B5BD-4E17-911A-EF3A142D03C3">
-				<File Id="RussianDLL" Source="$(var.StarryFiles++RU.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="RussianInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="SinhalaTranslation" Guid="9498A177-47D8-40E8-B86E-7602D1BCBBD1">
-				<File Id="SinhalaDLL" Source="$(var.StarryFiles++SI.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="SinhalaInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="SwedishTranslation" Guid="B93F6D2B-B490-4C03-BD41-68F3C73D821D">
-				<File Id="SwedishDLL" Source="$(var.StarryFiles++SV.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="SwedishInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="TurkishTranslation" Guid="181D5945-8026-4756-BA1F-85696E7629F7">
-				<File Id="TurkishDLL" Source="$(var.StarryFiles++TR.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="TurkishInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="UkrainianTranslation" Guid="343C6FDF-FE50-476E-9BC2-FCD89E108631">
-				<File Id="UkrainianDLL" Source="$(var.StarryFiles++UK.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="UkrainianInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="VietnameseTranslation" Guid="540EBC40-9950-4FC7-840B-0E2242006818">
-				<File Id="VietnameseDLL" Source="$(var.StarryFiles++VI.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="VietnameseInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="ChineseSimplifiedTranslation" Guid="06FB3620-50FD-46E3-BF77-C5C4546C0A75">
-				<File Id="ChineseSimplifiedDLL" Source="$(var.StarryFiles++ZH_CN.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="ChineseSimplifiedInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-			<Component Id="ChineseTraditionalTranslation" Guid="C3D6AF88-F6BC-4E62-BC01-7FA08CC8C32C">
-				<File Id="ChineseTraditionalDLL" Source="$(var.StarryFiles++ZH_TW.TargetPath)" />
-				<RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="ChineseTraditionalInstalled" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-		</ComponentGroup>
-	</Fragment>
+    <Fragment>
+        <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+            <Component Id="MainExecutable" Guid="64A067D6-381D-4C81-A24D-F0FC735B5E19">
+                <File Id="StarryfilesppEXE" Name="StarryFiles++.exe" DiskId="1" Source="$(var.StarryFiles++.TargetPath)" KeyPath="yes" Checksum="yes" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="MainExeInstalled" Type="integer" Value="1" />
+            </Component>
+            <Component Id="History" Guid="0CB49788-9CBD-403C-863C-A02060659179">
+                <File Id="History" Source="$(var.SolutionDir)..\Documentation\User\History.txt" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="HistoryInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="License" Guid="975F5EE5-957C-457F-BE1A-EF50CFFB5E0C">
+                <File Id="License" Source="$(var.SolutionDir)..\Documentation\User\License.txt" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="LicenseInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="Readme" Guid="184D8A24-6930-4639-8C51-703DF78C6EA2">
+                <File Id="Readme" Source="$(var.SolutionDir)..\Documentation\User\Readme.txt" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]" Name="ReadmeInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="CatalanTranslation" Guid="F991E89C-C776-4F58-926A-B8EA63292AAE">
+                <File Id="CatalanDLL" Source="$(var.StarryFiles++CA.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="CatalanInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="CzechTranslation" Guid="21502F40-6E55-4D6C-9DD7-DEDC8FE2D70A">
+                <File Id="CzechDLL" Source="$(var.StarryFiles++CS.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="CzechInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="DanishTranslation" Guid="0DE4D191-6B28-42B5-B9EE-09D2F07BF817">
+                <File Id="DanishDLL" Source="$(var.StarryFiles++DA.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="DanishInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="GermanTranslation" Guid="253F8457-6861-468B-ADAA-A291FA8941D7">
+                <File Id="GermanDLL" Source="$(var.StarryFiles++DE.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="GermanInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="SpanishTranslation" Guid="94A01289-2368-4414-AE1E-91F36CB7B6A4">
+                <File Id="SpanishDLL" Source="$(var.StarryFiles++ES.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="SpanishInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="PersianTranslation" Guid="6E06E678-6E38-40CD-88EA-D73B639DD64C">
+                <File Id="PersianDLL" Source="$(var.StarryFiles++FA.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="PersianInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="FinnishTranslation" Guid="BA70C501-2865-4B59-A257-C23E0A7D68AD">
+                <File Id="FinnishDLL" Source="$(var.StarryFiles++FI.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="FinnishInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="FrenchTranslation" Guid="C89702B5-8DF8-40D8-BDC4-D51AA845907C">
+                <File Id="FrenchDLL" Source="$(var.StarryFiles++FR.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="FrenchInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="HebrewTranslation" Guid="0035482C-7253-41CA-9FDD-849B954FD452">
+                <File Id="HebrewDLL" Source="$(var.StarryFiles++HE.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="HebrewInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="HungarianTranslation" Guid="194FB780-6CF3-485E-A782-2B7FE21DEAC7">
+                <File Id="HungarianDLL" Source="$(var.StarryFiles++HU.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="HungarianInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="ItalianTranslation" Guid="32591CF9-DA7F-4244-8648-4BBCA8D67B45">
+                <File Id="ItalianDLL" Source="$(var.StarryFiles++IT.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="ItalianInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="JapaneseTranslation" Guid="3ADAE17A-53D9-48E9-8522-2774F4AD028B">
+                <File Id="JapaneseDLL" Source="$(var.StarryFiles++JA.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="JapaneseInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="KoreanTranslation" Guid="BE1C5FF6-E813-46C8-BDB9-A23296E73DAA">
+                <File Id="KoreanDLL" Source="$(var.StarryFiles++KO.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="KoreanInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="DutchTranslation" Guid="11395C79-2998-4C32-BEB0-A68EBAA3B7F8">
+                <File Id="DutchDLL" Source="$(var.StarryFiles++NL.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="DutchInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="NorwegianTranslation" Guid="1C298559-442C-4EC7-B2D1-2B12A749175E">
+                <File Id="NorwegianDLL" Source="$(var.StarryFiles++NO.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="NorwegianInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="PolishTranslation" Guid="C6A8C4D0-2183-428E-B1CA-341BA0D305CB">
+                <File Id="PolishDLL" Source="$(var.StarryFiles++PL.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="PolishInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="PortugueseTranslation" Guid="EA28EA7D-B509-4807-ABC3-F432002DA4DA">
+                <File Id="PortugueseDLL" Source="$(var.StarryFiles++PT.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="PortugueseInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="RomanianTranslation" Guid="342F8272-E702-4594-A329-0C60E27584B4">
+                <File Id="RomanianDLL" Source="$(var.StarryFiles++RO.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="RomanianInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="RussianTranslation" Guid="68AD9176-B5BD-4E17-911A-EF3A142D03C3">
+                <File Id="RussianDLL" Source="$(var.StarryFiles++RU.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="RussianInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="SinhalaTranslation" Guid="9498A177-47D8-40E8-B86E-7602D1BCBBD1">
+                <File Id="SinhalaDLL" Source="$(var.StarryFiles++SI.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="SinhalaInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="SwedishTranslation" Guid="B93F6D2B-B490-4C03-BD41-68F3C73D821D">
+                <File Id="SwedishDLL" Source="$(var.StarryFiles++SV.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="SwedishInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="TurkishTranslation" Guid="181D5945-8026-4756-BA1F-85696E7629F7">
+                <File Id="TurkishDLL" Source="$(var.StarryFiles++TR.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="TurkishInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="UkrainianTranslation" Guid="343C6FDF-FE50-476E-9BC2-FCD89E108631">
+                <File Id="UkrainianDLL" Source="$(var.StarryFiles++UK.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="UkrainianInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="VietnameseTranslation" Guid="540EBC40-9950-4FC7-840B-0E2242006818">
+                <File Id="VietnameseDLL" Source="$(var.StarryFiles++VI.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="VietnameseInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="ChineseSimplifiedTranslation" Guid="06FB3620-50FD-46E3-BF77-C5C4546C0A75">
+                <File Id="ChineseSimplifiedDLL" Source="$(var.StarryFiles++ZH_CN.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="ChineseSimplifiedInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="ChineseTraditionalTranslation" Guid="C3D6AF88-F6BC-4E62-BC01-7FA08CC8C32C">
+                <File Id="ChineseTraditionalDLL" Source="$(var.StarryFiles++ZH_TW.TargetPath)" />
+                <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="ChineseTraditionalInstalled" Type="integer" Value="
+	</ComponentGroup>
+</Fragment>
 </Wix>
