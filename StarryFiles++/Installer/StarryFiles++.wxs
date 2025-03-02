@@ -50,7 +50,8 @@
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 			<Component Id="MainExecutable" Guid="64A067D6-381D-4C81-A24D-F0FC735B5E19">
-					<File Id="StarryfilesppEXE" Name="StarryFiles++.exe" DiskId="1" Source="$(var.StarryFiles++.TargetPath)" KeyPath="yes" Checksum="yes" />
+					<File Id="StarryfilesppEXE" Name="StarryFiles++.exe" DiskId="1" Source="$(var.StarryFiles++.TargetPath)" Checksum="yes" />
+					<RegistryValue Root="HKCU" Key="Software\[ProductName]" Name="MainExeInstalled" Type="integer" Value="1" KeyPath="yes" />
 					<Shortcut Id="ApplicationStartMenuShortcut" Directory="ApplicationProgramsFolder" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" IconIndex="0" />
 					<Shortcut Id="ApplicationDesktopShortcut" Directory="DesktopFolder" Name="StarryFiles++" Target="[INSTALLFOLDER]StarryFiles++.exe" WorkingDirectory="INSTALLFOLDER" Icon="Starryfilespp.ico" IconIndex="0" />
 			</Component>
