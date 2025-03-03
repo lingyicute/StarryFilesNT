@@ -186,6 +186,7 @@
             <Component Id="ChineseTraditionalTranslation" Guid="C3D6AF88-F6BC-4E62-BC01-7FA08CC8C32C">
                 <File Id="ChineseTraditionalDLL" Source="$(var.StarryFiles++ZH_TW.TargetPath)" />
                 <RegistryValue Root="HKLM" Key="Software\[ProductName]\Languages" Name="ChineseTraditionalInstalled" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
 	</ComponentGroup>
 </Fragment>
 </Wix>
